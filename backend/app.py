@@ -4,6 +4,8 @@ from flask import Flask, render_template, request
 from flask_cors import CORS
 from helpers.MySQLDatabaseHandler import MySQLDatabaseHandler
 import pandas as pd
+
+# from nltk.tokenize import TreebankWordTokenizer
 from sklearn.feature_extraction.text import TfidfVectorizer
 import math
 import numpy as np
@@ -16,17 +18,23 @@ os.environ["ROOT_PATH"] = os.path.abspath(os.path.join("..", os.curdir))
 current_directory = os.path.dirname(os.path.abspath(__file__))
 
 # Specify the path to the JSON file relative to the current script
-json_file_path = os.path.join(current_directory, "/backend/data/init.json")
+json_file_path = os.path.join(current_directory, "data/init.json")
 
 # Assuming your JSON data is stored in a file named 'init.json'
 with open(json_file_path, "r") as file:
     data = json.load(file)
 
 vectorizer = TfidfVectorizer(strip_accents="unicode")
-data_tokenizer = lambda dicts: [
-    vectorizer.build_tokenizer()(d["description"]) for d in dicts
-]
-data_tokens = data_tokenizer(data)
+data_vector = []
+for d in data:
+    if isinstance(d["description"], str):
+        data_vector.append(d["description"])
+    else:
+        data_vector.append("")
+
+data_tokenizer = lambda d_v: [vectorizer.build_tokenizer()(d.lower()) for d in d_v]
+data_tokens = data_tokenizer(data_vector)
+# data_tokens = [TreebankWordTokenizer.tokenize(d.lower()) for d in data_vector]
 num_books = len(data_tokens)
 inverted_index = {}
 for i in range(num_books):
@@ -60,7 +68,8 @@ CORS(app)
 
 # Sample search using json with pandas
 def json_search(query):
-    query_tokens = vectorizer.build_tokenizer()(query)
+    query_tokens = vectorizer.build_tokenizer()(query.lower())
+    # query_tokens = TreebankWordTokenizer().tokenize(query.lower())
     doc_scores = {}
     q_norm = 0
     q_freq = {}
@@ -72,7 +81,7 @@ def json_search(query):
     for token in q_freq:
         count = q_freq[token]
         if token in inverted_index:
-            q_norm += (q_freq[key] * idf[key]) ** 2
+            q_norm += (q_freq[token] * idf[token]) ** 2
             ids = inverted_index[token]
             for doc, tf in ids:
                 word_idf = idf[token]
@@ -92,10 +101,12 @@ def json_search(query):
     sorted_res = sorted(results, key=lambda x: x[0], reverse=True)
 
     matched_res = []
-    for i in range(5):
+    for i in range(10):
         matched_res.append(data[sorted_res[i][1]])
 
-    return matched_res
+    df = pd.DataFrame(matched_res)
+
+    return df.to_json(orient="records")
 
 
 @app.route("/")  # calls render_template when url accessed
