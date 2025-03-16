@@ -1,7 +1,7 @@
 import pandas as pd
 import json
 
-df_books_data = pd.read_csv("books_data_stripped.csv")
+df_books_data = pd.read_csv("data/books_data_stripped.csv")
 
 # remove books without titles
 df_books_data = df_books_data[df_books_data["Title"].notna()]
