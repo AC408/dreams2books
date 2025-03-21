@@ -68,16 +68,33 @@ CORS(app)
 
 # Sample search using json with pandas
 def json_search(query):
-    query_tokens = vectorizer.build_tokenizer()(query.lower())
-    # query_tokens = TreebankWordTokenizer().tokenize(query.lower())
+    query = query.lower()
+    query_tokens = vectorizer.build_tokenizer()(query)
+    
+    phrases = []
+    max_words = min(10, len(query_tokens))
+    for i in range(max_words-1):
+        phrases.append(query_tokens[i] + " " + query_tokens[i+1])
+    for i in range(max_words-2):
+        phrases.append(query_tokens[i] + " " + query_tokens[i+1] + " " + query_tokens[i+2])
+    
+    # filter out common phrases that don't add meaning
+    common_phrases = {'the', 'a', 'an', 'and', 'or', 'but', 'in', 'on', 'at', 'to', 'for', 'of', 'with', 'by'}
+    phrases = [p for p in phrases if not all(word in common_phrases for word in p.split())]
+    
     doc_scores = {}
     q_norm = 0
     q_freq = {}
+    
+    # count word frequencies, but focus on meaningful words
     for word in query_tokens:
-        if word in q_freq:
-            q_freq[word] += 1
-        else:
-            q_freq[word] = 1
+         # skip common words and very short words
+        if word not in common_phrases and len(word) > 2: 
+            if word in q_freq:
+                q_freq[word] += 1
+            else:
+                q_freq[word] = 1
+
     for token in q_freq:
         count = q_freq[token]
         if token in inverted_index:
@@ -85,10 +102,25 @@ def json_search(query):
             ids = inverted_index[token]
             for doc, tf in ids:
                 word_idf = idf[token]
+                
+                # more weight for the titles
+                title_bonus = 1.0
+                if token in data[doc]["Title"].lower():
+                    title_bonus = 3.0
+                
+                phrase_bonus = 1.0
+                for phrase in phrases:
+                    if phrase in data[doc]["description"].lower():
+                        phrase_bonus = 2.0
+                        break
+                
+                score = count * word_idf * tf * word_idf * title_bonus * phrase_bonus
+                
                 if doc in doc_scores:
-                    doc_scores[doc] += count * word_idf * tf * word_idf
+                    doc_scores[doc] += score
                 else:
-                    doc_scores[doc] = count * word_idf * tf * word_idf
+                    doc_scores[doc] = score
+
     q_norm = q_norm ** (0.5)
     results = []
     for i in range(num_books):
@@ -101,11 +133,23 @@ def json_search(query):
     sorted_res = sorted(results, key=lambda x: x[0], reverse=True)
 
     matched_res = []
-    for i in range(10):
-        matched_res.append(data[sorted_res[i][1]])
+    result_count = 0
+    i = 0
+    
+    # Ok so, we need to get books with at least 20 character for description. since too tired to filter the dataset rn, using this as a crutch. next step is to clean the dataset and remove this temp crutch
+    while result_count < 10 and i < len(sorted_res):
+        book = data[sorted_res[i][1]]
+
+        if not isinstance(book["description"], str) or len(book["description"]) < 20:
+            i += 1
+            continue
+            
+        book['rank'] = result_count + 1
+        matched_res.append(book)
+        result_count += 1
+        i += 1
 
     df = pd.DataFrame(matched_res)
-
     return df.to_json(orient="records")
 
 
@@ -121,4 +165,4 @@ def episodes_search():
 
 
 if "DB_NAME" not in os.environ:
-    app.run(debug=True, host="0.0.0.0", port=5000)
+    app.run(debug=True, host="0.0.0.0", port=5001)
