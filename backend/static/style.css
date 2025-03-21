@@ -12,28 +12,8 @@
   flex-direction: column;
 }
 
-#google-c{
-  color:#4285F4;
-}
-
-#google-s{
-  color:#DB4437;
-}
-
-#google-4{
-  color:	#F4B400;
-}
-
-#google-3{
-  color:	#4285F4;
-}
-
-#google-0-1{
-  color:	#0F9D58;
-}
-
-#google-0-2{
-  color:#DB4437;
+#title{
+  color:black;
 }
 
 .google-colors{
@@ -79,12 +59,29 @@
 
 .search button{
   margin-top: 10px;
-  padding: 10px;
+  padding: 15px;
+  border: 2px black;
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+
+.search button:hover {
+  background-color: white;
+}
+
+.suggestions {
+  border: 2px solid black;
+  padding: 15px;
+  margin-bottom: 20px;
+  background-color: white;
+  border-radius: 5px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 #answer-box{
   width: 700px;
-  margin-top:50px; 
+  margin-top:50px;
 }
 
 .episode-title{
