@@ -68,10 +68,7 @@
         " " +
         document.getElementById("filter-text-val3").value;
       console.log(query);
-      fetch(
-        "http://localhost:5001/episodes?" +
-          new URLSearchParams({ title: query }).toString()
-      )
+      fetch("/episodes?" + new URLSearchParams({ title: query }).toString())
         .then((response) => response.json())
         .then((data) =>
           data.forEach((row) => {
