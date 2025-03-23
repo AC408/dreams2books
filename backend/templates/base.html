@@ -43,11 +43,10 @@
   </div>
 
   <script>
-    function answerBoxTemplate(Title, authors, infoLink, description) {
+    function answerBoxTemplate(Title, authors, infoLink) {
       return `<div class='suggestions'>
                 <h3 class='episode-title'>${Title}</h3>
                 <p class='episode-desc'>${authors}</p>
-                <p class='episode-desc'>Description: ${description}</p>
                 <p class='episode-rating'>Book Link: ${infoLink}</p>
             </div>`;
     }
@@ -77,7 +76,6 @@
               row.Title,
               row.authors,
               row.infoLink,
-              row.description
             );
             document.getElementById("answer-box").appendChild(tempDiv);
           })
