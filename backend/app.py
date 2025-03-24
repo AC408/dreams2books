@@ -55,7 +55,10 @@ idf = {}
 for key in inverted_index.keys():
     val = inverted_index[key]
     length = len(val)
-    idf[key] = math.log2(num_books / (1 + length))
+    if length > 10:
+        df_ratio = length / num_books
+        if df_ratio < 0.5:
+            idf[key] = math.log2(num_books / (1 + length))
 
 norms = np.zeros((num_books))
 for word in inverted_index.keys():
@@ -70,26 +73,24 @@ CORS(app)
 def json_search(query):
     query = query.lower()
     query_tokens = vectorizer.build_tokenizer()(query)
-    
+
     phrases = []
     max_words = min(10, len(query_tokens))
-    for i in range(max_words-1):
-        phrases.append(query_tokens[i] + " " + query_tokens[i+1])
-    for i in range(max_words-2):
-        phrases.append(query_tokens[i] + " " + query_tokens[i+1] + " " + query_tokens[i+2])
-    
-    # filter out common phrases that don't add meaning
-    common_phrases = {'the', 'a', 'an', 'and', 'or', 'but', 'in', 'on', 'at', 'to', 'for', 'of', 'with', 'by'}
-    phrases = [p for p in phrases if not all(word in common_phrases for word in p.split())]
-    
+    for i in range(max_words - 1):
+        phrases.append(query_tokens[i] + " " + query_tokens[i + 1])
+    for i in range(max_words - 2):
+        phrases.append(
+            query_tokens[i] + " " + query_tokens[i + 1] + " " + query_tokens[i + 2]
+        )
+
     doc_scores = {}
     q_norm = 0
     q_freq = {}
-    
+
     # count word frequencies, but focus on meaningful words
     for word in query_tokens:
-         # skip common words and very short words
-        if word not in common_phrases and len(word) > 2: 
+        # skip common words and very short words
+        if len(word) > 2:
             if word in q_freq:
                 q_freq[word] += 1
             else:
@@ -97,25 +98,25 @@ def json_search(query):
 
     for token in q_freq:
         count = q_freq[token]
-        if token in inverted_index:
+        if token in inverted_index and token in idf:
             q_norm += (q_freq[token] * idf[token]) ** 2
             ids = inverted_index[token]
             for doc, tf in ids:
                 word_idf = idf[token]
-                
+
                 # more weight for the titles
                 title_bonus = 1.0
                 if token in data[doc]["Title"].lower():
                     title_bonus = 3.0
-                
+
                 phrase_bonus = 1.0
                 for phrase in phrases:
                     if phrase in data[doc]["description"].lower():
                         phrase_bonus = 2.0
                         break
-                
+
                 score = count * word_idf * tf * word_idf * title_bonus * phrase_bonus
-                
+
                 if doc in doc_scores:
                     doc_scores[doc] += score
                 else:
@@ -135,7 +136,7 @@ def json_search(query):
     matched_res = []
     result_count = 0
     i = 0
-    
+
     # Ok so, we need to get books with at least 20 character for description. since too tired to filter the dataset rn, using this as a crutch. next step is to clean the dataset and remove this temp crutch
     while result_count < 10 and i < len(sorted_res):
         book = data[sorted_res[i][1]]
@@ -143,8 +144,8 @@ def json_search(query):
         if not isinstance(book["description"], str) or len(book["description"]) < 20:
             i += 1
             continue
-            
-        book['rank'] = result_count + 1
+
+        book["rank"] = result_count + 1
         matched_res.append(book)
         result_count += 1
         i += 1
