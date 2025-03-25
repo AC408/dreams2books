@@ -93,11 +93,11 @@ for index in range(len(df_books_data)):
             .replace("°", "")
         )
     row = df_books_data.iloc[index]
-    # # keep books with english descriptions and titles
-    # if not row["description"].isascii():
-    #     continue
-    # if not row["Title"].isascii():
-    #     continue
+    # keep books with english descriptions and titles
+    if not row["description"].isascii():
+        continue
+    if not row["Title"].isascii():
+        continue
     parsed_book.append(row)
 df_books_data = pd.DataFrame(parsed_book)
 # remove books with the same descriptions or titles
