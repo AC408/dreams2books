@@ -6,6 +6,9 @@ df_books_data = pd.read_csv("data/books_data_stripped.csv")
 # remove books without titles
 df_books_data = df_books_data[df_books_data["Title"].notna()]
 
+# remove books without descriptions
+df_books_data = df_books_data[df_books_data["description"].notna()]
+
 # make titles lowercase and without extra quotations
 df_books_data["Title"] = df_books_data["Title"].apply(
     lambda x: x.replace("'", "").replace('"', "").lower()
@@ -27,9 +30,23 @@ for index in range(len(df_books_data)):
         and row["Title"] in df_books_data.iloc[index + 1]["Title"]
     ):
         below = True
-    if not above and not below:
-        parsed_book.append(row)
+    if above or below:
+        continue
+    # skip books with descriptions length < 20
+    if len(row["description"]) < 20:
+        continue
+    # # BEFORE DOING THIS, NEED TO CONVERT “ to " as one isn't ascii
+    # # keep books with english descriptions and titles
+    # if not row["description"].isascii():
+    #     continue
+    # if not row["Title"].isascii():
+    #     continue
+    parsed_book.append(row)
 df_books_data = pd.DataFrame(parsed_book)
+# remove books with the same descriptions or titles
+# df_books_data = df_books_data.drop_duplicates(subset=["description", "Title"])
+
+# maybe remove books with less than x reviews, same reviews, reviews with less than x%, reviews not in english?
 
 # turn to dictionary to store as json
 df_dic = df_books_data.to_dict(orient="records")
