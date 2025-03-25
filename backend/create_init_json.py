@@ -35,7 +35,56 @@ for index in range(len(df_books_data)):
     # skip books with descriptions length < 20
     if len(row["description"]) < 20:
         continue
-    # # BEFORE DOING THIS, NEED TO CONVERT “ to " as one isn't ascii
+    # convert english non-ascii to ascii
+    if (
+        "“" in row["description"]
+        or "”" in row["description"]
+        or "’" in row["description"]
+        or "®" in row["description"]
+        or "—" in row["description"]
+        or " " in row["description"]  # non-ascii space
+        or "…" in row["description"]
+        or "•" in row["description"]
+        or "●" in row["description"]
+        or "×" in row["description"]  # non-ascii
+        or "“" in row["Title"]
+        or "”" in row["Title"]
+        or "’" in row["Title"]
+        or "®" in row["Title"]
+        or "—" in row["Title"]
+        or " " in row["Title"]
+        or "…" in row["Title"]
+        or "•" in row["Title"]
+        or "●" in row["Title"]
+        or "×" in row["Title"]
+    ):
+        df_books_data.iat[index, df_books_data.columns.get_loc("description")] = (
+            row["description"]
+            .replace("“", '"')
+            .replace("”", '"')
+            .replace("’", "'")
+            .replace("®", "")
+            .replace("—", "-")
+            .replace(" ", " ")
+            .replace("…", "...")
+            .replace("•", "->")
+            .replace("●", "->")
+            .replace("×", "x")
+        )
+        df_books_data.iat[index, df_books_data.columns.get_loc("Title")] = (
+            row["Title"]
+            .replace("“", '"')
+            .replace("”", '"')
+            .replace("’", "'")
+            .replace("®", "")
+            .replace("—", "-")
+            .replace(" ", " ")
+            .replace("…", "...")
+            .replace("•", "->")
+            .replace("●", "->")
+            .replace("×", "x")
+        )
+    row = df_books_data.iloc[index]
     # # keep books with english descriptions and titles
     # if not row["description"].isascii():
     #     continue
