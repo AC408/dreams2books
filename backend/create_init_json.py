@@ -47,6 +47,8 @@ for index in range(len(df_books_data)):
         or "•" in row["description"]
         or "●" in row["description"]
         or "×" in row["description"]  # non-ascii
+        or "©" in row["description"]
+        or "°" in row["description"]
         or "“" in row["Title"]
         or "”" in row["Title"]
         or "’" in row["Title"]
@@ -57,6 +59,8 @@ for index in range(len(df_books_data)):
         or "●" in row["Title"]
         or "×" in row["Title"]
         or "–" in row["Title"]
+        or "©" in row["Title"]
+        or "°" in row["Title"]
     ):
         df_books_data.iat[index, df_books_data.columns.get_loc("description")] = (
             row["description"]
@@ -70,6 +74,8 @@ for index in range(len(df_books_data)):
             .replace("●", "->")
             .replace("×", "x")
             .replace("–", "-")
+            .replace("©", "")
+            .replace("°", "")
         )
         df_books_data.iat[index, df_books_data.columns.get_loc("Title")] = (
             row["Title"]
@@ -83,6 +89,8 @@ for index in range(len(df_books_data)):
             .replace("●", "->")
             .replace("×", "x")
             .replace("–", "-")
+            .replace("©", "")
+            .replace("°", "")
         )
     row = df_books_data.iloc[index]
     # # keep books with english descriptions and titles
