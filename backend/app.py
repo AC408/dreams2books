@@ -55,10 +55,9 @@ idf = {}
 for key in inverted_index.keys():
     val = inverted_index[key]
     length = len(val)
-    if length > 10:
-        df_ratio = length / num_books
-        if df_ratio < 0.5:
-            idf[key] = math.log2(num_books / (1 + length))
+    df_ratio = length / num_books
+    if df_ratio < 0.5:
+        idf[key] = math.log2(num_books / (1 + length))
 
 norms = np.zeros((num_books))
 for word in inverted_index.keys():
@@ -134,21 +133,8 @@ def json_search(query):
     sorted_res = sorted(results, key=lambda x: x[0], reverse=True)
 
     matched_res = []
-    result_count = 0
-    i = 0
-
-    # Ok so, we need to get books with at least 20 character for description. since too tired to filter the dataset rn, using this as a crutch. next step is to clean the dataset and remove this temp crutch
-    while result_count < 10 and i < len(sorted_res):
-        book = data[sorted_res[i][1]]
-
-        if not isinstance(book["description"], str) or len(book["description"]) < 20:
-            i += 1
-            continue
-
-        book["rank"] = result_count + 1
-        matched_res.append(book)
-        result_count += 1
-        i += 1
+    for i in range(10):
+        matched_res.append(data[sorted_res[i][1]])
 
     df = pd.DataFrame(matched_res)
     return df.to_json(orient="records")
