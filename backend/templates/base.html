@@ -3,10 +3,8 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link
-  href="https://fonts.googleapis.com/css2?family=Kanit&family=Montserrat&family=Open+Sans:wght@500&display=swap"
-  rel="stylesheet"
-/>
+<link href="https://fonts.googleapis.com/css2?family=Kanit&family=Montserrat&family=Open+Sans:wght@500&display=swap"
+  rel="stylesheet" />
 
 <body>
   <div class="full-body-container">
@@ -16,24 +14,11 @@
       </div>
       <div class="input-box">
         <img src="{{ url_for('static', filename='images/mag.png') }}" />
-        <input
-          placeholder="Describe your dreams in a minimum of x words"
-          id="filter-text-val1"
-        />
+        <input placeholder="Describe your dreams in a minimum of x words" id="filter-text-val1" />
       </div>
       <div class="input-box">
         <img src="{{ url_for('static', filename='images/mag.png') }}" />
-        <input
-          placeholder="How did you feel about your dream"
-          id="filter-text-val2"
-        />
-      </div>
-      <div class="input-box">
-        <img src="{{ url_for('static', filename='images/mag.png') }}" />
-        <input
-          placeholder="List the most important aspects of the dreams"
-          id="filter-text-val3"
-        />
+        <input placeholder="How did you feel about your dream" id="filter-text-val2" />
       </div>
       <div class="search">
         <button type="button" onclick="filterText()">Search Books!</button>
@@ -43,11 +28,13 @@
   </div>
 
   <script>
-    function answerBoxTemplate(Title, authors, infoLink) {
+    function answerBoxTemplate(Title, authors, description, infoLink, similarity_score) {
       return `<div class='suggestions'>
                 <h3 class='episode-title'>${Title}</h3>
                 <p class='episode-desc'>${authors}</p>
+                <p class='episode-desc'>Description: ${description}</p>
                 <p class='episode-rating'>Book Link: ${infoLink}</p>
+                <p class='episode-rating'>Similarity Score: ${similarity_score}</p>
             </div>`;
     }
 
@@ -59,13 +46,10 @@
       document.getElementById("answer-box").innerHTML = "";
       console.log(document.getElementById("filter-text-val1").value);
       console.log(document.getElementById("filter-text-val2").value);
-      console.log(document.getElementById("filter-text-val3").value);
       var query =
         document.getElementById("filter-text-val1").value +
         " " +
-        document.getElementById("filter-text-val2").value +
-        " " +
-        document.getElementById("filter-text-val3").value;
+        document.getElementById("filter-text-val2").value;
       console.log(query);
       fetch("/episodes?" + new URLSearchParams({ title: query }).toString())
         .then((response) => response.json())
@@ -75,7 +59,9 @@
             tempDiv.innerHTML = answerBoxTemplate(
               row.Title,
               row.authors,
+              row.description,
               row.infoLink,
+              row.similarity_score
             );
             document.getElementById("answer-box").appendChild(tempDiv);
           })

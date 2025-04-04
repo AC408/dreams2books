@@ -70,6 +70,7 @@ CORS(app)
 
 # Sample search using json with pandas
 def json_search(query):
+    # TODO: CHANGE THIS TO USE TF-IDF AND THEN USE SVD
     query = query.lower()
     query_tokens = vectorizer.build_tokenizer()(query)
 
@@ -123,20 +124,26 @@ def json_search(query):
 
     q_norm = q_norm ** (0.5)
     results = []
+    similarity_score = []
     for i in range(num_books):
         if i in doc_scores:
             norm = norms[i]
             numerator = doc_scores[i]
             results.append((numerator / (norm * q_norm), i))
+            similarity_score.append(numerator / (norm * q_norm))
         else:
             results.append((0, i))
+            similarity_score.append(0)
     sorted_res = sorted(results, key=lambda x: x[0], reverse=True)
+    sorted_similarity_score = sorted(similarity_score, reverse=True)
 
     matched_res = []
     for i in range(10):
         matched_res.append(data[sorted_res[i][1]])
 
     df = pd.DataFrame(matched_res)
+    df["similarity_score"] = sorted_similarity_score[:10]
+    # TODO: Add photos, hyperlink, ISSN
     return df.to_json(orient="records")
 
 
