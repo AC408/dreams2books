@@ -24,19 +24,45 @@ json_file_path = os.path.join(current_directory, "init.json")
 with open(json_file_path, "r") as file:
     data = json.load(file)
 
-vectorizer = TfidfVectorizer(use_idf=True, strip_accents="unicode")
-doc_terms = []
+vectorizer = TfidfVectorizer(strip_accents="unicode")
+data_vector = []
 for d in data:
-    terms = d["description"]
-    for review in d["review"]:
-        terms += review["review/text"]
-    doc_terms.append(terms)
+    if isinstance(d["description"], str):
+        data_vector.append(d["description"])
+    else:
+        data_vector.append("")
 
-tf_idf = vectorizer.fit_transform([d for d in doc_terms]).toarray()
-index_to_vocab = {i: v for i, v in enumerate(vectorizer.get_feature_names_out())}
-vocab_to_index = {}
-for k in index_to_vocab.keys():
-    vocab_to_index[index_to_vocab[k]] = k
+data_tokenizer = lambda d_v: [vectorizer.build_tokenizer()(d.lower()) for d in d_v]
+data_tokens = data_tokenizer(data_vector)
+# data_tokens = [TreebankWordTokenizer.tokenize(d.lower()) for d in data_vector]
+num_books = len(data_tokens)
+inverted_index = {}
+for i in range(num_books):
+    toks = data_tokens[i]
+    for tok in toks:
+        if tok in inverted_index:
+            ids = inverted_index[tok]
+            last_id = len(ids) - 1
+            last_tup = ids[last_id]
+            if last_tup[0] == i:
+                ids[last_id] = (i, last_tup[1] + 1)
+            else:
+                inverted_index[tok] += [(i, 1)]
+        else:
+            inverted_index[tok] = [(i, 1)]
+
+idf = {}
+for key in inverted_index.keys():
+    val = inverted_index[key]
+    length = len(val)
+    df_ratio = length / num_books
+    if df_ratio < 0.5:
+        idf[key] = math.log2(num_books / (1 + length))
+
+norms = np.zeros((num_books))
+for word in inverted_index.keys():
+    for docs, tf in inverted_index[word]:
+        norms[docs] += (tf * idf.get(word, 0)) ** 2
 
 app = Flask(__name__)
 CORS(app)
@@ -58,55 +84,65 @@ def json_search(query):
         )
 
     doc_scores = {}
+    q_norm = 0
     q_freq = {}
 
     # count word frequencies, but focus on meaningful words
     for word in query_tokens:
-        # skip very short words
+        # skip common words and very short words
         if len(word) > 2:
             if word in q_freq:
                 q_freq[word] += 1
             else:
                 q_freq[word] = 1
 
-    q_vec = np.zeros(tf_idf.shape[1])
     for token in q_freq:
         count = q_freq[token]
-        if token in index_to_vocab.values():
-            word_idf = vectorizer.idf_[vectorizer.vocabulary_[token]]
-            q_tfidf = count * word_idf
-            q_vec[vocab_to_index[token]] = q_tfidf
+        if token in inverted_index and token in idf:
+            q_norm += (q_freq[token] * idf[token]) ** 2
+            ids = inverted_index[token]
+            for doc, tf in ids:
+                word_idf = idf[token]
 
-    cosine_similarity = np.dot(tf_idf, q_vec)
+                # more weight for the titles
+                title_bonus = 1.0
+                if token in data[doc]["Title"].lower():
+                    title_bonus = 3.0
 
-    for doc in range(tf_idf.shape[0]):
-        # more weight for the titles
-        title_bonus = 1.0
-        if token in data[doc]["Title"]:
-            title_bonus = 3.0
+                phrase_bonus = 1.0
+                for phrase in phrases:
+                    if phrase in data[doc]["description"].lower():
+                        phrase_bonus = 2.0
+                        break
 
-        phrase_bonus = 1.0
-        for phrase in phrases:
-            if phrase in data[doc]["description"]:
-                phrase_bonus = 2.0
-                break
+                score = count * word_idf * tf * word_idf * title_bonus * phrase_bonus
 
-        cosine_similarity[doc] = (
-            cosine_similarity[doc]
-            * title_bonus
-            * phrase_bonus
-            / np.linalg.norm(tf_idf[doc])
-        )
+                if doc in doc_scores:
+                    doc_scores[doc] += score
+                else:
+                    doc_scores[doc] = score
 
-    top_ten_score = np.sort(cosine_similarity)[::-1][:10]
-    top_ten_docs = np.argsort(cosine_similarity)[::-1][:10]
+    q_norm = q_norm ** (0.5)
+    results = []
+    similarity_score = []
+    for i in range(num_books):
+        if i in doc_scores:
+            norm = norms[i]
+            numerator = doc_scores[i]
+            results.append((numerator / (norm * q_norm), i))
+            similarity_score.append(numerator / (norm * q_norm))
+        else:
+            results.append((0, i))
+            similarity_score.append(0)
+    sorted_res = sorted(results, key=lambda x: x[0], reverse=True)
+    sorted_similarity_score = sorted(similarity_score, reverse=True)
 
     matched_res = []
     for i in range(10):
-        matched_res.append(data[top_ten_docs[i]])
+        matched_res.append(data[sorted_res[i][1]])
 
     df = pd.DataFrame(matched_res)
-    df["similarity_score"] = top_ten_score
+    df["similarity_score"] = sorted_similarity_score[:10]
     # TODO: Add photos, hyperlink, ISSN
     return df.to_json(orient="records")
 
