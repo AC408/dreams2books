@@ -38,3 +38,7 @@ import matplotlib.pyplot as plt
 
 plt.plot(s[::-1])
 plt.show()
+
+import joblib
+
+joblib.dump(vectorizer, "tfidf_vectorizer.pkl")
