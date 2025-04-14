@@ -30,9 +30,8 @@ for d in data:
 
 tf_idf = vectorizer.fit_transform([d for d in doc_terms])
 
-docs_compressed, s, words_compressed = svds(tf_idf, k=20)
+docs_compressed, s, words_compressed = svds(tf_idf, k=75)
 np.save("docs_compressed", docs_compressed)
-np.save("s", s)
 np.save("words_compressed", words_compressed)
 import matplotlib.pyplot as plt
 
