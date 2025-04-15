@@ -211,9 +211,7 @@ num_dictionary = len(df_dic)
 num_splits = 10
 num_steps = int(num_dictionary / num_splits) + 1
 start = 0
-print("n: ", num_dictionary)
 for k in range(num_splits):
-    print("s: ", start)
     # save as json
     with open("data_" + str(k) + ".json", "w") as json_file:
         json.dump(
