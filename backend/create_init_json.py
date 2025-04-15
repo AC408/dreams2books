@@ -1,18 +1,24 @@
 import pandas as pd
 import json
+import numpy as np
 
-MIN_NUM_REVIEW = 3  # Each books need MIN_NUM_REVIEW reviews
+MIN_NUM_REVIEW = 2  # Each books need MIN_NUM_REVIEW reviews
 MIN_DESCRIPTION_CHAR = 20  # Each book descriptions need MIN_DESCRIPTION_CHAR chars
 MIN_REVIEW_HELPFULNESS = (
-    0.75  # Each review has to be at least MIN_REVIEW_HELPFULNESS helpful
+    0.5  # Each review has to be at least MIN_REVIEW_HELPFULNESS helpful
 )
 MIN_NUM_REVIEW_OF_REVIEW = (
-    4  # Each review needs to have MIN_NUM_REVIEW_OF_REVIEW reviews
+    2  # Each review needs to have MIN_NUM_REVIEW_OF_REVIEW reviews
 )
 MIN_REVIEW_CHAR = 20  # Each review needs MIN_REVIEW_CHAR chars
-MAX_REVIEW_COUNT_PER_BOOK = 3  # Max number of reviews per book to conserve space
+# MAX_REVIEW_COUNT_PER_BOOK = np.inf  # Max number of reviews per book to conserve space
 
-df_books_data = pd.read_csv("data/books_data_stripped.csv")
+path_to_books_data = "~/Downloads/archive/books_data.csv"
+
+df_books_data = pd.read_csv(path_to_books_data)
+df_books_data = df_books_data.drop(
+    columns=["image", "previewLink", "publisher", "publishedDate"]
+)
 
 # remove books without titles
 df_books_data = df_books_data[df_books_data["Title"].notna()]
@@ -91,7 +97,20 @@ for index in range(len(df_books_data)):
 # remove books with the same descriptions or titles
 # df_books_data = df_books_data.drop_duplicates(subset=["description", "Title"])
 
-df_books_rating = pd.read_csv("data/books_rating_stripped.csv")
+path_to_books_rating = "~/Downloads/archive/Books_rating.csv"
+
+df_books_rating = pd.read_csv(path_to_books_rating)
+df_books_rating = df_books_rating.drop(
+    columns=[
+        "Id",
+        "Price",
+        "User_id",
+        "profileName",
+        "review/score",
+        "review/time",
+        "review/summary",
+    ]
+)
 
 # remove books without titles
 df_books_rating = df_books_rating[df_books_rating["Title"].notna()]
@@ -167,7 +186,8 @@ while index < len(df_books_rating):
                 sorted_reviews = sorted(
                     reviews, key=lambda x: x["num_reviews"], reverse=True
                 )
-                data["review"] = sorted_reviews[:MAX_REVIEW_COUNT_PER_BOOK]
+                # data["review"] = sorted_reviews[:MAX_REVIEW_COUNT_PER_BOOK]
+                data["review"] = sorted_reviews
                 parsed_books.append(data)
         title = row["Title"]
         reviews = []
@@ -187,7 +207,18 @@ df_books_data = pd.DataFrame(parsed_books)
 
 # turn to dictionary to store as json
 df_dic = df_books_data.to_dict(orient="records")
-
-# save as json
-with open("init.json", "w") as json_file:
-    json.dump(df_dic, json_file, indent=4)
+num_dictionary = len(df_dic)
+num_splits = 10
+num_steps = int(num_dictionary / num_splits) + 1
+start = 0
+print("n: ", num_dictionary)
+for k in range(num_splits):
+    print("s: ", start)
+    # save as json
+    with open("data_" + str(k) + ".json", "w") as json_file:
+        json.dump(
+            df_dic[start : min(num_dictionary, start + num_steps)],
+            json_file,
+            indent=4,
+        )
+    start += num_steps
