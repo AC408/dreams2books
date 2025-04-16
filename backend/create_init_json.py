@@ -221,6 +221,7 @@ df_dic = df_books_data.to_dict(orient="records")
 num_dictionary = len(df_dic)
 num_splits = 20
 num_steps = int(num_dictionary / num_splits) + 1
+print(num_steps)
 start = 0
 for k in range(num_splits):
     # save as json
