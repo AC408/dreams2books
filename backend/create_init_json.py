@@ -31,6 +31,8 @@ df_books_data["Title"] = df_books_data["Title"].apply(
     lambda x: x.replace("'", "").replace('"', "").lower()
 )
 
+df_books_data = df_books_data.drop_duplicates()
+
 df_books_data = df_books_data.sort_values(by=["Title"])
 
 asci_mapping = {
@@ -39,6 +41,7 @@ asci_mapping = {
     "’": "'",
     "®": "",
     "—": "-",
+    "–": ":",
     "…": "...",
     "•": "->",
     "●": "->",
@@ -46,6 +49,7 @@ asci_mapping = {
     "–": "-",
     "©": "",
     "°": "",
+    "  ": " ",
 }
 
 # remove any books with titles that are subset of other books
@@ -54,37 +58,46 @@ asci_mapping = {
 parsed_book_data = {}
 for index in range(len(df_books_data)):
     row = df_books_data.iloc[index]
-    above = False
-    below = False
-    if index > 0 and row["Title"] in df_books_data.iloc[index - 1]["Title"]:
-        above = True
-    if (
-        index < len(df_books_data) - 1
-        and row["Title"] in df_books_data.iloc[index + 1]["Title"]
-    ):
-        below = True
-    if above or below:
-        continue
+
     # skip books with descriptions length < 20
     if len(row["description"]) < MIN_DESCRIPTION_CHAR:
         continue
     # convert english non-ascii to ascii
-    if row["description"] in asci_mapping.keys() or row["Title"] in asci_mapping.keys():
-        new_description = row["description"]
-        new_title = row["Title"]
-        for k in asci_mapping.keys():
-            new_description = new_description.replace(k, asci_mapping[k])
-            new_title = new_title.replace(k, asci_mapping[k])
-        df_books_data.iat[index, df_books_data.columns.get_loc("description")] = (
-            new_description
-        )
-        df_books_data.iat[index, df_books_data.columns.get_loc("Title")] = new_title
+    new_description = row["description"]
+    new_title = row["Title"]
+    for k in asci_mapping.keys():
+        new_description = new_description.replace(k, asci_mapping[k])
+        new_title = new_title.replace(k, asci_mapping[k])
+    new_description = new_description.strip()
+    new_title = new_title.strip()
+    df_books_data.iat[index, df_books_data.columns.get_loc("description")] = (
+        new_description
+    )
+    df_books_data.iat[index, df_books_data.columns.get_loc("Title")] = new_title
     row = df_books_data.iloc[index]
+
     # keep books with english descriptions and titles
     if not row["description"].isascii():
         continue
     if not row["Title"].isascii():
         continue
+
+    # Skip if the current title is a substring of the previous title and they have the same description and authors
+    if index > 0:
+        prev_row = df_books_data.iloc[index - 1]
+        prev_title = prev_row["Title"]
+        prev_description = prev_row["description"]
+        prev_authors = prev_row["authors"]
+
+        # Check if this title is a substring of the previous title or vice versa, and descriptions and authors match
+        if (
+            (row["Title"] in prev_title or prev_title in row["Title"])
+            and prev_description == row["description"]
+            and prev_authors == row["authors"]
+        ):
+
+            continue
+
     d = {
         "Title": row["Title"],
         "description": row["description"],
@@ -123,6 +136,8 @@ df_books_rating["Title"] = df_books_rating["Title"].apply(
     lambda x: x.replace("'", "").replace('"', "").lower()
 )
 
+df_books_rating = df_books_rating.drop_duplicates()
+
 df_books_rating = df_books_rating.sort_values(by=["Title"])
 
 parsed_books = []
@@ -132,9 +147,7 @@ reviews = []  # starts empty because loop starts at row 0
 index = 0
 while index < len(df_books_rating):
     row = df_books_rating.iloc[index]
-    if (
-        row["Title"] == title or title in row["Title"] or row["Title"] in title
-    ):  # combine reviews together
+    if row["Title"] == title:  # combine reviews together
         review_helpfulness = row["review/helpfulness"]
         index_of_slash = review_helpfulness.index("/")
         denominator = int(review_helpfulness[index_of_slash + 1 :])
@@ -149,18 +162,16 @@ while index < len(df_books_rating):
         ):  # skips reviews with helpfulness less than x
             index += 1
             continue
-        if row["review/text"] in asci_mapping.keys():  # converts to ascii
-            new_review = row["review/text"]
-            for k in asci_mapping.keys():
-                new_review = new_review.replace(k, asci_mapping[k])
-            if (
-                len(new_review) < MIN_REVIEW_CHAR
-            ):  # skips reviews with less than x chars
-                index += 1
-                continue
-            df_books_rating.iat[
-                index, df_books_rating.columns.get_loc("review/text")
-            ] = new_review
+        new_review = row["review/text"]
+        for k in asci_mapping.keys():
+            new_review = new_review.replace(k, asci_mapping[k])
+        new_review = new_review.strip()
+        if len(new_review) < MIN_REVIEW_CHAR:  # skips reviews with less than x chars
+            index += 1
+            continue
+        df_books_rating.iat[index, df_books_rating.columns.get_loc("review/text")] = (
+            new_review
+        )
         row = df_books_rating.iloc[index]
         if not row["review/text"].isascii():  # remove non-english reviews
             index += 1
@@ -173,9 +184,9 @@ while index < len(df_books_rating):
         reviews.append(review)  # combine reviews
         index += 1
     else:
-        if title in asci_mapping.keys():  # converts to ascii
-            for k in asci_mapping.keys():
-                title = title.replace(k, asci_mapping[k])
+        for k in asci_mapping.keys():
+            title = title.replace(k, asci_mapping[k])
+        title = title.strip()
         if (
             title.isascii() and title in parsed_book_data
         ):  # removes non-english review, performs inner merge
@@ -208,7 +219,7 @@ df_books_data = pd.DataFrame(parsed_books)
 # turn to dictionary to store as json
 df_dic = df_books_data.to_dict(orient="records")
 num_dictionary = len(df_dic)
-num_splits = 10
+num_splits = 20
 num_steps = int(num_dictionary / num_splits) + 1
 start = 0
 for k in range(num_splits):
