@@ -115,7 +115,7 @@
 
         if (query1.length === 0 && query2.length === 0) return;
 
-        const query = query1 + " " + query2;
+        const query = query1 + " " + query1 + " " + query2;
 
         document.getElementById("answer-box").innerHTML = createLoadingState();
 
