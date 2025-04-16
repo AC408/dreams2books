@@ -19,7 +19,9 @@ for k in range(10):
         new_data = json.load(file)
         data = data + new_data
 
-vectorizer = TfidfVectorizer(use_idf=True, strip_accents="unicode")
+vectorizer = TfidfVectorizer(
+    use_idf=True, strip_accents="unicode", lowercase=True, stop_words="english"
+)
 doc_terms = []
 for d in data:
     terms = d["description"]
@@ -37,7 +39,8 @@ for k in range(num_splits):
     # save as json
     np.save("words_compressed_" + str(k), split[k])
 
-np.save("docs_compressed", docs_compressed)
+np.save("docs_compressed", docs_compressed @ np.diag(s))
+np.save("s", s)
 import matplotlib.pyplot as plt
 
 plt.plot(s[::-1])
