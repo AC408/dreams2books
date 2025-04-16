@@ -1,178 +1,163 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Dreams2Books - Find Books From Your Dreams</title>
-    <link
-      rel="stylesheet"
-      href="{{ url_for('static', filename='style.css') }}"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <div class="container">
-      <header class="hero">
-        <h1>Dreams2Books</h1>
-        <p class="subtitle">Find the perfect book inspired by your dreams</p>
 
-        <div class="search-container">
-          <div class="input-box">
-            <textarea
-              placeholder="Describe your dreams in a minimum of 10 words"
-              id="filter-text-val1"
-              rows="4"
-            ></textarea>
-          </div>
-          <div class="input-box">
-            <textarea
-              placeholder="How did you feel about your dream"
-              id="filter-text-val2"
-              rows="4"
-            ></textarea>
-          </div>
-          <button onclick="filterText()">Generate Recommendations</button>
+<head>
+  <title>Dreams2Books - Find Books From Your Dreams</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="container">
+    <header class="hero">
+      <h1>Dreams2Books</h1>
+      <p class="subtitle">Find the perfect book inspired by your dreams</p>
+
+      <div class="search-container">
+        <div class="input-box">
+          <textarea placeholder="Describe your dreams in a minimum of 10 words" id="filter-text-val1"
+            rows="4"></textarea>
         </div>
-      </header>
-
-      <div class="results-wrapper">
-        <main id="answer-box"></main>
+        <div class="input-box">
+          <textarea placeholder="How did you feel about your dream" id="filter-text-val2" rows="4"></textarea>
+        </div>
+        <button onclick="filterText()">Generate Recommendations</button>
       </div>
+    </header>
+
+    <div class="results-wrapper">
+      <main id="answer-box"></main>
     </div>
+  </div>
 
-    <script>
-      function answerBoxTemplate(
-        Title,
-        authors,
-        infoLink,
-        similarity_score,
-        description
-      ) {
-        // formatting the author text bc we got brackets and quotes in the dataset
-        let authorText = Array.isArray(authors) ? authors.join(", ") : authors;
-        authorText = authorText.replace(/['\[\]]/g, "");
+  <script>
+    function answerBoxTemplate(
+      Title,
+      authors,
+      infoLink,
+      similarity_score,
+      description
+    ) {
+      // formatting the author text bc we got brackets and quotes in the dataset
+      let authorText = Array.isArray(authors) ? authors.join(", ") : authors;
+      authorText = authorText.replace(/['\[\]]/g, "");
 
-        // uppercasing first letter bc our dataset si full of lowercase lol
-        const capitalizedTitle =
-          Title.charAt(0).toUpperCase() + Title.slice(1).toLowerCase();
+      // uppercasing first letter bc our dataset si full of lowercase lol
+      const capitalizedTitle =
+        Title.charAt(0).toUpperCase() + Title.slice(1).toLowerCase();
 
-        // construct image url with this nice little trick but unscalable trick. so we actually did have the image url in our dataset, but we trimmed it. but you can construct it like this since its just the google books api same as the book id.
-        const bookIdMatch = infoLink.match(/id=([^&]+)/);
-        const bookId = bookIdMatch ? bookIdMatch[1] : "";
-        const coverImageUrl = bookId
-          ? `https://books.google.com/books/content?id=${bookId}&printsec=frontcover&img=1&zoom=1&source=gbs_api`
-          : "";
+      // construct image url with this nice little trick but unscalable trick. so we actually did have the image url in our dataset, but we trimmed it. but you can construct it like this since its just the google books api same as the book id.
+      const bookIdMatch = infoLink.match(/id=([^&]+)/);
+      const bookId = bookIdMatch ? bookIdMatch[1] : "";
+      const coverImageUrl = bookId
+        ? `https://books.google.com/books/content?id=${bookId}&printsec=frontcover&img=1&zoom=1&source=gbs_api`
+        : "";
 
-        const hasCover = bookId !== "";
+      const hasCover = bookId !== "";
 
-        // Format similarity score to 2 decimal places
-        const formattedScore = similarity_score
-          ? `Similarity: ${parseFloat(similarity_score).toFixed(2)}`
-          : "N/A";
+      // Format similarity score to 2 decimal places
+      const formattedScore = similarity_score
+        ? `Similarity: ${parseFloat(similarity_score).toFixed(2)}`
+        : "N/A";
 
-        return `
+      return `
         <div class="book-card ${hasCover ? "has-cover" : ""}">
           <span class="book-rank">${formattedScore}</span>
-          ${
-            hasCover
-              ? `<div class="book-cover">
+          ${hasCover
+          ? `<div class="book-cover">
             <img src="${coverImageUrl}" alt="${capitalizedTitle} cover" />
           </div>`
-              : ""
-          }
+          : ""
+        }
           <div class="book-content">
             <div class="book-header">
               <h3 class="book-title">${capitalizedTitle}</h3>
             </div>
             <p class="book-authors">By ${authorText}</p>
-            <p class="book-description">${
-              description || "No description available"
-            }</p>
+            <p class="book-description">${description || "No description available"
+        }</p>
             <a href="${infoLink}" target="_blank" class="book-link">View on Google Books</a>
           </div>
         </div>`;
+    }
+
+    function createLoadingState() {
+      let loadingHTML = '<h2 class="results-heading">Recommended Books</h2>';
+      loadingHTML += '<div class="loading-grid">';
+
+      for (let i = 0; i < 6; i++) {
+        loadingHTML += '<div class="loading-card"></div>';
       }
 
-      function createLoadingState() {
-        let loadingHTML = '<h2 class="results-heading">Recommended Books</h2>';
-        loadingHTML += '<div class="loading-grid">';
+      loadingHTML += "</div>";
+      return loadingHTML;
+    }
 
-        for (let i = 0; i < 6; i++) {
-          loadingHTML += '<div class="loading-card"></div>';
-        }
+    function filterText() {
+      document.getElementById("answer-box").innerHTML = "";
+      const query1 = document.getElementById("filter-text-val1").value;
+      const query2 = document.getElementById("filter-text-val2").value;
 
-        loadingHTML += "</div>";
-        return loadingHTML;
-      }
+      if (query1.length === 0 && query2.length === 0) return;
 
-      function filterText() {
-        document.getElementById("answer-box").innerHTML = "";
-        const query1 = document.getElementById("filter-text-val1").value;
-        const query2 = document.getElementById("filter-text-val2").value;
+      const query = query1 + " " + query1 + " " + query2;
 
-        if (query1.length === 0 && query2.length === 0) return;
+      document.getElementById("answer-box").innerHTML = createLoadingState();
 
-        const query = query1 + " " + query1 + " " + query2;
-
-        document.getElementById("answer-box").innerHTML = createLoadingState();
-
-        fetch("/episodes?" + new URLSearchParams({ title: query }).toString())
-          .then((response) => response.json())
-          .then((data) => {
-            document.getElementById("answer-box").innerHTML = "";
-            if (data.length === 0) {
-              document.getElementById("answer-box").innerHTML =
-                "<div class='no-results'>No books found matching your dream.</div>";
-              return;
-            }
-
-            const resultsHeading = document.createElement("h2");
-            resultsHeading.className = "results-heading";
-            resultsHeading.textContent = "Recommended Books";
-            document.getElementById("answer-box").appendChild(resultsHeading);
-
-            const resultsGrid = document.createElement("div");
-            resultsGrid.className = "results-grid";
-            document.getElementById("answer-box").appendChild(resultsGrid);
-
-            data.forEach((row) => {
-              let tempDiv = document.createElement("div");
-              tempDiv.innerHTML = answerBoxTemplate(
-                row.Title,
-                row.authors,
-                row.infoLink,
-                row.similarity_score,
-                row.description
-              );
-              resultsGrid.appendChild(tempDiv.firstElementChild);
-            });
-          })
-          .catch(() => {
+      fetch("/episodes?" + new URLSearchParams({ title: query }).toString())
+        .then((response) => response.json())
+        .then((data) => {
+          document.getElementById("answer-box").innerHTML = "";
+          if (data.length === 0) {
             document.getElementById("answer-box").innerHTML =
-              "<div class='error'>No answer was found.</div>";
+              "<div class='no-results'>No books found matching your dream.</div>";
+            return;
+          }
+
+          const resultsHeading = document.createElement("h2");
+          resultsHeading.className = "results-heading";
+          resultsHeading.textContent = "Recommended Books";
+          document.getElementById("answer-box").appendChild(resultsHeading);
+
+          const resultsGrid = document.createElement("div");
+          resultsGrid.className = "results-grid";
+          document.getElementById("answer-box").appendChild(resultsGrid);
+
+          data.forEach((row) => {
+            let tempDiv = document.createElement("div");
+            tempDiv.innerHTML = answerBoxTemplate(
+              row.Title,
+              row.authors,
+              row.infoLink,
+              row.similarity_score,
+              row.description
+            );
+            resultsGrid.appendChild(tempDiv.firstElementChild);
           });
-      }
+        })
+        ;
+    }
 
-      document
-        .getElementById("filter-text-val1")
-        .addEventListener("keypress", function (e) {
-          if (e.key === "Enter" && !e.shiftKey) {
-            e.preventDefault();
-            filterText();
-          }
-        });
+    document
+      .getElementById("filter-text-val1")
+      .addEventListener("keypress", function (e) {
+        if (e.key === "Enter" && !e.shiftKey) {
+          e.preventDefault();
+          filterText();
+        }
+      });
 
-      document
-        .getElementById("filter-text-val2")
-        .addEventListener("keypress", function (e) {
-          if (e.key === "Enter" && !e.shiftKey) {
-            e.preventDefault();
-            filterText();
-          }
-        });
-    </script>
-  </body>
+    document
+      .getElementById("filter-text-val2")
+      .addEventListener("keypress", function (e) {
+        if (e.key === "Enter" && !e.shiftKey) {
+          e.preventDefault();
+          filterText();
+        }
+      });
+  </script>
+</body>
+
 </html>

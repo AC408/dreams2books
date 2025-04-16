@@ -46,7 +46,7 @@ def json_search(query):
     query_vec = normalize(np.dot(query_tfidf, words_compressed.T / s)).squeeze()
     sims = docs_compressed_normed.dot(query_vec)
 
-    num_results = min(np.nonzero(sims), MAX_NUM_RESULTS)
+    num_results = min(np.count_nonzero(sims), MAX_NUM_RESULTS)
     scores = np.sort(sims)[::-1][:num_results]
     asort = np.argsort(sims)[::-1][:num_results]
     matched_res = []
