@@ -99,7 +99,11 @@
       document.getElementById("answer-box").innerHTML = "";
       const query1 = document.getElementById("filter-text-val1").value;
       const query2 = document.getElementById("filter-text-val2").value;
-
+      if (query1.split(" ").length < 10) {
+        document.getElementById("answer-box").innerHTML =
+          "<div class='error'>Description has less than 10 words</div>";
+        return;
+      }
       if (query1.length === 0 && query2.length === 0) return;
 
       const query = query1 + " " + query1 + " " + query2;
