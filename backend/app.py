@@ -10,7 +10,7 @@ from sklearn.preprocessing import normalize
 import gc
 import joblib
 
-NUM_INDICES_IN_EACH_DATA_FILE = 7988  # determined by running create_init_json
+NUM_INDICES_IN_EACH_DATA_FILE = 18084  # determined by running create_init_json
 MAX_NUM_RESULTS = 50
 
 # ROOT_PATH for linking with all your files.
@@ -28,7 +28,7 @@ def get_path(file_name):
 # IF WE NEED MORE MEMORY, LOAD ON DEMAND AND IMMEDIATELY DELETE AFTERWARD
 vectorizer = joblib.load(get_path("tfidf_vectorizer.pkl"))
 words_compressed = np.load(get_path("words_compressed_0.npy"))
-num_split = 5
+num_split = 2
 for k in range(1, num_split):
     new_words_compressed = np.load(get_path("words_compressed_" + str(k) + ".npy"))
     words_compressed = np.concatenate((words_compressed, new_words_compressed))
