@@ -11,7 +11,7 @@ MIN_NUM_REVIEW_OF_REVIEW = (
     3  # Each review needs to have MIN_NUM_REVIEW_OF_REVIEW reviews
 )
 MIN_REVIEW_CHAR = 20  # Each review needs MIN_REVIEW_CHAR chars
-# MAX_REVIEW_COUNT_PER_BOOK = np.inf  # Max number of reviews per book to conserve space
+MAX_REVIEW_COUNT_PER_BOOK = 3  # Max number of reviews per book to conserve space
 
 path_to_books_data = "~/Downloads/archive/books_data.csv"
 
@@ -107,8 +107,6 @@ for index in range(len(df_books_data)):
         "ratingsCount": row["ratingsCount"],
     }
     parsed_book_data[row["Title"]] = d
-# remove books with the same descriptions or titles
-# df_books_data = df_books_data.drop_duplicates(subset=["description", "Title"])
 
 path_to_books_rating = "~/Downloads/archive/Books_rating.csv"
 
@@ -197,29 +195,16 @@ while index < len(df_books_rating):
                 sorted_reviews = sorted(
                     reviews, key=lambda x: x["num_reviews"], reverse=True
                 )
-                # data["review"] = sorted_reviews[:MAX_REVIEW_COUNT_PER_BOOK]
-                data["review"] = sorted_reviews
+                data["review"] = sorted_reviews[:MAX_REVIEW_COUNT_PER_BOOK]
                 parsed_books.append(data)
         title = row["Title"]
         reviews = []
 df_books_data = pd.DataFrame(parsed_books)
 
-# # merge all reviews per book under one label
-# # this means each row has a unique book
-# # otherwise, each row can refer to the same book
-# df = (
-#     df.groupby(
-#         ["Title", "description", "authors", "infoLink", "categories", "ratingsCount"],
-#         dropna=False,
-#     )
-#     .apply(lambda x: x[["review/helpfulness", "review/text"]].to_dict(orient="records"))
-#     .reset_index(name="reviews")
-# )
-
 # turn to dictionary to store as json
 df_dic = df_books_data.to_dict(orient="records")
 num_dictionary = len(df_dic)
-num_splits = 20
+num_splits = 10
 num_steps = int(num_dictionary / num_splits) + 1
 print(num_steps)
 start = 0
