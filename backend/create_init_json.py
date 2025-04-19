@@ -12,7 +12,7 @@ MIN_NUM_REVIEW_OF_REVIEW = (
     3  # Each review needs to have MIN_NUM_REVIEW_OF_REVIEW reviews
 )
 MIN_REVIEW_CHAR = 20  # Each review needs MIN_REVIEW_CHAR chars
-MAX_REVIEW_COUNT_PER_BOOK = 10  # Max number of reviews per book to conserve space
+MAX_REVIEW_COUNT_PER_BOOK = 5  # Max number of reviews per book to conserve space
 
 path_to_books_data = "~/Downloads/archive/books_data.csv"
 
@@ -205,7 +205,7 @@ df_books_data = pd.DataFrame(parsed_books)
 # turn to dictionary to store as json
 df_dic = df_books_data.to_dict(orient="records")
 num_dictionary = len(df_dic)
-num_splits = 10
+num_splits = 5
 num_steps = int(num_dictionary / num_splits) + 1
 print(num_steps)
 start = 0

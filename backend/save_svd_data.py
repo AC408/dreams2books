@@ -14,7 +14,7 @@ os.environ["ROOT_PATH"] = os.path.abspath(os.path.join("..", os.curdir))
 current_directory = os.path.dirname(os.path.abspath(__file__))
 
 data = []
-for k in range(10):
+for k in range(5):
     with open(os.path.join(current_directory, "data_" + str(k) + ".json"), "r") as file:
         new_data = json.load(file)
         data = data + new_data
