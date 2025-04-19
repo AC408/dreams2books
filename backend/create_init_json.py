@@ -1,6 +1,7 @@
 import pandas as pd
 import json
 import numpy as np
+import re
 
 MIN_NUM_REVIEW = 3  # Each books need MIN_NUM_REVIEW reviews
 MIN_DESCRIPTION_CHAR = 20  # Each book descriptions need MIN_DESCRIPTION_CHAR chars
@@ -11,7 +12,7 @@ MIN_NUM_REVIEW_OF_REVIEW = (
     3  # Each review needs to have MIN_NUM_REVIEW_OF_REVIEW reviews
 )
 MIN_REVIEW_CHAR = 20  # Each review needs MIN_REVIEW_CHAR chars
-MAX_REVIEW_COUNT_PER_BOOK = 3  # Max number of reviews per book to conserve space
+MAX_REVIEW_COUNT_PER_BOOK = 10  # Max number of reviews per book to conserve space
 
 path_to_books_data = "~/Downloads/archive/books_data.csv"
 
@@ -26,9 +27,9 @@ df_books_data = df_books_data[df_books_data["Title"].notna()]
 # remove books without descriptions
 df_books_data = df_books_data[df_books_data["description"].notna()]
 
-# make titles lowercase and without extra quotations
+# make titles lowercase and without punctuations
 df_books_data["Title"] = df_books_data["Title"].apply(
-    lambda x: x.replace("'", "").replace('"', "").lower()
+    lambda x: re.sub(r"[^\w\s]", "", x).lower()
 )
 
 df_books_data = df_books_data.drop_duplicates()
@@ -131,7 +132,7 @@ df_books_rating = df_books_rating[df_books_rating["review/text"].notna()]
 
 # make titles lowercase and without extra quotations
 df_books_rating["Title"] = df_books_rating["Title"].apply(
-    lambda x: x.replace("'", "").replace('"', "").lower()
+    lambda x: re.sub(r"[^\w\s]", "", x).lower()
 )
 
 df_books_rating = df_books_rating.drop_duplicates()
@@ -204,7 +205,7 @@ df_books_data = pd.DataFrame(parsed_books)
 # turn to dictionary to store as json
 df_dic = df_books_data.to_dict(orient="records")
 num_dictionary = len(df_dic)
-num_splits = 10
+num_splits = 5
 num_steps = int(num_dictionary / num_splits) + 1
 print(num_steps)
 start = 0
