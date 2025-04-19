@@ -2,13 +2,13 @@ import pandas as pd
 import json
 import numpy as np
 
-MIN_NUM_REVIEW = 2  # Each books need MIN_NUM_REVIEW reviews
+MIN_NUM_REVIEW = 3  # Each books need MIN_NUM_REVIEW reviews
 MIN_DESCRIPTION_CHAR = 20  # Each book descriptions need MIN_DESCRIPTION_CHAR chars
 MIN_REVIEW_HELPFULNESS = (
-    0.5  # Each review has to be at least MIN_REVIEW_HELPFULNESS helpful
+    0.75  # Each review has to be at least MIN_REVIEW_HELPFULNESS helpful
 )
 MIN_NUM_REVIEW_OF_REVIEW = (
-    2  # Each review needs to have MIN_NUM_REVIEW_OF_REVIEW reviews
+    3  # Each review needs to have MIN_NUM_REVIEW_OF_REVIEW reviews
 )
 MIN_REVIEW_CHAR = 20  # Each review needs MIN_REVIEW_CHAR chars
 # MAX_REVIEW_COUNT_PER_BOOK = np.inf  # Max number of reviews per book to conserve space
