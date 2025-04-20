@@ -14,7 +14,7 @@ os.environ["ROOT_PATH"] = os.path.abspath(os.path.join("..", os.curdir))
 current_directory = os.path.dirname(os.path.abspath(__file__))
 
 data = []
-for k in range(2):
+for k in range(1):
     with open(os.path.join(current_directory, "data_" + str(k) + ".json"), "r") as file:
         new_data = json.load(file)
         data = data + new_data
@@ -33,7 +33,7 @@ tf_idf = vectorizer.fit_transform([d for d in doc_terms])
 
 docs_compressed, s, words_compressed = svds(tf_idf, k=80)
 
-num_splits = 2
+num_splits = 1
 split = np.split(words_compressed, num_splits)
 for k in range(num_splits):
     # save as json
