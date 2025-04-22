@@ -33,7 +33,7 @@ for d in data:
 
 tf_idf = vectorizer.fit_transform([d for d in doc_terms])
 
-docs_compressed, s, words_compressed = svds(tf_idf, k=100)
+docs_compressed, s, words_compressed = svds(tf_idf, k=150)
 
 num_splits = 5
 split = np.split(words_compressed, num_splits)
