@@ -10,30 +10,23 @@ from sklearn.preprocessing import normalize
 import gc
 import joblib
 
-NUM_INDICES_IN_EACH_DATA_FILE = 6871  # determined by running create_init_json
+NUM_INDICES_IN_EACH_DATA_FILE = 11452  # determined by running create_init_json
 MAX_NUM_RESULTS = 50
 
 # ROOT_PATH for linking with all your files.
 # Feel free to use a config.py or settings.py with a global export variable
-os.environ["ROOT_PATH"] = os.path.abspath(os.path.join("..", os.curdir))
-
-# Get the directory of the current script
-current_directory = os.path.dirname(os.path.abspath(__file__))
-
-
-def get_path(file_name):
-    return os.path.join(current_directory, file_name)
-
+root_dir = os.path.abspath(os.path.join("..", os.curdir))
+svd_path = root_dir + "/backend/data/svd/"
 
 # IF WE NEED MORE MEMORY, LOAD ON DEMAND AND IMMEDIATELY DELETE AFTERWARD
-vectorizer = joblib.load(get_path("tfidf_vectorizer.pkl"))
-words_compressed = np.load(get_path("words_compressed_0.npy"))
-num_split = 10
+vectorizer = joblib.load(svd_path + "tfidf_vectorizer.pkl")
+words_compressed = np.load(svd_path + "words_compressed_0.npy")
+num_split = 5  # same as number of word_compressed files and in save_svd_data
 for k in range(1, num_split):
-    new_words_compressed = np.load(get_path("words_compressed_" + str(k) + ".npy"))
+    new_words_compressed = np.load(svd_path + "words_compressed_" + str(k) + ".npy")
     words_compressed = np.concatenate((words_compressed, new_words_compressed))
-docs_compressed_normed = normalize(np.load(get_path("docs_compressed.npy")))
-s = np.load(get_path("s.npy"))
+docs_compressed_normed = normalize(np.load(svd_path + "docs_compressed.npy"))
+s = np.load(svd_path + "s.npy")
 
 app = Flask(__name__)
 CORS(app)
@@ -54,7 +47,9 @@ def json_search(query):
         index = asort[i]
         file_num = int(index / NUM_INDICES_IN_EACH_DATA_FILE)
         # here, we should load the relevant data
-        with open(get_path("data_" + str(file_num) + ".json"), "r") as file:
+        with open(
+            root_dir + "/backend/data/book_info/data_" + str(file_num) + ".json", "r"
+        ) as file:
             data = json.load(file)
         index_in_file = index - NUM_INDICES_IN_EACH_DATA_FILE * file_num
         # then grab the data and append
