@@ -16,7 +16,8 @@ MAX_NUM_RESULTS = 50
 # ROOT_PATH for linking with all your files.
 # Feel free to use a config.py or settings.py with a global export variable
 root_dir = os.path.abspath(os.path.join("..", os.curdir))
-svd_path = root_dir + "/backend/data/svd/"
+current_directory = os.path.dirname(os.path.abspath(__file__))
+svd_path = current_directory + "/data/svd/"
 
 # IF WE NEED MORE MEMORY, LOAD ON DEMAND AND IMMEDIATELY DELETE AFTERWARD
 vectorizer = joblib.load(svd_path + "tfidf_vectorizer.pkl")
@@ -48,7 +49,7 @@ def json_search(query):
         file_num = int(index / NUM_INDICES_IN_EACH_DATA_FILE)
         # here, we should load the relevant data
         with open(
-            root_dir + "/backend/data/book_info/data_" + str(file_num) + ".json", "r"
+            current_directory + "/data/book_info/data_" + str(file_num) + ".json", "r"
         ) as file:
             data = json.load(file)
         index_in_file = index - NUM_INDICES_IN_EACH_DATA_FILE * file_num
