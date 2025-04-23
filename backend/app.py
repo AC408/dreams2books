@@ -27,7 +27,6 @@ for k in range(1, num_split):
     new_words_compressed = np.load(svd_path + "words_compressed_" + str(k) + ".npy")
     words_compressed = np.concatenate((words_compressed, new_words_compressed))
 docs_compressed_normed = normalize(np.load(svd_path + "docs_compressed.npy"))
-s = np.load(svd_path + "s.npy")
 
 app = Flask(__name__)
 CORS(app)
@@ -37,7 +36,7 @@ CORS(app)
 def json_search(query):
     query = query.lower()
     query_tfidf = vectorizer.transform([query]).toarray()
-    query_vec = normalize(np.dot(query_tfidf, words_compressed.T / s)).squeeze()
+    query_vec = normalize(np.dot(query_tfidf, words_compressed.T)).squeeze()
     sims = docs_compressed_normed.dot(query_vec)
 
     scores = np.sort(sims)[::-1][:MAX_NUM_RESULTS]

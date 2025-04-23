@@ -41,8 +41,7 @@ for k in range(num_splits):
     # save as json
     np.save(path_to_curr_dir + "words_compressed_" + str(k), split[k])
 
-np.save(path_to_curr_dir + "docs_compressed", docs_compressed @ np.diag(s))
-np.save(path_to_curr_dir + "s", s)
+np.save(path_to_curr_dir + "docs_compressed", docs_compressed)
 import matplotlib.pyplot as plt
 
 plt.plot(s[::-1])
