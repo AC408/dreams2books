@@ -40,11 +40,10 @@ def json_search(query):
     query_vec = normalize(np.dot(query_tfidf, words_compressed.T / s)).squeeze()
     sims = docs_compressed_normed.dot(query_vec)
 
-    num_results = min(np.count_nonzero(sims), MAX_NUM_RESULTS)
-    scores = np.sort(sims)[::-1][:num_results]
-    asort = np.argsort(sims)[::-1][:num_results]
+    scores = np.sort(sims)[::-1][:MAX_NUM_RESULTS]
+    asort = np.argsort(sims)[::-1][:MAX_NUM_RESULTS]
     matched_res = []
-    for i in range(num_results):
+    for i in range(MAX_NUM_RESULTS):
         index = asort[i]
         file_num = int(index / NUM_INDICES_IN_EACH_DATA_FILE)
         # here, we should load the relevant data
