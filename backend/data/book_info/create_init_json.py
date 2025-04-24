@@ -24,7 +24,14 @@ path_to_books_data = (
 
 df_books_data = pd.read_csv(path_to_books_data)
 df_books_data = df_books_data.drop(
-    columns=["image", "previewLink", "publisher", "publishedDate"]
+    columns=[
+        "image",
+        "previewLink",
+        "publisher",
+        "publishedDate",
+        "categories",
+        "ratingsCount",
+    ]
 )
 
 # remove books without titles
@@ -32,6 +39,9 @@ df_books_data = df_books_data[df_books_data["Title"].notna()]
 
 # remove books without descriptions
 df_books_data = df_books_data[df_books_data["description"].notna()]
+
+# remove books without authors
+df_books_data = df_books_data[df_books_data["authors"].notna()]
 
 # make titles lowercase and without punctuations
 df_books_data["Title"] = df_books_data["Title"].apply(
@@ -109,8 +119,6 @@ for index in range(len(df_books_data)):
         "description": row["description"],
         "authors": row["authors"],
         "infoLink": row["infoLink"],
-        "categories": row["categories"],
-        "ratingsCount": row["ratingsCount"],
     }
     parsed_book_data[row["Title"]] = d
 
