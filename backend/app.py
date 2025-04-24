@@ -10,7 +10,7 @@ from sklearn.preprocessing import normalize
 import gc
 import joblib
 
-NUM_INDICES_IN_EACH_DATA_FILE = 11452  # determined by running create_init_json
+NUM_INDICES_IN_EACH_DATA_FILE = 11450  # determined by running create_init_json
 MAX_NUM_RESULTS = 50
 
 # ROOT_PATH for linking with all your files.

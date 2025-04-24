@@ -35,7 +35,7 @@ df_books_data = df_books_data[df_books_data["description"].notna()]
 
 # make titles lowercase and without punctuations
 df_books_data["Title"] = df_books_data["Title"].apply(
-    lambda x: re.sub(r"[^\w\s]", "", x).lower()
+    lambda x: re.sub(r"[^\w\s]", "", x).lower().strip()
 )
 
 df_books_data = df_books_data.drop_duplicates()
@@ -76,7 +76,6 @@ for index in range(len(df_books_data)):
         new_description = new_description.replace(k, asci_mapping[k])
         new_title = new_title.replace(k, asci_mapping[k])
     new_description = new_description.strip()
-    new_title = new_title.strip()
     df_books_data.iat[index, df_books_data.columns.get_loc("description")] = (
         new_description
     )
@@ -138,7 +137,7 @@ df_books_rating = df_books_rating[df_books_rating["review/text"].notna()]
 
 # make titles lowercase and without extra quotations
 df_books_rating["Title"] = df_books_rating["Title"].apply(
-    lambda x: re.sub(r"[^\w\s]", "", x).lower()
+    lambda x: re.sub(r"[^\w\s]", "", x).lower().strip()
 )
 
 df_books_rating = df_books_rating.drop_duplicates()
@@ -191,7 +190,6 @@ while index < len(df_books_rating):
     else:
         for k in asci_mapping.keys():
             title = title.replace(k, asci_mapping[k])
-        title = title.strip()
         if (
             title.isascii() and title in parsed_book_data
         ):  # removes non-english review, performs inner merge
