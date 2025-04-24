@@ -1,0 +1,897 @@
+[
+    {
+        "Title": "an introduction to seismology earthquakes and earth structure",
+        "description": "An Introduction to Seismology, Earthquakes and Earth Structures is an introduction to seismology and its role in the earth sciences, and is written for advanced undergraduate and beginning graduate students. The fundamentals of seismic wave propagation are developed using a physical approach and then applied to show how refraction, reflection, and teleseismic techniques are used to study the structure and thus the composition and evolution of the earth. The book shows how seismic waves are used to study earthquakes and are integrated with other data to investigate the plate tectonic processes that cause earthquakes. Figures, examples, problems, and computer exercises teach students about seismology in a creative and intuitive manner. Necessary mathematical tools including vector and tensor analysis, matrix algebra, Fourier analysis, statistics of errors, signal processing, and data inversion are introduced with many relevant examples. The text also addresses the fundamentals of seismometry and applications of seismology to societal issues. Special attention is paid to help students visualize connections between different topics and view seismology as an integrated science. An Introduction to Seismology, Earthquakes, and Earth Structure gives an excellent overview for students of geophysics and tectonics, and provides a strong foundation for further studies in seismology. Multidisciplinary examples throughout the text - catering to students in varied disciplines (geology, mineralogy, petrology, physics, etc.). Most up to date book on the market - includes recent seismic events such as the 1999 Earthquakes in Turkey, Greece, and Taiwan). Chapter outlines - each chapter begins with an outline and a list of learning objectives to help students focus and study. Essential math review - an entire section reviews the essential math needed to understand seismology. This can be covered in class or left to students to review as needed. End of chapter problem sets - homework problems that cover the material presented in the chapter. Solutions to all odd numbered problem sets are listed in the back so that students can track their progress. Extensive References - classic references and more current references are listed at the end of each chapter. A set of instructor's resources containing downloadable versions of all the figures in the book, errata and answers to homework problems is available at: http://levee.wustl.edu/seismology/book/. Also available on this website are PowerPoint lecture slides corresponding to the first 5 chapters of the book.",
+        "authors": "['Seth Stein', 'Michael Wysession']",
+        "infoLink": "https://play.google.com/store/books/details?id=FHgpDAAAQBAJ&source=gbs_api",
+        "review": [
+            {
+                "review/text": "I used this book in a course on earthquake kinematics. Previously I had used the Aki/Richards book 'Quantitative Seismology' and found myself rethinking my major! Fortunately I slugged through it and my fascination with seismology was rekindled by this book. It explains a lot of the concepts well enough for those with only a few semesters of calc/physics under their belts to easily understand. I was even able to use this book as a more clear reference for an Inverse Theory course I took. The examples are great, the diagrams clear and concise and the tone is relaxed. This book actually explains concepts that are not explained in the Aki/Richards book. I particularly like the section on Green's functions, waveform inversion, and moment tensors. There is even a chapter on Fourier analysis! This is a book I can go back to for clear & concise explanations of otherwise abstract subjects. My copy is heavily tabbed since I use it often. My only gripe is the size of the font and the layout. There are two columns per page so it makes for some tiny print and everything seems squeezed together and slightly busy. The authors do provide a nice web-site where you can look at all the diagrams in the book as huge images....free! The link can be found on Dr. Wysession's homepage at Washington University St. Louis.All in all a great book on a great subject!",
+                "review/helpfulness": "11/11",
+                "num_reviews": 11
+            },
+            {
+                "review/text": "I have used this textbook for an intro to seismology class in college and have found it to be very detailed and covered a wider range of topics compared to other seismology textbooks. This book focus a great deal on deriving equations, so if you are a math person, it'll be a great way for you to learn. Problem sets at the end of each chapter are challenging but not totally impossible; and like most textbooks, only some of the answers are on the back. There are a few mistakes I found in the diagrams, but not it's not a big deal. Overall, I do recommend this book as an intro text book geared towards the upper level undergraduates or graduate students.",
+                "review/helpfulness": "5/5",
+                "num_reviews": 5
+            },
+            {
+                "review/text": "This book covers the essentials and then some. It goes beyond what can reasonably be covered in an introductory course. There is a good deal of derivations and presentations from several viewpoints. Covers seismology, interpreting seismograms, inverse theory, basic equations, earthquakes, earth structure. Loads of pictures, mathematics, and real-life discussions. Puts everything in a cohesive package. Expect a challenging read!",
+                "review/helpfulness": "3/3",
+                "num_reviews": 3
+            }
+        ]
+    },
+    {
+        "Title": "molecular and cellular biophysics",
+        "description": "Biophysics represents perhaps one of the best examples of interdisciplinary research areas, where concepts and methods from disciplines such as physics, biology, b- chemistry, colloid chemistry, and physiology are integrated. It is by no means a new ?eld of study and has actually been around, initially as quantitative physiology and partly as colloid science, for over a hundred years. For a long time, biophysics has been taught and practiced as a research discipline mostly in medical schools and life sciences departments, and excellent biophysics textbooks have been published that are targeted at a biologically literate audience. With a few exceptions, it is only relatively recently that biophysics has started to be recognized as a physical science and integrated into physics departments' curr- ula, sometimes under the new name of biological physics. In this period of cryst- lization and possible rede?nition of biophysics, there still exists some uncertainty as to what biophysics might actually represent. A particular tendency among phy- cists is to associate biophysics research with the development of powerful new te- niques that should eventually be used not by physicists to study physical processes in living matter, but by biologists in their biological investigations. There is value in that judgment, and excellent books have been published that introduce the int- ested reader to the use of physical principles for the development of new methods of investigation in life sciences.",
+        "authors": "['Valerica Raicu', 'Aurel Popescu']",
+        "infoLink": "https://play.google.com/store/books/details?id=qr3KWd2hJWcC&source=gbs_api",
+        "review": [
+            {
+                "review/text": "This book is aimed at providing the advanced undergraduate student or beginning graduate student a solid foundation in the basic concepts of molecular and cellular biophysics. I would suggest that this course be given prerequisites in physical chemistry and a very solid math background.To cover the math background the author has added six appendicies to the book covering: expansions and series, matrix algebra, Fourier analysis, gaussian integrals, hyperbolic functions, polar and spherical coordinates. All of this is covered in only 16 pages. You would have to be a lot better than I was to learn Fourier analysis in only four pages. In undergraduate school I had full semester course in Fourier analysis, and it was by no means the first math class that I took. Perhaps I was just slower than today's students. But in my mind learning all this math from the appendicies while studing the rest of the material in this book would be asking a lot of an undergraduate student.More important than the math, the author says, is having some knowledge of physical chemistry to include thermodynamics, kinetics, and statistical mechanics. And finally he assumes that the student has had some exposure to biochemistry.Having gotten that out of the way, the central theme of the book is of course what it says in the title. This is an excellent and very inclusive text. The author ranges far and wide to bring up as many different aspects of biophysics as possible. It is very current in its coverage of material on subjects not found in other texts.",
+                "review/helpfulness": "23/26",
+                "num_reviews": 26
+            },
+            {
+                "review/text": "This is a well written text book for students and researchers teaching basic concepts of biophysics. Especially biological membranes are dealed with comprehensively. The figures are easy to understand and the price is rather low. Actually it is the best book of this kind I encountered. It can be highly recommended.",
+                "review/helpfulness": "10/10",
+                "num_reviews": 10
+            },
+            {
+                "review/text": "I am doing research in biophysics and wanted a book that I could use as a review in my spare time. The book refreshed me on topics outside my immediate research area. This is useful because sometimes ideas for my research come from other sources. I enjoyed reviewing topics I already saw in my graduate classes years ago. I also learned a few new things as this book went into greater detail. I liked how it has problems at the end of each chapter. However I could not check my progress as there is no answer key. I think it would make a good senior level undergraduate text or a first year graduate text.",
+                "review/helpfulness": "4/4",
+                "num_reviews": 4
+            }
+        ]
+    },
+    {
+        "Title": "differential equations third edition",
+        "description": "The third edition of this concise, popular textbook on elementary differential equations gives instructors an alternative to the many voluminous texts on the market. It presents a thorough treatment of the standard topics in an accessible, easy-to-read, format. The overarching perspective of the text conveys that differential equations are about applications. This book illuminates the mathematical theory in the text with a wide variety of applications that will appeal to students in physics, engineering, the biosciences, economics and mathematics. Instructors are likely to find that the first four or five chapters are suitable for a first course in the subject. This edition contains a healthy increase over earlier editions in the number of worked examples and exercises, particularly those routine in nature. Two appendices include a review with practice problems, and a MATLAB supplement that gives basic codes and commands for solving differential equations. MATLAB is not required; students are encouraged to utilize available software to plot many of their solutions. Solutions to even-numbered problems are available on springer.com. From the reviews of the second edition: \"The coverage of linear systems in the plane is nicely detailed and illustrated. ...Simple numerical methods are illustrated and the use of Maple and MATLAB is encouraged. ...select Dave Logan's new and improved text for my course.\" -Robert E. O'Malley, Jr., SIAM Review, Vol. 53 (2), 2011 \"Aims to provide material for a one-semester course that emphasizes the basic ideas, solution methods, and an introduction to modeling. ...The book that results offers a concise introduction to the subject for students of mathematics, science and engineering who have completed the introductory calculus sequence. ...This book is worth a careful look as a candidate text for the next differential equations course you teach.\" -William J. Satzer, MAA Reviews, January, 2011",
+        "authors": "['J David Logan']",
+        "infoLink": "http://books.google.com/books?id=OelDvgAACAAJ&dq=Differential+Equations,+Third+Edition&hl=&source=gbs_api",
+        "review": [
+            {
+                "review/text": "When I was an undergraduate student taking my first course in differential equations the class hat had a textbook that had a lot of pictures and almost no explaining of the material (i.e. the usual just try this method that works & the magic how did they get that step).... Thus, being a student that wanted to do well in the course I sought out a different book to read and found the Ross book. The Ross differential equations book is an excellent introduction to differential equations as it does answer why things work, but still keeps it at an introductory level that freshman / sophomore college students can grasp.Now, that I have completed 80 years of school and have been granted the opportunity to be an assistant professor I choose this book to teach from as it keep that balance: for the students who want to see why things work it gives an outline, but then on the next page for the students who just want to solve the problems it gives the generic process that can be followed to solve the problems. And, the other useful thing is LOTS OF FULLY WORKED EXAMPLES, and not just simple examples. This book starts with one simple example and then builds to a more challenging example and continues in that fashion.I guess the only thing I can complain about this book is there are no pretty pictures like all of the books have, but at least you can say if you read this book you will learn differential equations..Tim",
+                "review/helpfulness": "11/11",
+                "num_reviews": 11
+            },
+            {
+                "review/text": "I had Ross differential equation in my undergraduate, and also graduate studies. I found it very simple written textbook in this area, and the beauty of the book is that the Author not only knows the subject, he also knows what he is talking about. I have seen lots of differential equations with pretty pictures, not even single of them is comparable with Ross book. Great book. I rate him 5 without any doubt.",
+                "review/helpfulness": "6/7",
+                "num_reviews": 7
+            },
+            {
+                "review/text": "The book by Ross was the textbook of the undergraduate ordinary differential equations course I took in my sophomore year in college.I also used this book in graduate school again as an intoduction to partial differential equations, Sturm-Liouville problems, Orthonormality of eigenfunctions etc. in an Advanced Mathematical Methods for _______ course.As such, I have to say that the breadth of this book is rather impressive. The prose is clear, and the presentation is to the point. There are many worked out examples in the text, which is most amenable in a first course in differential equations.I would have preferred, however, that the book also contained a chapter on operator methods in solving differential equations. This technique is not only more elegant, but also much more effective in solving more sophisticated equations, which is why the book was rated with only four stars.Overall, I believe this is a well composed primer on differential equations which contains much more substance that one initially anticipates. I, therefore, highly recommend this book.Entropy4Life----------------------",
+                "review/helpfulness": "6/6",
+                "num_reviews": 6
+            }
+        ]
+    },
+    {
+        "Title": "concepts and applications of finite element analysis 4th edition",
+        "description": "This book has been thoroughly revised and updated to reflect developments since the third edition, with an emphasis on structural mechanics. Coverage is up-to-date without making the treatment highly specialized and mathematically difficult. Basic theory is clearly explained to the reader, while advanced techniques are left to thousands of references available, which are cited in the text.",
+        "authors": "['Robert D. Cook', 'David S. Malkus', 'Michael E. Plesha', 'Robert J. Witt']",
+        "infoLink": "http://books.google.nl/books?id=b8seAQAAIAAJ&dq=Concepts+and+Applications+of+Finite+Element+Analysis,+4th+Edition&hl=&source=gbs_api",
+        "review": [
+            {
+                "review/text": "This book covers theories of finite element better than most other books in this subject, but it does not have many worked out examples. The problems have no answers!",
+                "review/helpfulness": "8/12",
+                "num_reviews": 12
+            },
+            {
+                "review/text": "I am a graduate student of solid mechanics and I have read quite a few books on FEA. Of all the textbooks I have read-this is clearly the worst. The authors don't spend any time to make the material coherent and organized. They seem to have published this book just for the sake of establishing their names in the field. It is basically a collection of research papers on the subject. The worst part of the book is that the authors use excessive verbiage to describe extremely inportant concepts with little or no mathematics. This leaves the readers confused and disoriented. This book is not for those looking for an introductory text and is useless to even those experienced in the field. Avoid this book.",
+                "review/helpfulness": "10/10",
+                "num_reviews": 10
+            },
+            {
+                "review/text": "I think this is one of the best books on FE. It is written from the point of view of an engineer and avoids unnecessary mathematics. The concepts are explained very clearly and there is a fair number of solved examples in each chapter.",
+                "review/helpfulness": "6/8",
+                "num_reviews": 8
+            },
+            {
+                "review/text": "The comments left are interesting in that all the people teaching from it find it useful, and all the students find it frustrating...there is a trend here!I agree that the explanations are great in detail and the content practical, but at a graduate level with minimal support from the professor and no TA available, not having examples or solutions (to the odds or evens at the very least) is infuriating. After spending close to $100 for this text, I had to go out to buy another with some problems to make it through my course. Two stars for readability, will pile the other three onto the review for my other text.If a professor recommends this book for his course, my suggestion would be to go talk to some fellow students who have already taken the course to be sure you know what you are signing up for!",
+                "review/helpfulness": "6/6",
+                "num_reviews": 6
+            },
+            {
+                "review/text": "This book covers most of the essential topics in finite element method. Various concepts of the method are well explained in detail, and many practical topics useful for practitioners are presented in this book. I am teaching the finite element method using this book at a graduate course. It is an excellent text book for both students and lecturers. Well organized and abundant contents!",
+                "review/helpfulness": "4/5",
+                "num_reviews": 5
+            },
+            {
+                "review/text": "Excellent treatment of a subject that all mechanical design and analysis engineers should be familiar with. This book is written from the engineers point of view, rather than focusing on pure mathematics. Each chapter (all 19 of them) is richly packed with concise information relavent to the understanding of the finite element method in structural mechanics. Common element types are thoroughly explained and enough FORTRAN listings and algorithms are given to allow good programming. This book should be a standard on the shelves of everyone who does FEA work",
+                "review/helpfulness": "2/3",
+                "num_reviews": 3
+            }
+        ]
+    },
+    {
+        "Title": "mathematical proofs a transition to advanced mathematics",
+        "description": "Mathematical Proofs: A Transition to Advanced Mathematics, Third Edition, prepares students for the more abstract mathematics courses that follow calculus. Appropriate for self-study or for use in the classroom, this text introduces students to proof techniques, analyzing proofs, and writing proofs of their own. Written in a clear, conversational style, this book provides a solid introduction to such topics as relations, functions, and cardinalities of sets, as well as the theoretical aspects of fields such as number theory, abstract algebra, and group theory. It is also a great reference text that students can look back to when writing or reading proofs in their more advanced courses.",
+        "authors": "['Gary Chartrand', 'Albert D. Polimeni', 'Ping Zhang']",
+        "infoLink": "http://books.google.nl/books?id=VqD6ngEACAAJ&dq=Mathematical+Proofs:+A+Transition+to+Advanced+Mathematics&hl=&source=gbs_api",
+        "review": [
+            {
+                "review/text": "This book is designed to prepare students for upper division math courses-like abstract algebra and advanced calculus-in which mathematical rigor and proofs are emphasized. The authors have made a serious effort to present the material with clarity and sufficient details to make it accessible to students who have completed two courses in calculus. Much of the material covered is fairly standard for such a textbook. Chapters 1-9 are devoted to basic topics from set theory and logic (including four proof techniques: direct proof, proof by contrapositive, proof by contradiction, and mathematical induction), equivalence relations, and functions, as well as a special chapter under the heading, \"Prove or Disprove.\" Chapters 10-13 cover cardinalities of sets and proof techniques applied to results from number theory, calculus, and group theory. In addition, the authors have a web site which includes three additional chapters (Chapters 14-16) dealing with proofs from ring theory, linear algebra, and topology. Thus instructors using this book will have a wide choice of options in selecting the material they want to include after the basic concepts are covered.The emphasis throughout the book is on proofs and proof techniques--how to recognize proofs, understand them and, above all, how to create and write them. The presentation is leisurely and thorough. Many examples are given, and discussions are always presented with all the details that students at this level would need to follow the argument. There are ample exercises at the end of each chapter (including those in the web site) that range in difficulty from routine to moderately challenging. The book also contains answers and hints to odd-numbered exercises.There are two features of this textbook that I believe are helpful to students and that set this book apart from others at its level: the detailed way in which proofs are analyzed, and the inclusion of a chapter on how to write mathematics well. In most cases, before a proof is presented the authors offer a \"proof strategy\": a discussion pointing out what needs to be proved and how one might go about proving it. Also, many proofs are followed by \"proof analyses\" in which some of the interesting or unusual points of the proof are commented on. I believe that students would find these discussions very helpful. In particular, these discussions offer students concrete pointers from which they would learn how to cope with abstract mathematical proofs.The chapter on writing mathematics (Chapter 0) is unique. While some mathematics textbooks encourage good writing and might devote a few paragraphs to the subject, the present volume offers a brief manual on mathematical writing. The authors begin by explaining why writing is important in mathematics and follow that by offering detailed instructions that would help students in improving their writing. From specific advice like, \"Never start a sentence with a symbol\" to explanations of &quot;common words and phrases that are peculiar to mathematics,&quot; there is a wealth of material on writing from which students can learn. I believe that, by its very existence, this chapter on writing would have a positive influence on students writing.This book can be used either as a textbook for a course such as the one described above or as a reference that students can consult on certain topics.Fawzi M. YaqubEmeritus Professor of MathematicsSUNY College at Fredonia",
+                "review/helpfulness": "134/136",
+                "num_reviews": 136
+            },
+            {
+                "review/text": "This book pretty much changed my life. My only regret is I didn't find it earlier. What different choices would I have made if I were comfortable with mathematical proofs in high school or early college? I recommend this book to anyone who has an interest in understanding mathematics but for whatever reason never learned or were never taught it by their teachers in school - I'm certain I was never taught these ideas. This book is great for self study and the material should be accessible to most high school students.The book starts off with basic ideas about sets and some logic. The real \"Aha!\" moment for me was the explanation of implication and biconditional in chapter 2 and how they're used in direct proofs in chapter 3. The examples about even/odd numbers are perfect for someone feeling their way thru new ideas.After reading this book I went back to college as an adult and obtained a BS in mathematics. It's foolish to dwell on what might have been, but one can only imagine.",
+                "review/helpfulness": "34/34",
+                "num_reviews": 34
+            },
+            {
+                "review/text": "If you look at the \"Customers Who Bought This Item Also Bought\" section on this page you will see several highly rated books that cover similar topics. They all are priced approximately $100 less than this book because Addison-Wesley (the publisher) has decided to market _Mathematical Proofs_ as a text-book rather than a book-book.This is tragic. The only people who will encounter this fantastic text are students with no choice but to suffer the rapacious fancies of textbook publishers.I was once such a student. Everything Penelope W. Yaqub \"Fawzi M. Yaqub\" says in her review is spot on. I have kept only three books on my personal shelf from my days as an undergraduate in mathematics. This slim volume is one of those.I recommend this book to anyone -- whether a student or hobbyist -- wanting to better their understanding of what mathematics is really about. It is also great training for thinking logically about all topics, from mathematics to current eventsI would have rated this 5 stars if the cover price were not so outrageous.",
+                "review/helpfulness": "21/23",
+                "num_reviews": 23
+            },
+            {
+                "review/text": "I bought Chartrand's book to teach myself how tounderstand and to do proofs. I worked every exercisein the text. Now taking some upper level proof basedcourses, after being out of school for 20 years, I amfinding that I am more comfortable with proofs thanmost of the people in my classes. The main thing thathelped me was the clear communication of the methodsand the ample opportunities to test out my knowledge.The only thing I that would have helped me more is thatmost problems at the end of the chapters do not provideexplanation. I had to trust my knowledge, which is notalways a good idea. Still, the authors do a goodjob of conveying the concepts and I do very much likechapter zero. I am a school teacher and I show thatchapter to my secondary students. Oh,that chapterexplains \"good\" mathematical writing style.",
+                "review/helpfulness": "23/23",
+                "num_reviews": 23
+            },
+            {
+                "review/text": "I purchased this book as a preparation to take advanced courses in mathematics. It is well laid out and explains the material clearly. I especially liked the chapter on \"proofs found in calculus\" which explains delta epsilon proofs in a manner that is easy and understandable. Big thumbs up!",
+                "review/helpfulness": "12/19",
+                "num_reviews": 19
+            },
+            {
+                "review/text": "Being a physist and a computer scientist i find this book very helpful for someone to aquire good skills in the mathematical language and thought.I consider that these two principles enable the creativity in mathematics for someone less involved with formal mathematical thought",
+                "review/helpfulness": "6/6",
+                "num_reviews": 6
+            },
+            {
+                "review/text": "A little more than a year back, I was forced to purchase this text for a mathematics course. At the time I lacked the maturity to see what a gem it really was, but it proved its worth the very next semester. I began a self-study real analysis sequence, and I tackled a mathematically rigorous (theorem-proof style) special relativity course. I found myself returning to \"Mathematical Proofs\" to slog through the dense material of these more advanced subjects.The exposition of \"Mathematical Proofs\" is not too terse. The examples are informative and useful. The problem sets are challenging and require a desire towards mathematical maturity, but they are solvable for anyone who has read and understands the preceding chapter.I keep this on my home desk for quick reference to lucid definitions and explanations of fundamental concepts. I even work an occasional problem to stay sharp in useful skills. It will definitely accompany me to graduate school next year.A must have for budding mathematicians!",
+                "review/helpfulness": "6/6",
+                "num_reviews": 6
+            },
+            {
+                "review/text": "This is one of the most well-written textbooks that I have ever had the pleasure to read. I come from a mechanical engineering background, but have a strong interest in mathematics and regularly tutor undergraduates. I picked up this book not for a course, but for self-study. From this book alone I was about to learn the material, teach it to one of my tutoring students, and get her an 'A'! I can't say that about most textbooks I suffered through in college.The only downside, as some reviewers have mentioned, is the hefty price tag. C'est la vie. I actually like the presentation of this book so much that I'm now looking into other works that the authors have.",
+                "review/helpfulness": "5/5",
+                "num_reviews": 5
+            },
+            {
+                "review/text": "It's an all around great book. Some people might complain about it holding the reader's hand too much, but that's what makes the book so great. It assumes you never seen a proof before, and it helps guide you towards writing and analyzing proofs. The examples provided are clear. The section problems for the most part mirror the examples provided, so usually you have a model solution to work with. All in all, it's a great book for self study. If you have to purchase it for a class your instructor made an excellent choice.",
+                "review/helpfulness": "5/5",
+                "num_reviews": 5
+            },
+            {
+                "review/text": "This is the single best book I have ever seen on the art of proofs. You really don't even need a teacher to guide you with this book. It is expensive but then so are all textbooks now.",
+                "review/helpfulness": "4/4",
+                "num_reviews": 4
+            }
+        ]
+    },
+    {
+        "Title": "principles of topology saunders series",
+        "description": "Originally published: Philadelphia: Saunders College Publishing, 1989; slightly corrected.",
+        "authors": "['Fred H. Croom']",
+        "infoLink": "http://books.google.nl/books?id=ZQFYCwAAQBAJ&dq=Principles+of+Topology+(Saunders+series)&hl=&source=gbs_api",
+        "review": [
+            {
+                "review/text": "As many math educators agree, there are many textbooks not written for beginners. This textbook is outstanding for any level of beginner. I wish it can be picked up by Dover. I highly recommend it to any reader who wants to know the subject: Topology.",
+                "review/helpfulness": "5/5",
+                "num_reviews": 5
+            },
+            {
+                "review/text": "I'm an adult, self-study student, with a background in calculus, physics. I've now gone through several books on topology, and I find that even many of the undergraduate texts tend to be a bit \"dense,\" in that they introduce too much, too fast. Croom's textbook takes a very step-by-step, hand-holding approach to introducing topology, focusing on concrete examples, yet still having a reasonable amount of rigor. (Of nine chapters, he doesn't even formally get to topology until Chapter 4. The first three chapters are a general intro, open and closed sets, and metric spaces.) The last chapter offers a basic introduction to algebraic topology. This is an excellent book for self-study, and also good for undergraduates with a physics or engineering orientation who want to get the intuitive principles, and also some sense for the formal math. Students (including undergrads) who are really strong on abstract math might benefit from the more intensive and detailed treatments found in other texts; but even they might find Croom's book useful to fall back on when they get stuck on some basic concept. Croom includes historical discussions of the foundations of topology, which is also helpful. He also includes a glossary of mathematical symbols up front, which is very helpful for trying to keep track of all the new notations involved. There are lots of solved problems, and also problems for students to work out, although solutions for those would be helpful in some future edition.",
+                "review/helpfulness": "4/4",
+                "num_reviews": 4
+            },
+            {
+                "review/text": "I taught a one semester course on basic point set topology out of this book. The emphasis in the first half is on metric spaces, which provide the most natural class of examples for the basic principles of point set topology that any student taking a course in topology must know about. There is little extraneous material, and I found that the students thought the book was very good. This was a group of students at a regional campus of a large state university, and I would recommend the book for a beginning course at a comparable campus. Those teaching at research institutions will want more.",
+                "review/helpfulness": "3/4",
+                "num_reviews": 4
+            }
+        ]
+    },
+    {
+        "Title": "mathematical methods for physics and engineering a comprehensive guide",
+        "description": "Solutions manual contains complete worked solutions to half of the problems in Mathematical Methods for Physics and Engineering, Third Edition.",
+        "authors": "['K. F. Riley', 'M. P. Hobson']",
+        "infoLink": "http://books.google.com/books?id=_YquHA2pnLoC&dq=Mathematical+Methods+for+Physics+and+Engineering:+A+Comprehensive+Guide&hl=&source=gbs_api",
+        "review": [
+            {
+                "review/text": "This is one of the best mathematical methods book, very readable.It has very clear explainations, in each topic it's developing from basic intuitions until it reaches the genralized equations, several detailed examples help a reader checks his understanding and follows the authors.The contents are very well-organized and self-contained, one can looks directly at the topic he wants to know. It's lucid and normally answer and teach a reader what he wants to do. All definitions make sense and a reader can accepts easily it's a smart thing to do math that way.It also serves as a one-stop, if you feel confused when you're reading because your background knowledge is not strong enough, just search for the previous related topics, all brilliant explainations are waiting for you to grasp them, make you ready for what you need.Any undergrads and beginning grad students in Physics will find this book is great. This is an excellent example how to write an approachable math methods book. Eventhough it has a thick over than 1,300 pages, but it never turns a reader away becuase of its thickness at all. Once one starts reading it, he'll enjoy and come back looking for another explaination.One more great point is, this book contains a lot of real physical examples besides the math formulations, make a reader understands the topic deeply and sees a practical use.Besides the book, I totally don't agree with a previous comment from a chemical physicist who gave this book just one star.",
+                "review/helpfulness": "20/21",
+                "num_reviews": 21
+            },
+            {
+                "review/text": "I've been teaching an upper-level course in math methods of physics on and off for thirty-five years or so. This is as good a text as I've found. In fact, I've been using this book since it began life as a much smaller volume by Riley alone. It has always provided a down-to-earth exposition of applicable mathematics. Now it provides more than ever, include two nice chapters on group theory, with more problems than the previous editions.Despite its broad coverage, it is not an encyclopedia. Individual sections are thorough, well illustrated by examples, and comprehensible. Yes, I might have organized some of the material somewhat differently. But that is largely a matter of taste.The reviewer who alleges that one must have mastered a lot of math to benefit from this book clearly has not read the first chapter. The book by Boas with which he compares it is a) less comprehensive, b) at a lower level overall, c) and a lot more expensive.At $63, this volume is a real bargain.",
+                "review/helpfulness": "18/18",
+                "num_reviews": 18
+            },
+            {
+                "review/text": "Beautifuly organized compendium of mathematical tools which are daily bread and butter of every theoretical physicst. Excellent for first year graduate students wanting to pursue career in any branch of theoretical physics.The main advantages which distinguishes this classic from others is clear and conscise pedagogical style and excellent selection of topics which are being discussed fully and without sacrifising mathematical rigour.However for advanced students this text may sometimes bore with overdetailed explanations and minor details.Summing up everything, if you wanna learn mathphys and want to start you are in the right place.",
+                "review/helpfulness": "12/12",
+                "num_reviews": 12
+            },
+            {
+                "review/text": "I am a graduate student in Biochemistry with a bachelors in applied math and I wanted to go back and review a lot of math techniques before I totally forgot them. So I started looking at my old math texts and saw that for what I wanted, many of them were far to dense for a quick review.So I started searching Amazon and purchased this text along with both of Stroud's texts and I am glad I did. Stroud's texts provide easy to follow examples while Riley's text provides a more rigorous concise presentation of the topics. I find myself reading Riley's text first and if I can not quite understand the topic, I then go to Stroud's for some easier to follow examples. Fortunately, they include many of the same topics.Thus in my opinion, Riley's is a great text as a reference and for reviewing a topic if you are a little rusty. It is not a good text if you are trying to learn something for the first time or for self study.",
+                "review/helpfulness": "6/7",
+                "num_reviews": 7
+            },
+            {
+                "review/text": "I bought this book because I felt that in my undergraduate Chemistry education, I didn't receive enough mathematical training. As I start graduate school, this book has been helpful in seeing the bigger picture of important mathematical concepts and tools. One can really learn a lot if you take the time to read the chapters AND do the problems. It is, in my opinion, a great resource if you need a refresher on some topic, although (as the authors note) not everything can be covered in detail.My only personal wish is that there was more visual, esp. graphical, content to accompany the concepts. As a visual learner this approach really helps me. The early chapters do well, but figures become sparse in later chapters. Other than that an excellent book.",
+                "review/helpfulness": "6/6",
+                "num_reviews": 6
+            },
+            {
+                "review/text": "Very good book. Wide range of contents and written in British style, which may seem strange to some.",
+                "review/helpfulness": "4/5",
+                "num_reviews": 5
+            },
+            {
+                "review/text": "The book was in excellent conditions and its content have been very useful. This is the book with a high level but at the same time easier to follow and understand. The examples shown are illustrative enough to consider that the topic was completely covered and understood.",
+                "review/helpfulness": "3/4",
+                "num_reviews": 4
+            },
+            {
+                "review/text": "I bought this book a few years ago when I was studying physics in University, I've now switched to engineering and I still use this book regularly. I wouldn't think it a very good book for a text, but it is a wonderful reference book. The entries are short(generally a couple of pages) but in depth with references to other sections to lean more. The book is full of examples and uses straight-forward explanations of techniques and their physical interpretation. I highly recommend this title for anyone looking for a good quick math reference.",
+                "review/helpfulness": "2/2",
+                "num_reviews": 2
+            },
+            {
+                "review/text": "I can't say enough good things about this wonderful book! It is an excellent resource as a reference for mathematical concepts that are commonly employed within the sciences and engineering. One caveat that others have pointed out is that the book does not go in esoteric detail and does not weigh heavily on the theoretical aspects of the material, and while this is true, it does not detract from the substance of the book. It still makes an excellent educational and reference resource and I highly recommend this to anyone wanting to add to their scientific and mathematical library.",
+                "review/helpfulness": "2/2",
+                "num_reviews": 2
+            }
+        ]
+    },
+    {
+        "Title": "mechanical measurements",
+        "description": "In the field of mechanical measurements, Mechanical Measurements continues to set the standard. With an emphasis on precision and clarity, the authors have consistently crafted a text that has helped thousands of students grasp the fundamentals of the field. Mechanical Measurements 6th edition &gives students a methodical, well thought-out presentation that covers fundamental issues common to all areas of measurement in Part One, followed by individual chapters on applied areas of measurement in Part Two. This modular format fits several different course formats and accommodates a wide variety of skill levels.",
+        "authors": "['Thomas G. Beckwith', 'Roy D. Marangoni']",
+        "infoLink": "http://books.google.nl/books?id=rH9RAAAAMAAJ&dq=Mechanical+Measurements&hl=&source=gbs_api",
+        "review": [
+            {
+                "review/text": "This book was assigned to me as part of a college mechanical engineering course. This book was hard to follow and strayed from the course description. It contains aspects of electronics and mechanical design where the math problems are not fully explained and worked out and the machine descriptions are extremely brief. It is possible to get an education out this book, but a person would really have to strain. If you buy this book, I recommend that you get a generic study guide to accompany it.",
+                "review/helpfulness": "7/8",
+                "num_reviews": 8
+            },
+            {
+                "review/text": "This text provides a good, basic overview of methods for measuring several physical phenomena. The treatment of most of these is average. However, thermal measurement is given an improved, more thorough coverage. Personally, I have primarily used this text as a reference and guide for Chapter 3: Assessing and Presenting Experimental Data. I have found the sections on Error and, especially, Uncertainty to be very instructive and practical for use during college and post-graduation (as a mechanical engineer in research and development).",
+                "review/helpfulness": "7/7",
+                "num_reviews": 7
+            },
+            {
+                "review/text": "The authors, in their new 6th edition of Mechanical Measurements, have overhauled most of the book. The new edition is much improved and makes great reference book for various measurement techniques. Very well-indexed.",
+                "review/helpfulness": "4/4",
+                "num_reviews": 4
+            }
+        ]
+    },
+    {
+        "Title": "finite mathematics for the managerial life and social sciences",
+        "description": "Market-leading FINITE MATHEMATICS FOR THE MANAGERIAL, LIFE, AND SOCIAL SCIENCES, Twelfth Edition, balances contemporary applications, solid pedagogy, and the latest technology to provide students with content that motivates and keeps them interested in the course. Praised by users for its clarity, easy-to-follow writing style, and excellent applications, the text's pedagogical features and exciting array of supplements equip students with the tools they need to make the most of their study time and succeed in the course. Using an intuitive approach, the text introduces mathematical concepts through real-life examples that students can relate to, and offers a clear and concise discussion of the mathematics involved, with numerous examples and applications that illustrate those concepts. Emphasis is placed on helping students formulate, solve, and interpret results of applied problems. Graphs and illustrations are used to help students visualize the concepts being presented. Important Notice: Media content referenced within the product description or the product text may not be available in the ebook version.",
+        "authors": "['Soo T. Tan']",
+        "infoLink": "https://play.google.com/store/books/details?id=fWM1DgAAQBAJ&source=gbs_api",
+        "review": [
+            {
+                "review/text": "This was the text book that was used in a course I took in Finite Math. Do not waste your time or money on this book. It does not go into any depth whatsoever, many of the thereoms shown were just pulled out of the authors hat without any proof of any kind. I honestly, had a hard time staying awake as I would read it, since it is so dull. It places far too much emphasis on phony applications and almost known on good solid theory. I only wish I could give this book a negative rating.",
+                "review/helpfulness": "11/13",
+                "num_reviews": 13
+            },
+            {
+                "review/text": "This was the required text for my Finite Mathematics class. There is absolutely no detailed information. Students have virtually no tools to apply to problem solving. Apparently there is also no student workbook to demonstrate the steps that Tan failed to illustrate in this text. Slow painful torture is preferable to the struggle one faces when trying to make progress through this textbook.",
+                "review/helpfulness": "6/7",
+                "num_reviews": 7
+            },
+            {
+                "review/text": "This book is not nearly as bad as the other reviews indicate. I teach a course in finite mathematics at the college level and I examined it for possible adoption as a textbook. While it is not the best text I have seen, so I will not be using it, the quality is just below that of the book I use. Therefore, I would have no trouble using this book in my class.The coverage in college courses in finite mathematics is standard and this book adheres to those standards. Topics are introduced via worked examples; there are exercises at the ends of the sections and review questions at the end of the chapters. The writing is clear, and the explanations are thorough. Solutions to the odd numbered exercises and all of the review exercises are included. While I hesitate to strongly recommend this book as a text, there is no delay in saying that it is one of the better options available.",
+                "review/helpfulness": "6/7",
+                "num_reviews": 7
+            },
+            {
+                "review/text": "I hated this stupid textbook, which I was required to have for a college math course. There are homework problems which the book does not give examples for. The examples it does give are extremely not helpful, especially if you are not a genius at math. My teacher explained things better, and he was foreign with an incomprehensible accent. Don't buy this crappy book if you can avoid it.",
+                "review/helpfulness": "2/3",
+                "num_reviews": 3
+            },
+            {
+                "review/text": "I teach Finite Mathematics at the community college level, and have no problem with this textbook. While the book is not uniquely good, I think that some of the complaints leveled against the text are a little off-base. First, the book does not assume that the student has no calculator. Many sections include an addendum showing how to perform the pertinent tasks on their calculator, and the book includes a calculator tutorial.Further, while it is true that the textbook doesn't dedicate much energy to theorems, that is somewhat irrelevant. This is an applied mathematics text; it exists to show a student how to use concepts. It does not exist to discuss the origin of these concepts. That is beyond the scope of the text, and presumably beyond the scope of any course utilizing the book.This is a perfectly usable textbook, but don't expect miracles. Many students will see matrices and mathematical game theory for the first time in this text. Doing Gauss-Jordan by hand is slow, tedious work. The book can't change these types of facts. As always, math is a language. The way you learn a language is by practicing and practicing until one day you find you understand the conversation.",
+                "review/helpfulness": "2/2",
+                "num_reviews": 2
+            }
+        ]
+    },
+    {
+        "Title": "handbook of structural biology practical nmr applications",
+        "description": "This textbook begins with an overview of NMR development and applications in biological systems. It describes recent developments in instrument hardware and methodology. Chapters highlight the scope and limitation of NMR methods. While detailed math and quantum mechanics dealing with NMR theory have been addressed in several well-known NMR volumes, chapter two of this volume illustrates the fundamental principles and concepts of NMR spectroscopy in a more descriptive manner. Topics such as instrument setup, data acquisition, and data processing using a variety of offline software are discussed. Chapters further discuss several routine stategies for preparing samples, especially for macromolecules and complexes. The target market for such a volume includes researchers in the field of biochemistry, chemistry, structural biology and biophysics.",
+        "authors": "['Quincy Teng']",
+        "infoLink": "http://books.google.com/books?id=wJRkkgEACAAJ&dq=Handbook+of+Structural+Biology:+Practical+NMR+Applications&hl=&source=gbs_api",
+        "review": [
+            {
+                "review/text": "This is a great addition to the NMR catalog. Dr. Teng combines theory, instrumentation and application in a text that is easily accessible to everyone. A must have for any student of biological NMR!",
+                "review/helpfulness": "6/6",
+                "num_reviews": 6
+            },
+            {
+                "review/text": "The book is a complete saga of NMR with relevant references. To learn NMR for macromolecules, just go through it.........you will reach the destination.",
+                "review/helpfulness": "4/4",
+                "num_reviews": 4
+            },
+            {
+                "review/text": "This is an impressive and detailed book for anyone who wants to know NMR. I found in this book all what I need about protein NMR from basic level up to most advanced triple-resonance experiments. This textbook (or reference book) is helpful for all levels of students and experts. After reading through the book, I feel like I am an NMR expert because the book not only teaches the new thing I did not know but also summarizes what I already knew. I showed it to my friends and they all like it just by looking at the table of contents. I totally agree with the reviewer's comments printed on the book cover:\"This is the first totally thorough book on the subject...\" by Lawrence J. Berliner, University of Denver\"While NMR treatises abound, there exists no single text that provides both the information necessary to understand the experiments and processes, as well as the practical details for their successful implementation. This considerable gap in the literature is now happily bridged by Quincy Teng's timely contribution.\" By Gerd N. La Mar, University of California, Davis.",
+                "review/helpfulness": "4/4",
+                "num_reviews": 4
+            },
+            {
+                "review/text": "This book clearly illustrates the major aspects of NMR spectroscopy, instrumentation and applications in a relatively simple language without the use of complicated mathematics. The questions at the end of each section reflect the main points of the contents. It can be used as a self study textbook for beginners, as well as a reference for teaching and research in NMR spectroscopy.",
+                "review/helpfulness": "2/2",
+                "num_reviews": 2
+            }
+        ]
+    },
+    {
+        "Title": "port of two brothers english and bengali edition",
+        "description": "First published in 1996, this comprehensive guide to the history of Britain and its peoples will be indispensable reading for the general enthusiast, as well as students. It is packed full of fascinating detail on everything from Hadrian's Wall to the Black Death to Tony Blair. The book was assembled over more than thirty years and has seen updates in three editions. \"He has done for historical encyclopaedias what Samuel Johnson did for dictionaries.\" Andrew Roberts, The Daily Telegraph \"An astonishing synthesis of information.\" Roger Scruton, The Times \"An astonishing achievement, a compelling book for dipping into, a splendid work.\" Simon Hoggart, The Guardian \"This marvellous book, which contains tens of thousands of historical facts will enlighten, amuse, and inform. Every home should have one.\" Simon Heffer, The Daily Mail \"If you were marooned on that mythical desert island with only one history book, this would be the one to take. Buy three copies - one for the children, one for the grandchildren- and one for yourself.\" John Charmley, The Daily Telegraph",
+        "authors": "['Charles Arnold-Baker']",
+        "infoLink": "https://play.google.com/store/books/details?id=FJdGCgAAQBAJ&source=gbs_api",
+        "review": [
+            {
+                "review/text": "My father wrote this book lest we not fully understand the purpose of his work. By reading this book I was able to grasp the true meaning of life's deepest spiritual fulfillment which enables me to cope with all the inconsistencies and insecurities that I encounter -wether it be in a remote jungle or the busy streets of a modern city. I recommend this book not only for the pleasure of my father's loving humor, but also for its' everlasting repercussions.",
+                "review/helpfulness": "8/8",
+                "num_reviews": 8
+            },
+            {
+                "review/text": "Wow! An amazing recount of actual experiences of life in the Amazon! Capitivating and a truly remarkable story! Very good for those who like reading of true life adventures. Easy to read but not easy to put down! So glad Mr. Schlener shared his experiences with the rest of us! All too often we take for granted our luxuries of esstentials, like, electricity, bathroom facilities, and cooking accessories! Everyone in the U.S.A should read this book! What a wonderful tribute to a wonderful family.",
+                "review/helpfulness": "7/7",
+                "num_reviews": 7
+            },
+            {
+                "review/text": "Mr. Schlener takes his readers along with him on the remarkable journey of his family's experiences in the Amazon jungle. Mr. Schlener has a personable, easy writing style that captures his readers attention on the first page and keeps it throughout the book. It is an inspirational book. Thank you Mr. Schlener for writing it.",
+                "review/helpfulness": "7/7",
+                "num_reviews": 7
+            },
+            {
+                "review/text": "When you read this book it is as if you have experienced this advanture right along with them. One could almost taste the food, feel the heat of the sun and hear the thunder in the storms. Not only could one picture the beauty of God's handiwork but felt His presence guiding and protecting this man and his family.The &quot;Port of Two Brothers&quot;, is a wonderful bedtime story for those little ones, good research book for students, and totally entertaining for the older generation.This is a wonderful and unique story!!!",
+                "review/helpfulness": "5/5",
+                "num_reviews": 5
+            },
+            {
+                "review/text": "These true accounts really show what God's work is all about and lets the rest of America feel how cozy it really is here inside these borders. Best missionary life story out there with the &quot;just telling it how it was&quot; style, and it doesn't allow the reader to be led into boredom for one line. Definitely worth reading, and the pictures are cool.",
+                "review/helpfulness": "3/3",
+                "num_reviews": 3
+            }
+        ]
+    },
+    {
+        "Title": "advanced calculus 3rd edition",
+        "description": "Demonstrating analytical and numerical techniques for attacking problems in the application of mathematics, this well-organized, clearly written text presents the logical relationship and fundamental notations of analysis. Buck discusses analysis not solely as a tool, but as a subject in its own right. This skill-building volume familiarizes students with the language, concepts, and standard theorems of analysis, preparing them to read the mathematical literature on their own. The text revisits certain portions of elementary calculus and gives a systematic, modern approach to the differential and integral calculus of functions and transformations in several variables, including an introduction to the theory of differential forms. The material is structured to benefit those students whose interests lean toward either research in mathematics or its applications.",
+        "authors": "['R. Creighton Buck']",
+        "infoLink": "http://books.google.com/books?id=pvx1PwAACAAJ&dq=Advanced+Calculus,+3rd+Edition&hl=&source=gbs_api",
+        "review": [
+            {
+                "review/text": "I am no expert in the area of Mathematical Analysis, but I am an avid reader of any book that pertains the subject. I found this book in my schools mathematics lounge and could not resist reading it from cover to cover. This book is of the quality of such authors as Buck, Widder, Courant, and Rudin. As another reviewer has noted, this book is definitely worth every penny. It is not dry or to pedantic as some of the other afore mentioned authors, yet it is not simple and lacking in content. Of course like any quality Advanced Calculus book it requires the reader to have mathematical maturity as well as patience and the drive to self-explore the concepts. If one cannot follow simple examples and from those examples formulate their own, they may want to review the very basics of mathematics or consider a different major. I would highly recommend this book to advanced undergraduates or beginning gradutes students as a reference book or for self study.",
+                "review/helpfulness": "14/16",
+                "num_reviews": 16
+            },
+            {
+                "review/text": "This is the advanced calculus text I used at University of Washington while getting my BS in mathematics. I loved it then, and I've just purchased another copy to use for review. It's extremely well written. If you're looking for a good second year calculus text, this one's it.",
+                "review/helpfulness": "11/12",
+                "num_reviews": 12
+            },
+            {
+                "review/text": "This book has a clarity unparalleled among books covering similar topics. While it contains an extensive amount of prose, it is still fairly compact: the book explains each result, the motivation for it, and points out possible pitfalls and considerations. Examples are well-chosen, proofs are easily followed. The order of the book is a bit chaotic, but it's written in such a way that it is easy to skip around in it.My only complaint about this book is that I wish it covered a bit more material. This book might not go quite as far as some people might want, especially for a two-semester sequence or for courses at the graduate level.I would recommend this book to anyone who already knows calculus and wants to learn (the more rigorous topic of) analysis on their own, or anyone selecting a textbook for an undergraduate advanced calculus course. This book also makes a good reference, and I was happy to permanently add it to my collection. For a more advanced book covering topics beyond those covered in this book, I would recommend Apostol's analysis book.",
+                "review/helpfulness": "11/11",
+                "num_reviews": 11
+            }
+        ]
+    },
+    {
+        "Title": "gas dynamics",
+        "description": "This edition of a very successful and widely adopted book has been brought up-to-date with computer methods and applications throughout. It makes use of spreadsheet programs, and contains unique procedures that have never appeared before in any gas dynamics book. KEY TOPICS Chapter topics include basic equations of compressible flow., wave propagation in compressible media, isentropic flow of a perfect gas, stationary and moving normal shock waves, oblique shock waves, flow with friction and with heat addition or heat loss, equations of motion for multidimensional flow, methods of characteristics, special topics in gas dynamics, and measurement in compressible flow. For mechanical and aerospace engineers.",
+        "authors": "['James E. A. John', 'Theo G. Keith']",
+        "infoLink": "http://books.google.com/books?id=VXgsAAAAYAAJ&dq=Gas+Dynamics&hl=&source=gbs_api",
+        "review": [
+            {
+                "review/text": "I used this book in Graduate School at Purdue in a Gas Dynamics class taught by the co-author, J.D. Hoffman. A excellent, in-depth text, that starts with the fundamentals and builds. The best and most comprehensive book on the subject I've seen.",
+                "review/helpfulness": "4/4",
+                "num_reviews": 4
+            },
+            {
+                "review/text": "If you want to understand about Gas Dynamics, better read this book. It can be either used as a text book or as a reference. A must for a person dealing with thermo-fluid mechanics.",
+                "review/helpfulness": "2/2",
+                "num_reviews": 2
+            }
+        ]
+    },
+    {
+        "Title": "foundations of cellular neurophysiology bradford books",
+        "description": "with simulations and illustrations by Richard Gray Problem solving is an indispensable part of learning a quantitative science such as neurophysiology. This text for graduate and advanced undergraduate students in neuroscience, physiology, biophysics, and computational neuroscience provides comprehensive, mathematically sophisticated descriptions of modern principles of cellular neurophysiology. It is the only neurophysiology text that gives detailed derivations of equations, worked examples, and homework problem sets (with complete answers). Developed from notes for the course that the authors have taught since 1983, Foundations of Cellular Neurophysiology covers cellular neurophysiology (also some material at the molecular and systems levels) from its physical and mathematical foundations in a way that is far more rigorous than other commonly used texts in this area.",
+        "authors": "['Daniel Johnston', 'Samuel Miao-Sin Wu']",
+        "infoLink": "http://books.google.com/books?id=y8bxCwAAQBAJ&dq=Foundations+of+Cellular+Neurophysiology+(Bradford+Books)&hl=&source=gbs_api",
+        "review": [
+            {
+                "review/text": "This was the assigned text for a short section on electrophysiology in my first year graduate neuroscience course. I did not have a math or electronics background, but had worked in a neurophys lab for two years. I managed to learn stuff from this book, but it was hard work and I couldn't have done it without my lecturer and classmates. It's obvious that the authors really know their stuff, but being able to explain it to novices is another thing... And I agree with the other reviewer who noted that the index is *completely* useless, almost random lists of page numbers after topics...Unless you have to buy this book for a class, skip it (and if it is the text for a course, ask your instructor why!!)- buy Molecular and Cellular Physiology of Neurons by Fain instead, it doesn't cover as many topics, but breadth is no use if you can't understand the content. My department switched to the Fain text last year because so many people complained about Johnston et al.",
+                "review/helpfulness": "12/18",
+                "num_reviews": 18
+            },
+            {
+                "review/text": "This book covers a lot of material. The quality varies from chapter to chapter. Figures are sprinkled here and there with very little explanation of what they mean. Additionally, there is not much consistency between figures. This book might be serve as a good companion to a course, but it's virtually useless for self study.My background is engineering and neuroscience, but I still found the math to be poorly explained. If you're trying to learn about biophysics and cellular neurophysiology, pick another book. If you're unfortunate enough to have this book assigned to you for a class, make sure you attend the lectures.The index is also terrible and virtually useless for anything that I've tried to look up. The only good thing about the book is that it references a lot of stuff, so you know where to look.One star is for the breadth of topics covered and one is for the references. The Matisse drawing on the cover is also a nice touch.",
+                "review/helpfulness": "12/15",
+                "num_reviews": 15
+            },
+            {
+                "review/text": "You don't really have to hold a degree in mathematics or physics to understand cellular biophysics quantitavely; at least not with this book.Clearly written, concise, self-contained, begins with the very basic knowledge of ion transport through semi-permeable membranes, moves to electrical properties of membranes, and then to passive and active properties of neuronal membranes, all in a very didactic and intuitive approach.Of special interest are the chapters on stochastic analysis and formulation of single channel function, and on the relationship between calcium dynamics and transmitter release.This text is essential for students interested in pursuing graduate studies in electrophysiology, cellular neuroscience, and in computational neuroscience.",
+                "review/helpfulness": "7/10",
+                "num_reviews": 10
+            },
+            {
+                "review/text": "This book is chock full of equations concerning the Hodgkin-Huxley Model, Kinetics of Ionic Channels, Presynaptic &amp; Postsynaptic Transmission, LTP, LTD, quantum vesicular release and reuptake, &amp; a &quot;scant&quot; neural net theory. There are a plethora of 'end of chapter' problems with derivations &amp; applications to solve. The book is going to be confusing and tedious, even for computationally trained neuroscientists. For me, this book is a reference only. The format is similar to Thomas Weiss' Cellular Biophysics 2 Volume Set. There is too much on the Hodgkin-Huxley Model which is very important historically, but of less interest today than it was in the 1960s. The authors also use cable theory to model neuronal &amp; dendritic function.",
+                "review/helpfulness": "6/7",
+                "num_reviews": 7
+            }
+        ]
+    },
+    {
+        "Title": "the siberian bam guide rail rivers road northeast russias siberian bam railway lena river kolyma highway trailblazer guides",
+        "description": "Expanded from the first edition (Siberian BAM Railway Guide) this book now also includes other forms of transport in this fascinating but rarely-visited north-eastern corner of Russia, the Siberian BAM region. Note: this book covers a different area from the Trans-Siberian Handbook (also from Trailblazer). * Practical information - full details of how to get to the region, where to stay, what to see and how to get around; plus 30 maps * City guides and maps - Taishet, Bratsk, Zheleznogorsk-Ilimski, Ust-Kut, Lena, Severobaikalsk, Nizhneangarsk, Taksimo, Kuanda, Novaya Chara, Tynda, Novy Urgal, Komsomolsk-na-Amure, Amursk, Vanino, Sovetskaya Gavan, Khabarovsk, Kirensk, Magadan, Aldan & Yakutsk * BAM Railway route guide - covering the 3400km of mountain railway, closed until 1991, from north of Lake Baikal to the Pacific, with detailed information on how to take the train and what to see * Lena River route guide - the entire river from source to Arctic Ocean, including the 1988km served by steam-driven passenger boats * Kolyma Highway route guide - the rugged land route from Yakutsk to Magadan, built by Stalin's political prisoners",
+        "authors": "['Athol Yates', 'Nicholas Zvegintzov']",
+        "infoLink": "http://books.google.com/books?id=oq8EAAAACAAJ&dq=The+Siberian+BAM+Guide:+Rail,+Rivers&hl=&source=gbs_api",
+        "review": [
+            {
+                "review/text": "This book contains very concise information about the route, cities and history. Such information is difficult to obtain in other books, and so very precious.The book is also fun for train lovers to read.",
+                "review/helpfulness": "7/8",
+                "num_reviews": 8
+            },
+            {
+                "review/text": "A great travel guide to a part of the world that is not often covered in such detail. The book is eight years old (as of 2009) and so not much good any more for prices and hotel recommendations, but this it is such a wonderful resource for planning a route and planning where to make stops on a BAM voyage.The book also includes some great coverage of places north of the railway, including route planning information for a trip all the way to the Arctic Ocean.Good stuff here.",
+                "review/helpfulness": "2/2",
+                "num_reviews": 2
+            }
+        ]
+    },
+    {
+        "Title": "observational astrophysics",
+        "description": "For the last twenty years astronomy has been developing dramatically. Until the nineteen-fifties, telescopes, spectrometers, and photographic plates consti tuted a relatively simple set of tools which had been refined to a high degree of perfection by the joint efforts of physicists and astronomers. Indeed these tools helped at the birth of modern astrophysics: the discovery of the expan sion of the Universe. Then came radioastronomy and the advent of electronics; the last thirty years have seen the application to astrophysics of a wealth of new experimental techniques, based on the most advanced fields of physics, and a constant interchange of ideas between physicists and astronomers. Last, but not least, modern computers have sharply reduced the burden of dealing with the information painfully extracted from the skies, whether from ever scarce photons, or from the gigantic data flows provided by satellites and large telescopes. The aim of this book is not to give an extensive overview of all the tech niques currently in use in astronomy, nor to provide detailed instructions for preparing or carrying out an astronomical project. Its purpose is methodologi cal: photons are still the main carriers of information between celestial sources and the observer. How we are to collect, sample, measure, and store this infor mation is the unifying theme of the book. Rather than the diversity of tech niques appropriate for each wavelength range, we emphasize the physical and mathematical bases which are common to all wavelength regimes.",
+        "authors": "['Pierre Lena']",
+        "infoLink": "http://books.google.com/books?id=F1vxCAAAQBAJ&dq=Observational+Astrophysics&hl=&source=gbs_api",
+        "review": [
+            {
+                "review/text": "Very broad in its scope with enough depth to deal with the fundamentals while pointing the reader in the right direction for a more detailed treatment of the subject matter. Could be used as a text or reference book, or simply read as I chose, to broaden ones knowledge. Contains a good overview of the tools and techniques of radio astronomy. A fair bit of math employed, but not overwhelming to the educated reader. Reading level is geared toward a 3rd or 4th year undergrad in physics/astronomy but would also be useful as a primer for graduate level students or the serious amateur. Good book at a good price!",
+                "review/helpfulness": "16/17",
+                "num_reviews": 17
+            },
+            {
+                "review/text": "This book is the perfect first text for astronomy students that are just getting beyond descriptive astronomy and are venturing into more mmathematically rigorous depths. From the first chapter to the last what has often been accepted in descriptive courses is now plumbed with the tools of basic calculus and statistics.Students are given the opportunity to see how the various formulas used in observational astronomy are derived, leading to a greater understanding when these formulas are applied in daily use. The mathematics is of little difficulty to anyone with a basic knowledge of calculus and many of the problems presented would serve as exceptional real-world problems for sophomore level mathematics courses.The text is best suited to advanced undergraduate students and may be adapted for use in introductory graduate courses. The problems and ideas presented have immediate applications in the observatory and transition from lecture to lab is remarkably easy.This book truly is a gem!",
+                "review/helpfulness": "7/7",
+                "num_reviews": 7
+            }
+        ]
+    },
+    {
+        "Title": "graph theory and its applications",
+        "description": "Graph Theory and Its Applications, Third Edition is the latest edition of the international, bestselling textbook for undergraduate courses in graph theory, yet it is expansive enough to be used for graduate courses as well. The textbook takes a comprehensive, accessible approach to graph theory, integrating careful exposition of classical developments with emerging methods, models, and practical needs. The authors' unparalleled treatment is an ideal text for a two-semester course and a variety of one-semester classes, from an introductory one-semester course to courses slanted toward classical graph theory, operations research, data structures and algorithms, or algebra and topology. Features of the Third Edition Expanded coverage on several topics (e.g., applications of graph coloring and tree-decompositions) Provides better coverage of algorithms and algebraic and topological graph theory than any other text Incorporates several levels of carefully designed exercises that promote student retention and develop and sharpen problem-solving skills Includes supplementary exercises to develop problem-solving skills, solutions and hints, and a detailed appendix, which reviews the textbook's topics About the Authors Jonathan L. Gross is a professor of computer science at Columbia University. His research interests include topology and graph theory. Jay Yellen is a professor of mathematics at Rollins College. His current areas of research include graph theory, combinatorics, and algorithms. Mark Anderson is also a mathematics professor at Rollins College. His research interest in graph theory centers on the topological or algebraic side.",
+        "authors": "['Jonathan L. Gross', 'Jay Yellen', 'Mark Anderson']",
+        "infoLink": "https://play.google.com/store/books/details?id=eVauDwAAQBAJ&source=gbs_api",
+        "review": [
+            {
+                "review/text": "This recently published book in graph theory has many unique features: (1) it contains a large number of figures that make it much easier to follow and understand the mathematical reasonnings; (2) it contains a lot more recent developments in the area that are not covered in general graph theory books; (3) it shows close connections of this area to other areas, in particular to computer science, which greatly increase the usefulness of the book; (4) the book is so well written that can be understood by people with very preliminary knowledge in mathematics (most parts can be understood by people with, say, high school mathematics).I really like the book, and I recommend it very highly.",
+                "review/helpfulness": "27/27",
+                "num_reviews": 27
+            },
+            {
+                "review/text": "Professors Gross and Yallen have written a great book on &quot;practical&quot; graph theory that can be used in math or computer sciences courses alike. The book is very well organized and its chapters can be read on almost any sequence, allowing instructors to skip sections or give special emphasis to certain more interesting subjects.The text can be used in a one semester introductory graduate course in graph theory in a CS or math department, an advanced undergraduate seminar or as a reference book for an undergraduate course in discrete math.Of special interest are the sections on Huffman trees and voltage graphs. The section on Hoffman trees is especially interesting to computer scientists. I believe this is the first book that devotes an entire section to the theoretical treatment of this very useful subject. Prof. Gross is a pioneer in voltage graphs and the treatment of this somewhat esoteric subject is lucid and complete.Overall this textbook is excellent. The writing is clear and precise and the knowledge needed to read it is that of an advanced undergraduate student. However, the book could benefit from solutions to the exercises, or at least some selected exercises, some computer sciences oriented &quot;practical&quot; examples and projects and an instructor's manual.",
+                "review/helpfulness": "22/23",
+                "num_reviews": 23
+            },
+            {
+                "review/text": "Regardless of whether you just want to implement a couple of graph algorithms or get into the guts of graph theoretic proofs, this book should come in as a great resource.In over 500 pages, this book covers a lot of ground beyond the basics, such as topology of graphs, graph operations and mappings, voltage graphs, and surface imbeddings. Definitions are very clear, propositions and proofs are stated very clearly, and there are shrink-wrapped algorithms if you just want to apply them.Requiring no previous knowledge of abstract algebra or graph theory, this is a great resource to have in your bookshelf.",
+                "review/helpfulness": "16/18",
+                "num_reviews": 18
+            },
+            {
+                "review/text": "This is a superb book for an introduction to graph theory. It is not just a pile of theorems as other books you'll find in this field. It presents insight and intuition first, and then it gives the necessary formal treatment. The topics covered are perfect, in the right order. Extremelly recommended for anyone eagerly wanting a first contact with this exciting field, as well as for any graph theory instructor looking for the right book to follow in class.",
+                "review/helpfulness": "7/8",
+                "num_reviews": 8
+            },
+            {
+                "review/text": "Reads like a dictionary, each page is nothing more than bullet points that alternate between definitions and corollaries. Proofs are typically very short: explained and illustrated in no more than a quarter of a page. More appropriate as a reference manual than a textbook for a class.",
+                "review/helpfulness": "4/6",
+                "num_reviews": 6
+            },
+            {
+                "review/text": "This is a great and comprehensive book on graph theory. The book can also serve as a reference. It is well-written, clear and precise. Almost everything that a student or practitioner need to know about graphs is likely to be found here. However the book is best appreciated by someone who has studied some graph theory. A beginner would benefit more by looking at more elementary books such as Graphs and Applications by Wilson.",
+                "review/helpfulness": "3/3",
+                "num_reviews": 3
+            },
+            {
+                "review/text": "This is a good book on graph theory for the Computer Scientist - At least the one who is interested in understanding various graphs (and operations on those graphs) and some applications where those graphs are useful. It is not a book to copy code from, though there are about 60 simple algorithms laid out. There are about another 60 applications mentioned that use the specific types of graphs. I don't know how improved the second edition is in these two areas, but as far as value is concerned, I purchased my first edition book used for about 1/10th the cost of the second edition book. I doubt that the second edition is anywhere close to being ten times more valuable than the first edition.",
+                "review/helpfulness": "2/2",
+                "num_reviews": 2
+            }
+        ]
+    },
+    {
+        "Title": "probability and stochastic processes",
+        "description": "This text introduces engineering students to probability theory and stochastic processes. Along with thorough mathematical development of the subject, the book presents intuitive explanations of key points in order to give students the insights they need to apply math to practical engineering problems. The first seven chapters contain the core material that is essential to any introductory course. In one-semester undergraduate courses, instructors can select material from the remaining chapters to meet their individual goals. Graduate courses can cover all chapters in one semester.",
+        "authors": "['Roy D. Yates', 'David J. Goodman']",
+        "infoLink": "http://books.google.com/books?id=6gKJAgAAQBAJ&dq=Probability+and+Stochastic+Processes&hl=&source=gbs_api",
+        "review": [
+            {
+                "review/text": "Solomon's Probability and Stochastic Processes is well written and easy to read. Examples and problems do a good job of relating the material to intuition.",
+                "review/helpfulness": "9/12",
+                "num_reviews": 12
+            },
+            {
+                "review/text": "This is one of the best books I've read in Mathematics.It was even fun to read.It is written so well it makes Probability seem easy. But don't be fooled. This is tough material. Other books make topics like Conditional Probability or Markov Chains seem difficult and tedious. With this book you'll wonder why authors make it so hard.This book is to Probability what Griffiths is to Electrodynamics.",
+                "review/helpfulness": "7/7",
+                "num_reviews": 7
+            }
+        ]
+    },
+    {
+        "Title": "concise handbook of mathematics and physics",
+        "description": "A Concise Handbook of Mathematics, Physics, and Engineering Sciences takes a practical approach to the basic notions, formulas, equations, problems, theorems, methods, and laws that most frequently occur in scientific and engineering applications and university education. The authors pay special attention to issues that many engineers and students",
+        "authors": "['Andrei D. Polyanin']",
+        "infoLink": "https://play.google.com/store/books/details?id=ejzScufwDRUC&source=gbs_api",
+        "review": [
+            {
+                "review/text": "This text is a hard to find collection of formulas, theorems, symbols and laws that took me quite some time to find. If you like math and/or physics and want to know all you can, then this text is your best bet. It is laid out logically and coherently and culminates in a unified picture of two closely related fields of study. I highly recommend it to any scientific mind.",
+                "review/helpfulness": "4/4",
+                "num_reviews": 4
+            },
+            {
+                "review/text": "This is a great book for wide variety of audiences -- students in high school to professionals (engineers and scientists) with many years of math training. If you are looking for rigorous derivations or theorem/proofs, this is not the book. But if you are looking for a handy source that you can go to everyday in your professional life, then this is the book. I commend the authors for designing an accessible book with cogent presentation and exceptional clarity.",
+                "review/helpfulness": "2/2",
+                "num_reviews": 2
+            }
+        ]
+    },
+    {
+        "Title": "fourier analysis and boundary value problems",
+        "description": "Fourier Analysis and Boundary Value Problems provides a thorough examination of both the theory and applications of partial differential equations and the Fourier and Laplace methods for their solutions. Boundary value problems, including the heat and wave equations, are integrated throughout the book. Written from a historical perspective with extensive biographical coverage of pioneers in the field, the book emphasizes the important role played by partial differential equations in engineering and physics. In addition, the author demonstrates how efforts to deal with these problems have lead to wonderfully significant developments in mathematics. A clear and complete text with more than 500 exercises, Fourier Analysis and Boundary Value Problems is a good introduction and a valuable resource for those in the field. Topics are covered from a historical perspective with biographical information on key contributors to the field The text contains more than 500 exercises Includes practical applications of the equations to problems in both engineering and physics",
+        "authors": "['Enrique A. Gonzalez-Velasco']",
+        "infoLink": "https://play.google.com/store/books/details?id=EgPMOo1r-Q8C&source=gbs_api",
+        "review": [
+            {
+                "review/text": "This book is very complete and comprehensive. It is meant for the advanced undergraduate (and even graduate) student. The book states it assumes you know the 1st year of calculus and how to solve some ordinary differential equations. It would help if you took one more upper division math class, as to be familiar with the proofs.In a nutshell, this book is great! I used it to study for my PhD Quals in physics. It has a nice portion on Green's functions. The book is 'mathematical' but the backdrop on the topics are based on physical problems. The historical notes are great, and act as a complement to the physical problems (I'm not a big fan of history in textbooks, but this book does a nice job of integrating it).Lots of problems are given, though no solutions are given for any of them. It would be a nice compliment to at least show the start, a tid bit in the middle, and then the solution. The solution at the very least. There are other books that do provide solutions to the types of problems listed here, but it would be nice just to carry around this one when learning boundary value problems.A must for anyone that works on any problems that have ODEs, PDEs, Fourier and Laplace transforms, Boundary Value Problems and Green's Functions. You won't be disappointed!",
+                "review/helpfulness": "4/4",
+                "num_reviews": 4
+            },
+            {
+                "review/text": "This is an excellent introduction to Fourier series and itsapplications to boundary value problems. It has a very good combination of history, theory,and exercises. In particular,the book is an ideal text for math students who are takingtheir first PDE course and do not have enough backgound in physics. The only problem with this book is its high price.",
+                "review/helpfulness": "2/2",
+                "num_reviews": 2
+            }
+        ]
+    },
+    {
+        "Title": "molecular theory of gases and liquids structure of matter series",
+        "description": "An essential cross-disciplinary reference for molecular interactions Molecular Theory of Gases and Liquids offers a rigorous, comprehensive treatment of molecular characteristics and behaviors in the gaseous and fluid states. A unique cross-disciplinary approach provides useful insight for students of chemistry, chemical engineering, fluid dynamics, and a variety of related fields, with thorough derivations and in-depth explanations throughout. Appropriate for graduate students and working scientists alike, this book details advanced concepts without sacrificing depth of coverage or technical detail.",
+        "authors": "['Joseph O. Hirschfelder', 'Charles F. Curtiss', 'R. Byron Bird']",
+        "infoLink": "http://books.google.com/books?id=HQtRAAAAMAAJ&dq=Molecular+theory+of+gases+and+liquids+(Structure+of+matter+series)&hl=&source=gbs_api",
+        "review": [
+            {
+                "review/text": "An ideal reference for those intimate with the field of reacting and non-reacting &quot;fluids&quot;. This is not a text-book for those faint-of-heart when it comes to mathematics and &quot;techno-babble&quot;, but rather a comprehensive treatment of physical properties and interactions that govern gaseous and liquid phase molecules.&quot;Molecular Theory of Gases and Liquids&quot; is unique in its cross-disciplinary approach to each aspect of molecular phenomena. Chemists, Physicists, and Engineers alike will find its content, the corresponding discussions, and at least one of the various approaches to the derivation of each concept invaluable.Most disciplines have a text that is casually refered to as its &quot;bible&quot;. As a physical chemist studying the interactions of high- temperature reacting fluid flows, (a glorified way of saying combustion), I heartily recommend &quot;Molecular Theory of Gases and Liquids&quot; to that status.",
+                "review/helpfulness": "9/9",
+                "num_reviews": 9
+            },
+            {
+                "review/text": "This classic book on the physical chemistry of gases and liquids is showing its 36+ year age, but it is still the book for an all-encompasing survey of the theory of fluids. ...",
+                "review/helpfulness": "5/5",
+                "num_reviews": 5
+            }
+        ]
+    },
+    {
+        "Title": "the walkers companion nature company guides",
+        "description": "A handbook for amateur naturalists describes what to look for on nature walks and discusses the different environments found in North America",
+        "authors": "['Elizabeth Ferber']",
+        "infoLink": "http://books.google.com/books?id=QNnk06ZUEjcC&dq=The+Walker%27s+Companion+(Nature+Company+Guides)&hl=&source=gbs_api",
+        "review": [
+            {
+                "review/text": "If you value field guides, you will love this Time-Life edition of &quot;The Walker's Companion&quot; from The Nature Company. Several highly respected nature writers, including David Rains Wallace and Ann Zwinger, make contributions to this well-illustrated and highly informative text. Those names should give you a clue to the excellent combination of literary and scientific writing that makes this text a must-have reference for anyone who is interested in the environment.This is a field guide that powerfully combines content with context in a way that makes the information about nature and the environment not only highly accessible, but intrinsically linked to the key social topics that are central issues in both science and social studies. Topics include the history of nature writing and in America, hiking tips, the study of nature throughout the ages, field identification and sketching outdoors. Ecological concepts such as food chains and pollination are concisely described and illustrated in a section titled, &quot;Understanding Nature&quot;. Information about every ecosystem from forests, mountains and deserts to farmland and vacant lots is included in the &quot;Guide to Habitats&quot; section. This kind of comprehensive perspective about environment helps the reader to think about and see ecology in very relevant ways.The format of double-facing pages per topic gives concise environmental information, making it easy to read, index and apply to the reader's world. The guide is an essential home or travel reference as well as a valuable classroom text that would be interesting and accessible for audiences from 10 to 100. The text is so versatile that I have a copy for myself and have ordered a class set for my middle school students for a wide range of class use including nature drawing, research, gardening and environmental education.",
+                "review/helpfulness": "13/13",
+                "num_reviews": 13
+            },
+            {
+                "review/text": "I am surprised that a book published in 1995 has had only one review posted on Amazon.It is a hard book to review,but I'll give it a try.I rated it 5* because of the wide coverage,quality of the pictures,sketches,maps,paper,printing and binding.It is very well constructed and fairly priced.As an avid Birder with a wide interest in all areas of nature I have spent a lot of time walking the states of the US and provinces of Canada.This book covers just about everything;but in very scant detail.There are 288 pages,a pletora of pictures,sketches,maps,and photos;but every 2 pages is a different topic.For instance,pages 154 and 155 cover Southeastern Subtropical Forests;way too big a subject for 2 pages,including half of which consists of about 8 picturss and sketches..This book is so broad and tries to cover so much,that I wonder what value it has.One would certainly not carry it in the field as a \"Companion\".It's too big,too heavy and no detail for any area.It is more of a catalogue than a FIELD GUIDE.As to what this book might be useful for;I can go along with Margo,who felt it might be useful in the classroom.Even then it's use would be more appropriate at the lower grade level.It's certainly constructed to take a lot of wear and tear.I would not recommend its use as a field guide or as a gift for someone who does walk and enjoys nature.While the book covered so many things;I can't remembering one of the most important things about nature walking,namely the issue of trespassing;either knowingly or unintentionally.This is particularly important in areas one is not familiar with.Here are a few signs one might encounter:NO TRESSPASSING WITHOUT PERMISSIONIF THIS SIGN IS UNDER WATER THE ROAD IS IMPASSIBLETHIS PROPERTY IS PROTECTED BY SMITH & WESSONTRESPASSERS WILL BE SHOT,SURVIVORS WILL BE SHOT AGAINTHE FARMER ALLOWS WALKERS TO CROSS THE FIELD FOR FREE,BUT THE BULL CHARGESAs you can see,some of these signs might seem funny,but anytime you go on private property,it's a serious matter.If in doubt,check first.",
+                "review/helpfulness": "7/9",
+                "num_reviews": 9
+            }
+        ]
+    },
+    {
+        "Title": "mathematical models in biology",
+        "description": "Mathematical Models in Biology is an introductory book for readers interested in biological applications of mathematics and modeling in biology. A favorite in the mathematical biology community, it shows how relatively simple mathematics can be applied to a variety of models to draw interesting conclusions. Connections are made between diverse biological examples linked by common mathematical themes. A variety of discrete and continuous ordinary and partial differential equation models are explored. Although great advances have taken place in many of the topics covered, the simple lessons contained in this book are still important and informative. Audience: the book does not assume too much background knowledge--essentially some calculus and high-school algebra. It was originally written with third- and fourth-year undergraduate mathematical-biology majors in mind; however, it was picked up by beginning graduate students as well as researchers in math (and some in biology) who wanted to learn about this field.",
+        "authors": "['Leah Edelstein-Keshet']",
+        "infoLink": "https://play.google.com/store/books/details?id=uABYP1hnsf0C&source=gbs_api",
+        "review": [
+            {
+                "review/text": "There are lots of books about mathematical modeling, and many of them cover biological systems. But no book I've ever seen even comes close to the quality of this beautiful work by Edelstein-Keshet. So what is it that makes this book so special? First of all, the book is both accessible and self-contained. Just start at the beginning, and you're guaranteed to learn A LOT of math. Second, the style of writing and the way in which the author presents the material is utterly beautiful. It is impossible NOT to understand, but the material is not at all 'chewed out' for the reader. Third of all, the book really encourages the reader to pick up pen and paper, go out there and MODEL something; dozens of inspiring and high-quality exercises and research projects are to be found throughout the book. Fourth, the various techniques are easily applied to non-biological problems. Fifth, the book will help to gain insight in the qualitative aspects of biological phenomena. What Peter Atkins is to chemistry, Edelstein-Keshet is to mathematical biology. Sadly, she is not as widely known. Get this book while you can!",
+                "review/helpfulness": "33/34",
+                "num_reviews": 34
+            },
+            {
+                "review/text": "A classic textbook in mathematical biology, and still one of the best I know. It is a testament to the quality of this book that many other textbooks that have been published after it essentially follow the template of this book.No other book does a better job at explaining clearly and concisely the biological background. The tone is precise and approachable without being aloof.There are two flaws about this book: One is the mathematical exposition, which is sometimes simply wrong. (The whole section about the Hopf bifurcation is very poor, and I couldn't use this section in classes I taught. It has to be supplemented by other textbooks.) The other, related, flaw is the flood of typos. This is the text with the most typos I've ever seen. (The latest errata list has 16 pages, and there are still many unlisted typos.) And this is the second edition! Normally typos don't bother me too much, but there are so many here that it truly becomes a nuisance.Overall, though, this is a good textbook. I wish the author would decide to update the text and clean up the typos and some of the math sections.",
+                "review/helpfulness": "5/7",
+                "num_reviews": 7
+            },
+            {
+                "review/text": "This is a nice introductory book on math biology models. It is easy to understand and a necessary reading for those who want to approach more difficult books such as Mathematical Physiology. The exercises presented are useful for active learning of this topic.Be aware: this book requires prior knowledge of calculus (differential equations, partial derivatives, Taylor series expansion...).",
+                "review/helpfulness": "7/7",
+                "num_reviews": 7
+            },
+            {
+                "review/text": "This is one of the best books I have read in Math. biology. I strongly propose that a second updated paperback edition is done so that many students will benefit from it.",
+                "review/helpfulness": "4/6",
+                "num_reviews": 6
+            },
+            {
+                "review/text": "This is an excellent book for teaching. However due to the rapid progress in the field I hope that the auther will consider a new and enlarged version of the book. Also a paperback edition will be helpful especially for thos in third world countries.I thank the auther for this book.",
+                "review/helpfulness": "3/4",
+                "num_reviews": 4
+            },
+            {
+                "review/text": "The book is very easy to read and appropriate for undergraduate and postgraduate level, whether it be review or introduction to a particular topic. The biology and how it relates to the mathematics is clearly explained. Overall I would highly recommend this book to students entering the biomathematics arena or who simply have an interest in this area.",
+                "review/helpfulness": "3/3",
+                "num_reviews": 3
+            }
+        ]
+    },
+    {
+        "Title": "advanced engineering mathematics 8th edition",
+        "description": "O'Neil's ADVANCED ENGINEERING MATHEMATICS, 8E makes rigorous mathematical topics accessible to today's learners by emphasizing visuals, numerous examples, and interesting mathematical models. New Math in Context broadens the engineering connections by demonstrating how mathematical concepts are applied to current engineering problems. The reader has the flexibility to select from a variety of topics to study from additional posted web modules. Important Notice: Media content referenced within the product description or the product text may not be available in the ebook version.",
+        "authors": "[\"Peter V. O'Neil\"]",
+        "infoLink": "http://books.google.com/books?id=qZRdzgEACAAJ&dq=Advanced+Engineering+Mathematics+8th+Edition&hl=&source=gbs_api",
+        "review": [
+            {
+                "review/text": "I am currently using this massive book as it is the required text for my Engineering Math I course (MS Mech Eng). I heartily agree with others who claim to find this book is not thorough enough in the subjects it covers. BUT, out of curiosity I have delved into the book and studied the chapters covering material I am familiar with I saw in previous courses (Diff Equations, 4 Calculus courses, Control Systems, Linear Systems, Numerical Methods) and I have to say... it is an ALL encompassing book, and the tremendous amount of material in it has is a credit to itself. Do not criticize this book because you failed in understanding a subject when using it, I myself am currenly a victim of this situation. Go find a book which treats only the topic (Laplace, Fourier, Linear Algebra, etc.) you're covering now, study it, and return it. Keep Kreyszig's as a handy reference. Mathematics is an extensive science, this &quot;handbook&quot; for us beginners is one of the best there is. Question: Did any of you Mechanical Engineers use MARKS' Handbook for your Fluid Mechanics course, or Shigley's Machine Design Handbook for learning how to design gears?",
+                "review/helpfulness": "57/64",
+                "num_reviews": 64
+            },
+            {
+                "review/text": "This book is great as a reference. You are trying a problem in Complex Analysis, and you are stuck, and you want to recall the Cauchy Integral Theorem for multiply connected domains, and thats when you need an excellent resource like this one. Flip a few pages, get what you want, and get back to the problem.BUT, if you want to LEARN things, if you want to know WHAT a multiple connected domain is, what the various theorems are, then NO....Kreyszig isnt what you need.You need a textbook in Complex Analysis then, not a All-in-One reference manual, which is what Advanced Engineering Mathematics by Kreyszig actually is.I will give it three stars, because it really is very comprehensive, an excellent addition to a Math Majors library. Or for that matter, to even an engineers library, but it certainly cannot be used to learn things for the first time.Its a very good reference text, assuming you have learnt your ABCs from somewhere else. Although it covers a lot, it doesnt cover things in a way that would motivate students to learn new ideas or concepts. Its a mathematical cook-book, its only got the array of techniques in it, not the theory and the motivation.For those, you need to try the traditional textbooks in the different areas.",
+                "review/helpfulness": "25/27",
+                "num_reviews": 27
+            },
+            {
+                "review/text": "This book is an all-encompassing book dealing with all (I am not joking) topics of advanced engineering mathematics required by practicing engineers and students. This is not meant to be used as an introductory text during a math course but as a reference manual for practical applications once you go beyond your math course. If you are looking for a comprehensive math book with consistent notation and style of writing, look no further-get this book.",
+                "review/helpfulness": "17/18",
+                "num_reviews": 18
+            },
+            {
+                "review/text": "Having worked thru' the Kreyszig book as an ugrad in EE, back in the late 70s in India, and then reading the various editions of the same book by Prof. Kreyszig, I am appalled at the mindless apathy for the book as shown in the Amazon website by some readers. For a lack of a better word, I believe that most of these readers have a very warped up sense of applied mathematics - that is mathematics as it applies to solution of engineering problems. Kreyszig's book is a goldmine of information, and its latest edition contains a whole slew of carefully chosen problems that are worked out plus homework exercises to aid the student in mastering the necessary analytical techniques essential to solving problems.I have observed that of late in USA there is a lot of acerbic hostility towards mathematics. Most of the readers (including the teacher and the taught) express their displeasure if they cannot &quot; sell &quot; mathematics like some commodities in a grocery store. The students on the other hand, being too pampered by the existing escapism in a society are reluctant to accept the rigors of any mathematical training and hence are most unhappy if a math. text demands some discipline in terms of focussed concentration and thinking. It is excepected and unfortunate that such critics shall continue to judge such well-written and comprehensive texts on applied mathematics (such as Kreyszig) most boring and their displeasure is a substitute for more cogent and incisive analytical review.",
+                "review/helpfulness": "12/15",
+                "num_reviews": 15
+            },
+            {
+                "review/text": "It is not unusual for those who failed to pass (or understand) their courses to look for cheap scapegoats. Some have blamed their lecturers, and some have blamed their textbooks. But I am not swayed!Thus, despite all the negative rantings some reviewers have labelled against this \"Advanced Engineering Mathematics\", I will advise you to see for yourself. This book is superb! Erwin Kreyszig should be honoured with a twenty-one gun salute, for compiling this outstanding compendium.The way this book dissected Numerical Methods, Differential Equation, and Vector Calculus, will rouse envy in many academic circles. The same applies to its unsurpassed analyses of Oscillation Matrices, Quantum Symmetries, and Linear Algebra. I wonder why all those condemnations! In fact, I will advise those complainants to go back to primary school.As its name depicts, this text is an advanced book, and not an introductory one. Still, its author took the necessary pains in tabling an uncomplicated presentation. I will, with great pleasure, recommend it to any Engineering or Science student who needs an advanced mathematics textbook.",
+                "review/helpfulness": "12/14",
+                "num_reviews": 14
+            },
+            {
+                "review/text": "This book tries to do it all, which is impossible. It covers the basics of a wide, wide variety of engineering problems, including ordinary and partial differential equations, Fourier series, differnetial forms, graph theory, linear algebra, complex variables, probablilty and statistics, vector calculus, numerical and computer methods and so on, and is undoubtedly the best book if you want a wide overview of the problems with less attention paid to theory and much attention paid to problem-solving techniques, but there is so much to cover, that there is not really any roomm left for really advanced topics. Tensors are not even mentioned as are topics in variational calculus, and the discrete math and numerical methods chapters are barely touched upon at all in much depth. So if you want a sophmore-junior level enginerring text, this makes for a great textbook and general reference book, but should not really be considered an &quot;advanced&quot; text. Great for up and coming engineers, but is not enough by itself.",
+                "review/helpfulness": "11/14",
+                "num_reviews": 14
+            },
+            {
+                "review/text": "I've had for some time the 6th Ed. of this text, and I never liked it, due in part to the tiny print. Recently in a graduate engineering course I had to repair a deficiency I was unaware that I had in working with differential equations. I found this text enormously helpful. The author's examples were right &quot;on the money.&quot; The manner in which he had everything well organized for reference was also helpful. One of the critiques I saw here seemed to fault the book for inadequate examples (i.e., &quot;solutions&quot;). I notice that the publisher now has a &quot;Student Solutions Manual for Advanced Engineering Mathematics&quot; which at least one reader claims is very good. If it is good, it is a credit to the author for trying to go a step further to answer this kind of need. In principle, I think readers are correct who criticize texts that are unhelpful in this way -- which, for example, have numerous, difficult problems for the reader to work on, and by comparison have a negligible number of explanatory examples for the reader to learn from in order to be able to solve the problems. The text winds up representing to the reader knowledge that he never acquired nor ever could acquire using the text itself, when it should be the other way around. However, I feel from personal experience that this text deserves to have much more good said about it than bad in this area.",
+                "review/helpfulness": "8/10",
+                "num_reviews": 10
+            },
+            {
+                "review/text": "The popular recommended 'text book' that this is, it really takes on a task too large to condense into some 1100 pages. You just can't do that. Okay, if you're great at Math and want to revise yuor concepts of have a quick reference, this is a decent book. Well, much better than decent. BUT, and here's what matters, if you want to UNDERSTAND what engineering math is about, you absolutely have to get text books for each of the subjects Kreyszig deals with: Gilbert Strang's Linear Algebra, DiPrima/Boyce for ODE and so on...this book won't get you there. Having said that, no book can do that!",
+                "review/helpfulness": "7/8",
+                "num_reviews": 8
+            },
+            {
+                "review/text": "This is the book I used as a student and a graduate student and it is still the book I use as a reference book as a doctoral student! It is the complete reference textbook for any engineering mathematics student (and any student of applied mathematics). Though it is more difficult to use than Stroud (hence only 4 stars) it covers each topic in much more depth and also covers topics which Stroud does not even in his Advanced volume. I would recommend using Stroud first to learn the topic and then this book to master it. For the more advanced topics such as partial differential equations and advanced vector calculus this book is matchless. A must have reference book for any engineering/physical sciences student/researcher.",
+                "review/helpfulness": "8/8",
+                "num_reviews": 8
+            },
+            {
+                "review/text": "This book is designed to be taught as part of a year long survey course covering those topics in Mathematics most often used by engineers. It is not, nor does claim to be, a definative text of all engineering mathematics. This book is generally used as part of a review course in first year graduate level engineering mathematics. It is expected that you have seen these topics before in a formal course.If you are looking for a book with a more in depth treatment of one or all of the subjects covered in this book, look for something published by Springer Verlag and expect to pay out a lot more money.If you are looking for a good introductory book then look for the Engineering Mathematics books by K.A. Stroud. They are elementary in there treatment and leave the proofs for the student to do. However, no formal knowledge of the subject is required and the reader is introduced to each subject in a simple easy to read format.Finally, A good overall book for upper level undergraduate and first year graduate students in any science discipline is Basic Training in Mathematics by Shankar.",
+                "review/helpfulness": "8/8",
+                "num_reviews": 8
+            }
+        ]
+    },
+    {
+        "Title": "cold sassy tree",
+        "description": "The town of Cold Sassy, Georgia is scandalized on July 5, 1906 when E. Rucker Blakeslee, a widower for three weeks, eloped with Love Simpson, a northerner.",
+        "authors": "['Olive Ann Burns']",
+        "infoLink": "http://books.google.com/books?id=qFylPwAACAAJ&dq=Cold+Sassy+Tree&hl=&source=gbs_api",
+        "review": [
+            {
+                "review/text": "Who can fail to love this wonderful novel, full of warmth, humor, and honesty, of life in a small, turn-of-the-century Georgia town. Told by Will Tweedy, a 14yo child whose Grandpa Rucker forms the spine of the novel. The story begins with the death of Grandpa Rucker's wife, a saintly woman beloved by all, and there's a lovely scene of Grandpa asking his grandson to cut all the roses from the garden and help him stick them into burlap sacking to make a blanket of roses under which to bury his wife.After that touching scene, readers - not to mention family members and townsfolk and church people - are shocked to find Grandpa marrying Miss Love, the town's young and beautiful milliner less than a month later. And it's suspected that Miss Love has A Past.A beautiful coming-of-age story unfolds as Will becomes the confidante of Miss Love and his grandfather, and he learns life-changing lessons about love, life, death, and the meaning of true reverence, and the smallness of some minds.Wonderful, memorable characters, wonderful life lessons, wonderful set pieces. And absolutely top-notch dialogue.",
+                "review/helpfulness": "72/78",
+                "num_reviews": 78
+            },
+            {
+                "review/text": "For anyone who read books like To Kill a Mockingbird, or The Adventures of Huckleberry Finn and enjoyed them, I would suggest reading the national bestseller Cold Sassy Tree. This novel takes place in Cold Sassy, Goergia, in 1906. The town is slow-moving, and prejudice like Maycomb County in To Kill a Mockingbird. The story unfolds as Will Tweedy's, the main character,beloved grandmother dies. Scandal errupts when, only three weeks later, Will's granfather elopes with Miss love Simpson. The town cannot believe that he has married a &quot;yankee&quot; just after his wife's death. The major conflict of the story is between Miss Simpson and Will's family and town as to whether or not they can accept her taking grandma's place. But the important, underlying conflict of this book is if granpa can move on with his life, find love again, and find someway to convince the people of the town that Miss Love Simpson isn't the cold-hearted person they think she is. This book is seen through the eyes of Will Tweedy, a 14 year old boy growing up in a southern town, so, although the words are simple, there is a deeper message about love, death, feelings, and morals. I also learned a lot about southern life through this book. All in all, Cold Sassy Tree was a great book that I would reccommend to anyone. It discussed how much death can change a life forever. Read it! I guarantee you'll enjoy it.",
+                "review/helpfulness": "38/45",
+                "num_reviews": 45
+            },
+            {
+                "review/text": "... I was required to read this book in school. Being biased against the tedious, coming-of-age novels that always seem to find themselves on my reading list for English class, I immediately labeled Cold Sassy Tree under the &quot;dragging, bland, slow-moving&quot; category. My viewpoints have changed since then. Cold Sassy Tree is a fast-paced, interesting novel about the coming-of-age of a fourteen-year-old boy named Will, who grows up in Cold Sassy, Georgia. A major family conflict sets off the cruel, small-town gossipers of Cold Sassy in the beginning of the book. As the books progresses, several smaller plots take place, which support the theme and thus complicate the story. There are some points in the novel where it seems that Will's family's reputation has gone to the dogs. In the end, however, everything works out and Will learns lessons about life, love, and dignity. For the romantic, Cold Sassy Tree covers the acceptnace of so-called &quot;odd couples.&quot; For the religious, Cold Sassy Tree questions theological issues. And for teenage boys also coming of age, Cold Sassy Tree views life from the eyes of a fourteen-year-old (as well as comments on the opposite sex).",
+                "review/helpfulness": "26/28",
+                "num_reviews": 28
+            },
+            {
+                "review/text": "I love a good novel and I'm glad our bookclub chose this one. It's a humorous and touching story about life in the south.I recommend it as much as I would \"To Kill A Mockingbird\".",
+                "review/helpfulness": "21/23",
+                "num_reviews": 23
+            },
+            {
+                "review/text": "I read this book for school over the summer. Now that I've finished, I am so happy it was assigned. This was one of those books that you miss when your done reading.It takes place in the small town of Cold Sassy, Georgia in the early 1900s. The story is told by a 14 year old boy who has recently lost his best friend and his grandmother. Three weeks after his grandma's death his Grandfather announces that he is going to marry a young woman who is half his age. The family is embarrassed and the town is shocked. After almost a year the town and family starts to accept her the way she accepted them.I wrote this review as a response to other reviews that I read on the site. Frankly, I was outraged by what some people had to say about this book. Someone claimed that the Grandfather raped his granddaughter and one of the boys friends raped his own sister. I don't know what version he read but that was not at all a part of the story!!! The woman the grandfather married tells that she was raped as a child but that was the only raping that went on in the book, and it was needed to explain why she was so afraid of marring and men. Another person said that a child getting whipped is \"HORRIFYING\" but that was part of the culture back then. People do not agree with it now but back then it happened all the time. There was also a touch of racism in the plot but again it was needed so that Olive Burns could accurately portray southern life in the early 20th. century.This book was a joy to read and I cannot wait to get the 2nd. part Leaving Cold Sassy. I hope you enjoy it as much as I did.",
+                "review/helpfulness": "21/23",
+                "num_reviews": 23
+            },
+            {
+                "review/text": "Cold Sassy Tree, a novel written by Olive Ann Burns, is a very realistic and easy to read book. The characters are very real and entertaining in their everyday life. I liked this book because you feel like you are right there listing to the author tell you about the life of the main character. Also this story is easy to read and follow. There is never a dull moment and every chapter is filled with excitement and adventure. The story takes place on a farm where a young boy is forced to deal with his grandfather who does not follow the normal way of life that the other people in Cold Sassy do. As he grows older the boy learns that he is more like his grandfather than he thought. This boy now must make the decision to follow in the family business, or like his grandfather, follow a different path of life from those people in Cold Sassy. This book is filled with laughs and good times. The ending has an exciting unexpected twist that will leave the reader wanting to read the sequel, Leaving Cold Sassy.",
+                "review/helpfulness": "18/20",
+                "num_reviews": 20
+            },
+            {
+                "review/text": "Cold Sassy Tree is about a boy, his family, and a town growing out of the narrow-mindedness prevolent in society in the early 1900's. The talent of this writer to describe characters and their feelings is unparalleled. You can picture Grandpa's ranting and raving, as well as Will's mischevious face. I would not recommend this book to everyone. If you have never lost someone close to you, don't read it. You just won't understand. There is racism in this book, but it serves a purpose. The people of that time period felt that way. It was necessary for Burns to portray people in that manner to present a believable story. The odd thing is small towns today still have the same basic hierarchy and people's reactions to scandal aren't different from those of people who lived century ago. For Southerners who have strong family ties, or wish they did, this book is a must read. It is filled with tragedy, love, wisdom, and acceptance. Don't miss out.",
+                "review/helpfulness": "16/19",
+                "num_reviews": 19
+            },
+            {
+                "review/text": "I feel about this book as someone once said of Mark Twain's HUCKLEBERRY FINN: &quot;I envy the reader who hasn't read it, the experience of reading it for the first time.&quot;14-year-old Will's best friend, Blu, has died as has his cherished Grandma Tweedy. Will is still grieving when his Grandpa Tweedy announces his plan to marry pretty Miss Love Simpson. Will's family and the town are scandalized -- poor Granny has been gone only three weeks!With the loving acceptance of innocent youth, Will approves of his new grandmother. He likes her and he certainly likes the affect she has on his dear grandpa. He becomes their friend, confidant and defender.Will's youthful adventures are woven before the background of this May/December romance. Will learns to drive a car. He is trapped on a trestle by and onrushing train. When the pressure is on, Will is resourceful.Olive Ann Burns's first book is destined to become a contemporary classic. The story of Will Tweedy is Burns's own father's story, gleaned from family reminiscences and local newspaper stories. It's light, refreshing and entertaining reading. It is definitely on my to-read-again list.",
+                "review/helpfulness": "11/13",
+                "num_reviews": 13
+            },
+            {
+                "review/text": "It's difficult to believe that \"Cold Sassy Tree\" is Olive Ann Burns' first novel. It's just too good.The book is an affectionate portrait of rural Georgia in 1906, seen through the eyes of a 14-year-old boy (based on Burn's own father). The writing is by turns funny, moving, and profound, but always vividly descriptive. Of particular note is Burns' ability to handle Southern dialect in a fluid and controlled manner that is very easy to read. The colorful characters are complex and richly developed.Burns employs an interesting literary device of mentioning an event or person in passing near the end of one chapter and then focusing on that event or person in detail in the next chapter. It has the effect of interrupting a storyteller by saying, \"Wait, who was that, now?\" and the storyteller replying, \"Oh, didn't I mention him before? Well, let me tell you!\" It's a very effective technique for a novel of this kind.\"Cold Sassy Tree\" is one of the finest novels I have ever read.",
+                "review/helpfulness": "10/12",
+                "num_reviews": 12
+            },
+            {
+                "review/text": "I truly loved 3/4 of this book. It was reminiscent of the the Fannie Flagg books that I have loved so much, beginning to end. It is the story of a small town in 1906 Georgia, told through the eyes of a 14 boy. It never seems that someone can make a book out of the lives of themselves and their family, but yes, someone can! I enjoyed reading the narrator's adolescent shenanigans and loved and hated his wise, but over bearing grandfather.The last three quarters were taken up by depressing subject matter and Grandpas musings over God, death and generally the meaning of life. Once I found out that the author was diagnosed with a serious illness while writing the book, I understood Grandpa's insights and thoughts were probably her own.Overall, though, enjoyable, light reading...until the last 100 pages.",
+                "review/helpfulness": "9/12",
+                "num_reviews": 12
+            }
+        ]
+    },
+    {
+        "Title": "an introduction to boundary layer meteorology atmospheric and oceanographic sciences library",
+        "description": "Part of the excitement in boundary-layer meteorology is the challenge associated with turbulent flow - one of the unsolved problems in classical physics. An additional attraction of the filed is the rich diversity of topics and research methods that are collected under the umbrella-term of boundary-layer meteorology. The flavor of the challenges and the excitement associated with the study of the atmospheric boundary layer are captured in this textbook. Fundamental concepts and mathematics are presented prior to their use, physical interpretations of the terms in equations are given, sample data are shown, examples are solved, and exercises are included. The work should also be considered as a major reference and as a review of the literature, since it includes tables of parameterizatlons, procedures, filed experiments, useful constants, and graphs of various phenomena under a variety of conditions. It is assumed that the work will be used at the beginning graduate level for students with an undergraduate background in meteorology, but the author envisions, and has catered for, a heterogeneity in the background and experience of his readers.",
+        "authors": "['Roland B. Stull']",
+        "infoLink": "http://books.google.com/books?id=oI0PswEACAAJ&dq=An+Introduction+to+Boundary+Layer+Meteorology+(Atmospheric+and+Oceanographic+Sciences+Library)&hl=&source=gbs_api",
+        "review": [
+            {
+                "review/text": "R. Stull makes a comprehensive and profound review of the boundary layer meteorology in his book. I consider this book to be a most useful tool for any scientist concerned with the troposphere, for all environmental engineers having to do with air quality, and for all micrometeorologists. Just like a hammer! One of the first to get for one's library. It contains the general descriptions of the usual subjects, thoroughly and well explained. Then it also contains extensive descriptions of different models used to make calculations. This is why I am willing to pay its... unfortunately not-very-low price.",
+                "review/helpfulness": "10/12",
+                "num_reviews": 12
+            },
+            {
+                "review/text": "Very comprehensive book, cover all the important topics in Boundary Layer phenomena's: friction - turbulence - stability -fluxes- advection of atmospherics' variables etc' . It is suitable for a student who has already some familiarity with Physics and Calculus (including several variables, vector calculus and partial derivative) I think its excellent book in a fair price.",
+                "review/helpfulness": "3/4",
+                "num_reviews": 4
+            }
+        ]
+    },
+    {
+        "Title": "ism finite math fmlss 7e",
+        "description": "College Algebra provides a comprehensive exploration of algebraic principles and meets scope and sequence requirements for a typical introductory algebra course. The modular approach and richness of content ensure that the book meets the needs of a variety of courses. College Algebra offers a wealth of examples with detailed, conceptual explanations, building a strong foundation in the material before asking students to apply what they've learned. Coverage and Scope In determining the concepts, skills, and topics to cover, we engaged dozens of highly experienced instructors with a range of student audiences. The resulting scope and sequence proceeds logically while allowing for a significant amount of flexibility in instruction. Chapters 1 and 2 provide both a review and foundation for study of Functions that begins in Chapter 3. The authors recognize that while some institutions may find this material a prerequisite, other institutions have told us that they have a cohort that need the prerequisite skills built into the course. Chapter 1: Prerequisites Chapter 2: Equations and Inequalities Chapters 3-6: The Algebraic Functions Chapter 3: Functions Chapter 4: Linear Functions Chapter 5: Polynomial and Rational Functions Chapter 6: Exponential and Logarithm Functions Chapters 7-9: Further Study in College Algebra Chapter 7: Systems of Equations and Inequalities Chapter 8: Analytic Geometry Chapter 9: Sequences, Probability and Counting Theory",
+        "authors": "['Jay Abramson']",
+        "infoLink": "http://books.google.com/books?id=hGGatAEACAAJ&dq=ISM+Finite+Math+F/MLSS+7e&hl=&source=gbs_api",
+        "review": [
+            {
+                "review/text": "This was the text book that was used in a course I took in Finite Math. Do not waste your time or money on this book. It does not go into any depth whatsoever, many of the thereoms shown were just pulled out of the authors hat without any proof of any kind. I honestly, had a hard time staying awake as I would read it, since it is so dull. It places far too much emphasis on phony applications and almost known on good solid theory. I only wish I could give this book a negative rating.",
+                "review/helpfulness": "11/13",
+                "num_reviews": 13
+            },
+            {
+                "review/text": "This was the required text for my Finite Mathematics class. There is absolutely no detailed information. Students have virtually no tools to apply to problem solving. Apparently there is also no student workbook to demonstrate the steps that Tan failed to illustrate in this text. Slow painful torture is preferable to the struggle one faces when trying to make progress through this textbook.",
+                "review/helpfulness": "6/7",
+                "num_reviews": 7
+            },
+            {
+                "review/text": "This book is not nearly as bad as the other reviews indicate. I teach a course in finite mathematics at the college level and I examined it for possible adoption as a textbook. While it is not the best text I have seen, so I will not be using it, the quality is just below that of the book I use. Therefore, I would have no trouble using this book in my class.The coverage in college courses in finite mathematics is standard and this book adheres to those standards. Topics are introduced via worked examples; there are exercises at the ends of the sections and review questions at the end of the chapters. The writing is clear, and the explanations are thorough. Solutions to the odd numbered exercises and all of the review exercises are included. While I hesitate to strongly recommend this book as a text, there is no delay in saying that it is one of the better options available.",
+                "review/helpfulness": "6/7",
+                "num_reviews": 7
+            },
+            {
+                "review/text": "I hated this stupid textbook, which I was required to have for a college math course. There are homework problems which the book does not give examples for. The examples it does give are extremely not helpful, especially if you are not a genius at math. My teacher explained things better, and he was foreign with an incomprehensible accent. Don't buy this crappy book if you can avoid it.",
+                "review/helpfulness": "2/3",
+                "num_reviews": 3
+            },
+            {
+                "review/text": "I teach Finite Mathematics at the community college level, and have no problem with this textbook. While the book is not uniquely good, I think that some of the complaints leveled against the text are a little off-base. First, the book does not assume that the student has no calculator. Many sections include an addendum showing how to perform the pertinent tasks on their calculator, and the book includes a calculator tutorial.Further, while it is true that the textbook doesn't dedicate much energy to theorems, that is somewhat irrelevant. This is an applied mathematics text; it exists to show a student how to use concepts. It does not exist to discuss the origin of these concepts. That is beyond the scope of the text, and presumably beyond the scope of any course utilizing the book.This is a perfectly usable textbook, but don't expect miracles. Many students will see matrices and mathematical game theory for the first time in this text. Doing Gauss-Jordan by hand is slow, tedious work. The book can't change these types of facts. As always, math is a language. The way you learn a language is by practicing and practicing until one day you find you understand the conversation.",
+                "review/helpfulness": "2/2",
+                "num_reviews": 2
+            }
+        ]
+    },
+    {
+        "Title": "physical chemistry understanding our chemical world",
+        "description": "Understanding Physical Chemistry is a gentle introduction to the principles and applications of physical chemistry. The book aims to introduce the concepts and theories in a structured manner through a wide range of carefully chosen examples and case studies drawn from everyday life. These real-life examples and applications are presented first, with any necessary chemical and mathematical theory discussed afterwards. This makes the book extremely accessible and directly relevant to the reader. Aimed at undergraduate students taking a first course in physical chemistry, this book offers an accessible applications/examples led approach to enhance understanding and encourage and inspire the reader to learn more about the subject. A comprehensive introduction to physical chemistry starting from first principles. Carefully structured into short, self-contained chapters. Introduces examples and applications first, followed by the necessary chemical theory.",
+        "authors": "['Paul M. S. Monk']",
+        "infoLink": "http://books.google.nl/books?id=9qVpoDH00pEC&dq=Physical+Chemistry:+Understanding+our+Chemical+World&hl=&source=gbs_api",
+        "review": [
+            {
+                "review/text": "This book does a great job at discribing the conceptual aspects of basic p.chem topics like thermodynaics, kinectics and photochemistry. Unfortuently it only breafly explaines the mathmatical aspects and in little detail, making the book unsutible for anythig except a low level class. The book also suffers from a severe lack of practice problems. If you only need to understad the basic concepts of p.chem this book cannot be beat, but if you need to know the nitty gritty mathmatical deatials you will be hurting at test time.",
+                "review/helpfulness": "5/6",
+                "num_reviews": 6
+            },
+            {
+                "review/text": "This book is everything it says it is. I am in school to be a chem teacher and P chem has been mind boggling. The many examples gets a person into thinking like a p chemists and this is invaluable when trying to set up the math problems in an acutal class. If you understand your Calc the math isn't the issue in passing p chem its setting up the math. This book is a must read for any under grad chemist. I am going to write the author this book is a master piece. Simple and to the point with lots of real world examples.",
+                "review/helpfulness": "4/6",
+                "num_reviews": 6
+            }
+        ]
+    },
+    {
+        "Title": "advanced engineering electromagnetics",
+        "description": "Balanis' second edition of Advanced Engineering Electromagnetics - a global best-seller for over 20 years - covers the advanced knowledge engineers involved in electromagnetic need to know, particularly as the topic relates to the fast-moving, continually evolving, and rapidly expanding field of wireless communications. The immense interest in wireless communications and the expected increase in wireless communications systems projects (antenna, microwave and wireless communication) points to an increase in the number of engineers needed to specialize in this field. In addition, the Instructor Book Companion Site contains a rich collection of multimedia resources for use with this text. Resources include: Ready-made lecture notes in Power Point format for all the chapters. Forty-nine MATLAB programs to compute, plot and animate some of the wave phenomena Nearly 600 end-of-chapter problems, that's an average of 40 problems per chapter (200 new problems; 50% more than in the first edition) A thoroughly updated Solutions Manual 2500 slides for Instructors are included.",
+        "authors": "['Constantine A. Balanis']",
+        "infoLink": "http://books.google.nl/books?id=_q35KChOfVwC&dq=Advanced+Engineering+Electromagnetics&hl=&source=gbs_api",
+        "review": [
+            {
+                "review/text": "This is a good introduction to EM for Graduate Students. Having been educated with the physics approach of Jackson this is an excellent EE aproach to electromagnetics (i.e. practical). The best recommendation I can give is that I actually own a copy.",
+                "review/helpfulness": "14/16",
+                "num_reviews": 16
+            },
+            {
+                "review/text": "I worked with this book when i studied microwaves an electromangnetic fields, i must say the author goes in a very deep analysis on each topic with a clear and precise lenguage very suitable for a 4 year, or graduated, student . The part of resonators talking about the superior modes of transmition is magnificent. also the interfaces between diferent media.",
+                "review/helpfulness": "15/15",
+                "num_reviews": 15
+            },
+            {
+                "review/text": "This is an extraordinary book to learn advanced electromagnetics from.Mr Balanis is Greek and it seems to me he uses the same method Socrates invented more than 2000 years ago which is the following as reported by Plato:truth (in this case electromagnetic theory)is present in everyone of us,what is left to the wise educator (teaching engineer)is to make everyone conscious of this inner truth using the most simple method of reducing the whole to its most elementary pieces and then using basic logic for reassemble it in a conscious way.This is exactly Mr Balanis winning strategy:he begins from the most basical things in electromagnetic theory like wave equations ,Poynting vectors and potential theory and then progresses in the clearest possible way to very advanced topics like scattering theory ,integral methods,Green functionts etc.etc.What is wonderful is that you are able to grasp the use of very advanced mathematical objects like special functions (Bessel,Hankel etc.etc.)with a reasonable effort(in many other text of comparable level they suppose you know more or less everything of this stuff!).In the end you are able to actually develop your analytical models for the analysis of real problems.The only improvement of this semi-perfect book would be to explain more of the included Fortran code.I give this book 5 stars! Grazie Mr Balanis!",
+                "review/helpfulness": "9/12",
+                "num_reviews": 12
+            },
+            {
+                "review/text": "In this book Balanis goes into great detail covering the solutions of the wave equation for several important boundary-valued EM problems in different coordinate systems. One of the other reviewers complains of the wordiness in this book and how Balanis' solves both the TE and TM problems in every case. I do not see the faults here as these are fundamental concepts that all graduate level electromagnetics students need to become familiar with. Wordiness, especially to someone unfamiliar with many of the more complex topics in electromagnetics, is only beneficial.Later in the book Balanis includes very basic discussions on the Method of Moments, which are pretty much cut-and-paste from his antenna book. As there are other resources dealing specifically with the MoM, there is really no reason to include it here. Otherwise, a timeless reference that refer to over and over again.",
+                "review/helpfulness": "12/12",
+                "num_reviews": 12
+            },
+            {
+                "review/text": "I am a graduate student at Rio de Janeiro, Brazil (Universidade Federal Fluminense - UFF) and this book is used on the following subjects: Electromagnetics III and as an introduction of Microwaves in the course of Telecommunications Engineering. All the students here, including myself, think that this book is excellent. If you have a good background on basic electromagnetics, calculus (including complex analysys), and love science, this book is a must-have.",
+                "review/helpfulness": "5/6",
+                "num_reviews": 6
+            },
+            {
+                "review/text": "I have many E&M texts primarily because there are so many nuances to learn and I find it important to have different points of view. However, the Balanis text does something the others doesnt. It covers a great deal of ground and puts the multitude of equations into a 'BOX' for easy reference. And all these equations are derived in a very straight forward fashion so a person can remember them and understand their basis. Most texts have the equations all over the place and when trying to solve problems you wonder where to look next. Not so with Balanis. In fact, I have definitely been able to solve E&M problems now after reading his book then I could do before it. If E&M is your field this text is a must.",
+                "review/helpfulness": "6/6",
+                "num_reviews": 6
+            },
+            {
+                "review/text": "I used this book during Electromagnetics I and II. It is very useful specially for topics concerning electromagnetic waves. The mathematical approach is very good and justifies most of the basic Electromagnetic concepts.",
+                "review/helpfulness": "5/6",
+                "num_reviews": 6
+            },
+            {
+                "review/text": "This book is an excellent electromagnetics text. I use it in conjunction with Kraus, and the two together allow you to work almost any problem. -Tom McIntire",
+                "review/helpfulness": "3/3",
+                "num_reviews": 3
+            },
+            {
+                "review/text": "This book is one of the best graduate EM books around. This book is a sort of transition from undergraduate EM to advanced EM (eg: Van Bladel,Weng Cho Chew).All the chapters are lovely. Hardly any typos. Superb mathematical clarity. You can probably solve all the end of chapter problems, if your math background is fine.Balanis is a great author. His other book : Antenna theory is the BEST antenna book.",
+                "review/helpfulness": "2/2",
+                "num_reviews": 2
+            }
+        ]
+    },
+    {
+        "Title": "introduction to vector analysis",
+        "description": "Focusing on vector analysis, this book aims to meet the professional needs of the engineer or scientist, and to give the mathematician an understanding of the three-dimensional versions of the theorems of higher geometry. Concepts are described geometrically and then examined analytically, allowing the reader to visualize a concept before it is formally defined.",
+        "authors": "['Harry F. Davis', 'Arthur David Snider']",
+        "infoLink": "http://books.google.com/books?id=iq4rAAAAYAAJ&dq=Introduction+to+vector+analysis&hl=&source=gbs_api",
+        "review": [
+            {
+                "review/text": "I have the third edition and the latest edition of this book. In my opinion, the later editions have been dumbed down considerably. In addition to developing the basics of vector analysis, the older editions included splendid discussions of curvilinear coordinates, tensor analysis and touched on differential forms (the wedge product being introduced). While the latest edition features appendices covering specific applications such as Maxwells and Navier-Stokes equations, the explanations are far too brief to be of much use. I suggest that interested parties attempt to get used older editions whose content were presumably under the control of Davis (not Snider) being much better written and probably less expensive. The older edition had few typos with very useful and entertaining problem sets. A better alternative book might be \"Vectors and Tensors in Engineering and Physics\" by Donald A. Danielson in paperback.",
+                "review/helpfulness": "16/16",
+                "num_reviews": 16
+            },
+            {
+                "review/text": "This book was used in my vector calculus class at UCSD. I think if I was in one of my upper division engineering classes it would be great to use as a reference to help me figure out problems. However, as a math book alone, this was not too helpful. Many of the explanations lack clarity and are from a mathmatician's point of view (in other words, very difficult for lower division students who are not math majors to understand). Also, a lot of the problems are practically impossible. The only reason I did alright in this class was because I had a great teacher. I would recommend this book for people who are in science or engineering classes and need a superficial introduction to vector calculus, but NOT for math classes that go into deep analysis of vectors.",
+                "review/helpfulness": "4/5",
+                "num_reviews": 5
+            },
+            {
+                "review/text": "I just finished a class on Vector Analysis that used this book. This book is good for those who are interested in vectors. The authors start off with the basics and then move quickly to the more difficult lessons. Basically this text treats the material the same as a calculus text does with a couple of exceptions. First, the book moves more quickly than a calculus text, so if you are shaky on the first part i would advise having a calculus book there with you. Second, this book shows the proofs in a more precise manner that the calculus text that I used (Stewart). You study the same equations and theories, but now you have harder exercises to do at the end of the chapter (with most of the answers in the back of the book). So I would recommend this book to those interested in vectors who are familiar with them. Otherwise you may want to look at a calculus book to get up to speed first.",
+                "review/helpfulness": "3/3",
+                "num_reviews": 3
+            }
+        ]
+    }
+]
