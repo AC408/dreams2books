@@ -360,8 +360,11 @@
         const progressMessages = [
           "Looking through the backend...",
           "Analyzing your dream description...",
+          "Calculating emphasis on keywords...",
+          "Filtering out data...",
           "Comparing dream vibes with book plots...",
           "Finding the best book matches...",
+          "Double checking results with backend..."
         ];
         let currentMessageIndex = 0;
         let progressInterval;
@@ -376,7 +379,7 @@
           setTimeout(() => {
             progressText.textContent = progressMessages[currentMessageIndex];
             progressText.style.opacity = 1;
-          }, 300);
+          }, 500);
         }, 4000);
 
         fetch("/episodes?" + new URLSearchParams({ title: query }).toString())
