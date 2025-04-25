@@ -22,6 +22,9 @@
 
         <div class="search-container">
           <div class="input-box-container">
+            <label for="filter-text-val1" class="input-label"
+              >Describe your dreams (minimum 20 words)</label
+            >
             <div class="input-box">
               <textarea
                 placeholder="Describe your dreams (minimum 20 words)"
@@ -31,12 +34,32 @@
             </div>
             <span id="word-count">0 words</span>
           </div>
-          <div class="input-box">
-            <textarea
-              placeholder="How did you feel about your dream?"
-              id="filter-text-val2"
-              rows="4"
-            ></textarea>
+          <div class="input-box-container">
+            <label for="filter-text-val2" class="input-label"
+              >How did you feel about your dream?</label
+            >
+            <div class="input-box">
+              <textarea
+                placeholder="How did you feel about your dream?"
+                id="filter-text-val2"
+                rows="4"
+              ></textarea>
+            </div>
+          </div>
+          <div class="input-box-container">
+            <label for="genre-selector" class="input-label">Book Genre</label>
+            <select id="genre-selector" class="genre-dropdown">
+              <option value="Any">Any</option>
+              <option value="Fantasy">Fantasy</option>
+              <option value="Mystery">Mystery</option>
+              <option value="Romance">Romance</option>
+              <option value="Horror">Horror</option>
+              <option value="Fiction">Fiction</option>
+              <option value="Biography">Biography</option>
+              <option value="History">History</option>
+              <option value="Adventure">Adventure</option>
+              <option value="Poetry">Poetry</option>
+            </select>
           </div>
           <button id="generate-button" onclick="filterText()" disabled>
             Generate Recommendations
@@ -46,7 +69,7 @@
 
       <div class="results-wrapper">
         <div id="progress-indicator" style="display: none">
-          <p id="progress-text"></p>
+          <span class="loader"></span><span id="progress-text"></span>
         </div>
         <main id="answer-box"></main>
       </div>
@@ -80,19 +103,21 @@
 
         const hasCover = bookId !== "";
 
-        // Format similarity score to 2 decimal places
         const formattedScore = similarity_score
           ? `Similarity: ${parseFloat(similarity_score).toFixed(2)}`
           : "N/A";
 
         return `
         <div class="book-card ${hasCover ? "has-cover" : ""}">
-          <span class="book-rank">${formattedScore}</span>
           ${
             hasCover
-              ? `<div class="book-cover">
-            <img src="${coverImageUrl}" alt="${capitalizedTitle} cover" />
-          </div>`
+              ? `
+              <div class="book-cover-container">
+                <div class="book-cover">
+                  <img src="${coverImageUrl}" alt="${capitalizedTitle} cover" />
+                </div>
+                <span class="book-rank">${formattedScore}</span>
+              </div>`
               : ""
           }
           <div class="book-content">
@@ -119,7 +144,6 @@
               <p class="explanation-title">Important Query Word Matches</p>
               <div class="explanation-tags">
                 ${
-                  // Check if cos_explanation exists and is an array
                   cos_explanation &&
                   Array.isArray(cos_explanation) &&
                   cos_explanation.length > 0
@@ -129,13 +153,12 @@
                             `<span class="explanation-tag">${word}</span>`
                         )
                         .join("")
-                    : '<span class="explanation-tag">N/A</span>' // Display N/A tag if no data
+                    : '<span class="explanation-tag">N/A</span>'
                 }
               </div>
               <p class="explanation-title explanation-hidden">Hidden Correlations Calculation</p>
               <div class="explanation-tags explanation-hidden">
                  ${
-                   // Check if hidden_explanation exists and is an array
                    hidden_explanation &&
                    Array.isArray(hidden_explanation) &&
                    hidden_explanation.length > 0
@@ -145,7 +168,7 @@
                              `<span class="explanation-tag">${word}</span>`
                          )
                          .join("")
-                     : '<span class="explanation-tag">N/A</span>' // Display N/A tag if no data
+                     : '<span class="explanation-tag">N/A</span>'
                  }
               </div>
             </div>
@@ -158,13 +181,15 @@
         document.getElementById("answer-box").innerHTML = "";
         const progressIndicator = document.getElementById("progress-indicator");
         const progressText = document.getElementById("progress-text");
-        progressIndicator.style.display = "none"; // Ensure it's hidden initially
+        progressIndicator.style.display = "none";
 
         const query1 = document.getElementById("filter-text-val1").value;
         const query2 = document.getElementById("filter-text-val2").value;
+        const genreSelect = document.getElementById("genre-selector");
+        const selectedGenre =
+          genreSelect.options[genreSelect.selectedIndex].value;
         const wordCount = query1.trim().split(/\s+/).filter(Boolean).length;
 
-        // Check word count and if second input is filled
         if (wordCount < 20) {
           document.getElementById("answer-box").innerHTML =
             "<div class='error'>Dream description must have at least 20 words.</div>";
@@ -176,9 +201,12 @@
           return;
         }
 
-        const query = query1 + " " + query1 + " " + query2; // Consider refining query combination logic if needed
+        let query = query1 + " " + query1 + " " + query2;
 
-        // --- Start Progress Indicator ---
+        if (selectedGenre !== "Any") {
+          query += " The genre is " + selectedGenre;
+        }
+
         const progressMessages = [
           "Looking through the backend...",
           "Analyzing your dream description...",
@@ -189,29 +217,25 @@
         let progressInterval;
 
         progressText.textContent = progressMessages[currentMessageIndex];
-        progressIndicator.style.display = "block"; // Show the indicator
+        progressIndicator.style.display = "block";
 
         progressInterval = setInterval(() => {
           currentMessageIndex =
             (currentMessageIndex + 1) % progressMessages.length;
-          // Add a fade-out/fade-in effect for the text change
           progressText.style.opacity = 0;
           setTimeout(() => {
             progressText.textContent = progressMessages[currentMessageIndex];
             progressText.style.opacity = 1;
-          }, 300); // Match CSS transition duration (adjust if needed)
-        }, 2500); // Change message every 2.5 seconds
-        // --- End Progress Indicator Setup ---
+          }, 300);
+        }, 4000);
 
         fetch("/episodes?" + new URLSearchParams({ title: query }).toString())
           .then((response) => response.json())
           .then((data) => {
-            // --- Stop Progress Indicator ---
             clearInterval(progressInterval);
             progressIndicator.style.display = "none";
-            // --- Stop Progress Indicator ---
 
-            document.getElementById("answer-box").innerHTML = ""; // Clear just in case
+            document.getElementById("answer-box").innerHTML = "";
             if (data.length === 0) {
               document.getElementById("answer-box").innerHTML =
                 "<div class='no-results'>No books found matching your dream.</div>";
@@ -243,19 +267,17 @@
             });
           })
           .catch((error) => {
-            // --- Stop Progress Indicator on Error ---
             clearInterval(progressInterval);
             progressIndicator.style.display = "none";
-            // --- Stop Progress Indicator on Error ---
             console.error("Error fetching recommendations:", error);
             document.getElementById("answer-box").innerHTML =
               "<div class='error'>Could not fetch recommendations. Please try again later.</div>";
           });
       }
 
-      // --- Input Validation and Button Enabling ---
       const dreamInput = document.getElementById("filter-text-val1");
       const feelingInput = document.getElementById("filter-text-val2");
+      const genreSelect = document.getElementById("genre-selector");
       const generateButton = document.getElementById("generate-button");
       const wordCountDisplay = document.getElementById("word-count");
 
@@ -265,15 +287,12 @@
         const words = dreamText.split(/\s+/).filter(Boolean);
         const currentWordCount = words.length;
 
-        // Update word count display
         wordCountDisplay.textContent = `${currentWordCount} word${
           currentWordCount !== 1 ? "s" : ""
         }`;
-        // Add visual feedback if below limit
         wordCountDisplay.style.color =
           currentWordCount < 20 ? "#e53e3e" : "var(--medium-light)";
 
-        // Enable button only if dream >= 20 words AND feeling has content
         if (currentWordCount >= 20 && feelingText.length > 0) {
           generateButton.disabled = false;
         } else {
@@ -281,14 +300,10 @@
         }
       }
 
-      // Add listeners to both inputs
       dreamInput.addEventListener("input", updateButtonState);
       feelingInput.addEventListener("input", updateButtonState);
 
-      // Initial call to set state
       updateButtonState();
-
-      // --- End Input Validation ---
 
       document
         .getElementById("filter-text-val1")

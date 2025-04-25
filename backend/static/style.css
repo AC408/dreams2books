@@ -71,11 +71,14 @@ body {
   margin-bottom: 40px;
 }
 
-/* Container for input box + word counter */
 .input-box-container {
-  position: relative; /* Needed for absolute positioning of counter */
+  position: relative;
   width: 100%;
-  margin-bottom: 16px; /* Space below the first input area */
+  margin-bottom: 24px;
+}
+
+.input-box-container:first-of-type .input-box textarea {
+  padding-bottom: 30px;
 }
 
 .input-box {
@@ -83,13 +86,12 @@ body {
   border: 1px solid var(--light-accent);
   display: flex;
   align-items: flex-start;
-  padding: 16px 20px;
   width: 100%;
   transition: border-color 0.15s, box-shadow 0.15s;
   background-color: var(--white);
-  background-color: transparent;
   line-height: 1.5;
   padding: 0;
+  overflow: hidden;
 }
 
 .input-box:focus-within {
@@ -104,16 +106,17 @@ body {
   outline: 0;
   font-family: inherit;
   resize: none;
+  padding: 12px 16px;
+  border-radius: 12px;
 }
 
-/* Word Counter Style */
 #word-count {
   position: absolute;
   bottom: 10px;
-  right: 15px;
+  right: 16px;
   font-size: 12px;
   color: var(--medium-light);
-  pointer-events: none; /* Prevent interference with textarea */
+  pointer-events: none;
 }
 
 .search-container button {
@@ -130,10 +133,9 @@ body {
   letter-spacing: 0.2px;
 }
 
-/* Disabled Button Style */
 .search-container button:disabled {
-  background-color: var(--medium-light); /* Lighter background */
-  cursor: not-allowed; /* Indicate non-interactive state */
+  background-color: var(--medium-light);
+  cursor: not-allowed;
   opacity: 0.7;
 }
 
@@ -141,15 +143,14 @@ body {
   background-color: var(--dark-accent);
 }
 
-/* Results Section */
 .results-wrapper {
   height: 100vh;
   overflow-y: auto;
   background-color: var(--light);
   padding: 40px;
+  position: relative;
 }
 
-/* Results Heading */
 .results-heading {
   font-size: 24px;
   font-weight: 500;
@@ -158,12 +159,10 @@ body {
   padding: 0;
 }
 
-/* Results List (formerly Grid) */
 .results-list {
-  /* Renamed from .results-grid */
-  display: flex; /* Changed from grid */
-  flex-direction: column; /* Added */
-  gap: 20px; /* Adjusted gap */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
   padding-bottom: 60px;
 }
 
@@ -174,43 +173,35 @@ body {
   padding: 24px;
   transition: transform 0.2s, box-shadow 0.2s;
   border: 1px solid var(--light-accent);
-  /* Removed fixed height: 300px; */
   display: flex;
   flex-direction: column;
   position: relative;
 }
 
 .book-card.has-cover {
-  padding: 0;
+  padding: 16px 0 0 16px;
   overflow: hidden;
-  display: flex; /* Keep flex for overall row layout */
+  display: flex;
   flex-direction: row;
-  align-items: flex-start; /* Align items to the top */
 }
 
 .book-cover {
-  width: 150px; /* Fixed width */
+  width: 150px;
+  height: 225px;
   flex-shrink: 0;
   overflow: hidden;
-  align-self: stretch; /* Make cover stretch to the card height */
-  position: relative; /* For potential aspect ratio enforcement */
+  position: relative;
 }
 
-/* Enforce aspect ratio (e.g., 2:3) */
 .book-cover::before {
-  content: "";
-  display: block;
-  padding-top: 150%; /* 3 / 2 * 100% = 150% */
+  display: none;
 }
 
 .book-cover img {
-  position: absolute; /* Position image within the pseudo-element space */
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Cover ensures the image fills the space */
-  object-position: center;
+  object-fit: cover;
+  object-position: center top;
   display: block;
 }
 
@@ -218,9 +209,8 @@ body {
   padding: 24px;
   display: flex;
   flex-direction: column;
-  flex-grow: 1; /* Allow content to take remaining space */
-  overflow: hidden; /* Prevent content overflow */
-  /* Removed height: 100%; */
+  flex-grow: 1;
+  overflow: hidden;
 }
 
 .book-card:hover {
@@ -249,18 +239,14 @@ body {
   color: white;
   font-size: 14px;
   font-weight: 500;
-  min-width: 120px;
-  height: 30px;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   border-radius: 4px;
-  position: absolute;
-  top: 12px;
-  left: 12px;
-  z-index: 10;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  padding: 0 12px;
+  padding: 4px 10px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .book-authors {
@@ -270,7 +256,6 @@ body {
   font-weight: 500;
 }
 
-/* Style for the feature tags container */
 .book-features {
   margin-bottom: 16px;
   display: flex;
@@ -279,19 +264,17 @@ body {
   white-space: nowrap;
 }
 
-/* Style for individual feature tags */
 .feature-tag {
   background-color: var(--light-accent);
   color: var(--medium-dark);
   padding: 4px 10px;
-  border-radius: 12px; /* More rounded corners */
+  border-radius: 12px;
   font-size: 12px;
   font-weight: 500;
   line-height: 1.4;
-  white-space: nowrap; /* Prevent tags from wrapping */
+  white-space: nowrap;
 }
 
-/* Explanation styles */
 .explanations {
   margin-top: 16px;
   border-top: 1px solid var(--light-accent);
@@ -302,23 +285,21 @@ body {
   font-size: 12px;
   font-weight: 600;
   color: var(--medium);
-  margin-bottom: 8px; /* Increased spacing */
+  margin-bottom: 8px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
 
-/* Container for explanation tags */
 .explanation-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
-  margin-bottom: 12px; /* Space below tag group */
+  margin-bottom: 12px;
 }
 
-/* Style for individual explanation tags */
 .explanation-tag {
-  background-color: #e2e8f0; /* Slightly different background */
-  color: #4a5568; /* Slightly different text color */
+  background-color: #e2e8f0;
+  color: #4a5568;
   padding: 3px 8px;
   border-radius: 10px;
   font-size: 11px;
@@ -330,12 +311,8 @@ body {
 .book-description {
   color: var(--medium-light);
   font-size: 14px;
-  /* Removed margin-bottom: 16px; */
   line-height: 1.6;
-  /* Removed flex: 1; */
-  /* Removed overflow-y: auto; */
-  /* Removed scrollbar styles - let card handle scrolling if needed */
-  margin-top: 16px; /* Add space above description */
+  margin-top: 16px;
 }
 
 .book-link {
@@ -354,38 +331,47 @@ body {
   border-bottom: 1px solid var(--medium);
 }
 
-/* New Progress Indicator Styles */
 #progress-indicator {
-  /* Remove card styles */
-  /* background-color: var(--white); */
-  /* border-radius: var(--radius); */
-  /* box-shadow: var(--shadow); */
-  /* margin-bottom: 30px; */
-
-  /* Centering styles */
-  position: absolute; /* Position relative to results-wrapper */
+  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  text-align: center;
-  padding: 20px; /* Add some padding */
-  width: 80%; /* Prevent text becoming too wide */
-  max-width: 400px; /* Max width */
-  z-index: 100; /* Ensure it's above other content */
+  padding: 15px 20px;
+  z-index: 100;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.loader {
+  display: inline-block;
+  border: 4px solid var(--light-accent);
+  border-top: 4px solid var(--dark);
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  animation: spin 1s linear infinite;
+  vertical-align: middle;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 #progress-text {
+  display: inline-block;
   font-size: 18px;
   color: var(--medium);
   font-weight: 500;
-  transition: opacity 0.3s ease-in-out; /* Match JS timeout */
-  background-color: rgba(255, 255, 255, 0.9); /* Slight background */
-  padding: 15px 25px;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow-md);
+  transition: opacity 0.3s ease-in-out;
+  margin-left: 10px;
+  vertical-align: middle;
 }
 
-/* Status Messages */
 .no-results,
 .error {
   grid-column: 1 / -1;
@@ -402,7 +388,6 @@ body {
   color: #e53e3e;
 }
 
-/* Responsive Design */
 @media (max-width: 1100px) {
   .container {
     grid-template-columns: minmax(350px, 35%) 1fr;
@@ -436,11 +421,66 @@ body {
   .results-wrapper {
     height: auto;
     padding: 30px 20px;
-    position: relative; /* Needed for absolute positioning of progress indicator */
+    position: relative;
   }
 
   .results-list,
   .loading-grid {
     grid-template-columns: 1fr;
   }
+
+  .book-card.has-cover {
+    flex-direction: column;
+    padding: 16px 16px 0 16px;
+  }
+
+  .book-cover {
+    width: 100%;
+    height: 200px;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .book-cover-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .book-cover img {
+    object-position: center;
+  }
+}
+
+.input-label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--medium);
+}
+
+.genre-dropdown {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: var(--radius);
+  border: 1px solid var(--light-accent);
+  background-color: var(--white);
+  font-size: 16px;
+  font-family: inherit;
+  color: var(--dark);
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23666666%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  background-size: 12px;
+  cursor: pointer;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.genre-dropdown:focus {
+  border-color: var(--medium);
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.05);
+  outline: none;
 }
