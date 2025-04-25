@@ -21,49 +21,186 @@
         <p class="subtitle">Find the perfect book inspired by your dreams</p>
 
         <div class="search-container">
-          <div class="input-box-container">
-            <label for="filter-text-val1" class="input-label"
-              >Describe your dreams (minimum 20 words)</label
-            >
-            <div class="input-box">
-              <textarea
-                placeholder="Describe your dreams (minimum 20 words)"
-                id="filter-text-val1"
-                rows="4"
-              ></textarea>
-            </div>
-            <span id="word-count">0 words</span>
-          </div>
-          <div class="input-box-container">
-            <label for="filter-text-val2" class="input-label"
-              >How did you feel about your dream?</label
-            >
-            <div class="input-box">
-              <textarea
-                placeholder="How did you feel about your dream?"
-                id="filter-text-val2"
-                rows="4"
-              ></textarea>
+          <!-- Step Indicators -->
+          <div class="form-steps" id="step-indicators">
+            <div class="step-indicator">
+              <div class="step active" id="step-1-indicator">1</div>
+              <div class="step-line"></div>
+              <div class="step" id="step-2-indicator">2</div>
+              <div class="step-line"></div>
+              <div class="step" id="step-3-indicator">3</div>
             </div>
           </div>
-          <div class="input-box-container">
-            <label for="genre-selector" class="input-label">Book Genre</label>
-            <select id="genre-selector" class="genre-dropdown">
-              <option value="Any">Any</option>
-              <option value="Fantasy">Fantasy</option>
-              <option value="Mystery">Mystery</option>
-              <option value="Romance">Romance</option>
-              <option value="Horror">Horror</option>
-              <option value="Fiction">Fiction</option>
-              <option value="Biography">Biography</option>
-              <option value="History">History</option>
-              <option value="Adventure">Adventure</option>
-              <option value="Poetry">Poetry</option>
-            </select>
+
+          <!-- Multi-page steps for first-time input -->
+          <div id="multi-step-form">
+            <!-- Step 1: Dream Description -->
+            <div class="form-step" id="step-1">
+              <div class="input-box-container">
+                <label for="filter-text-val1" class="input-label"
+                  >Describe your dreams (minimum 15 words)</label
+                >
+                <div class="input-box">
+                  <textarea
+                    placeholder="Describe your dreams (minimum 15 words)"
+                    id="filter-text-val1"
+                    rows="4"
+                  ></textarea>
+                </div>
+                <span id="word-count">0 words</span>
+              </div>
+              <div class="form-buttons">
+                <button id="next-step-1" class="next-button" disabled>
+                  Next
+                </button>
+              </div>
+              <div class="example-container">
+                <h4>Example Dream Descriptions:</h4>
+                <div class="example-box">
+                  <p>
+                    "I was swimming with elephants in my bathtub and they
+                    started playing trumpets. Then we were in the ocean and the
+                    elephants wore sunglasses. After that my kindergarten
+                    teacher gave me an A+ for playing the trumpet."
+                  </p>
+                </div>
+                <div class="example-box">
+                  <p>
+                    "I was making a sandwich but the sandwich ran away to run a
+                    marathon. I chased it but just couldn't catch up. Eventually
+                    it won the race so I finally caught it but woke up before I
+                    could eat it."
+                  </p>
+                </div>
+                <div class="example-box">
+                  <p>
+                    "I was a lady in the Regency era and I amassed a large
+                    fortune by marrying an agreeable gentleman and inherited the
+                    estate as well. Then we raised a family in our house."
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 2: Dream Feelings -->
+            <div class="form-step" id="step-2" style="display: none">
+              <div class="input-box-container">
+                <label for="filter-text-val2" class="input-label"
+                  >How did you feel about your dream?</label
+                >
+                <div class="input-box">
+                  <textarea
+                    placeholder="How did you feel about your dream?"
+                    id="filter-text-val2"
+                    rows="4"
+                  ></textarea>
+                </div>
+              </div>
+              <div class="form-buttons">
+                <button id="prev-step-2" class="prev-button">Previous</button>
+                <button id="next-step-2" class="next-button" disabled>
+                  Next
+                </button>
+              </div>
+              <div class="example-container">
+                <h4>Example Feelings:</h4>
+                <div class="example-box">
+                  <p>
+                    "Confused, happy, impressed by elephant music, cozy,
+                    disappointed to wake up"
+                  </p>
+                </div>
+                <div class="example-box">
+                  <p>"Annoyed, exhausted, hungry"</p>
+                </div>
+                <div class="example-box">
+                  <p>"Happy, sentimental, charmed"</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 3: Genre Selection -->
+            <div class="form-step" id="step-3" style="display: none">
+              <div class="input-box-container">
+                <label for="genre-selector" class="input-label"
+                  >Book Genre</label
+                >
+                <select id="genre-selector" class="genre-dropdown">
+                  <option value="Any">Any</option>
+                  <option value="Fantasy">Fantasy</option>
+                  <option value="Mystery">Mystery</option>
+                  <option value="Romance">Romance</option>
+                  <option value="Horror">Horror</option>
+                  <option value="Fiction">Fiction</option>
+                  <option value="Biography">Biography</option>
+                  <option value="History">History</option>
+                  <option value="Adventure">Adventure</option>
+                  <option value="Poetry">Poetry</option>
+                </select>
+              </div>
+              <div class="form-buttons">
+                <button id="prev-step-3" class="prev-button">Previous</button>
+                <button id="generate-button-multi" class="generate-button">
+                  Generate
+                </button>
+              </div>
+            </div>
           </div>
-          <button id="generate-button" onclick="filterText()" disabled>
-            Generate Recommendations
-          </button>
+
+          <!-- Single-page all inputs view (shown after first submission) -->
+          <div id="single-page-form" style="display: none">
+            <div class="input-box-container">
+              <label for="filter-text-val1-single" class="input-label"
+                >Describe your dreams (minimum 15 words)</label
+              >
+              <div class="input-box">
+                <textarea
+                  placeholder="Describe your dreams (minimum 15 words)"
+                  id="filter-text-val1-single"
+                  rows="4"
+                ></textarea>
+              </div>
+              <span id="word-count-single">0 words</span>
+            </div>
+
+            <div class="input-box-container">
+              <label for="filter-text-val2-single" class="input-label"
+                >How did you feel about your dream?</label
+              >
+              <div class="input-box">
+                <textarea
+                  placeholder="How did you feel about your dream?"
+                  id="filter-text-val2-single"
+                  rows="4"
+                ></textarea>
+              </div>
+            </div>
+
+            <div class="input-box-container">
+              <label for="genre-selector-single" class="input-label"
+                >Book Genre</label
+              >
+              <select id="genre-selector-single" class="genre-dropdown">
+                <option value="Any">Any</option>
+                <option value="Fantasy">Fantasy</option>
+                <option value="Mystery">Mystery</option>
+                <option value="Romance">Romance</option>
+                <option value="Horror">Horror</option>
+                <option value="Fiction">Fiction</option>
+                <option value="Biography">Biography</option>
+                <option value="History">History</option>
+                <option value="Adventure">Adventure</option>
+                <option value="Poetry">Poetry</option>
+              </select>
+            </div>
+
+            <div class="form-buttons">
+              <button id="reset-button" class="prev-button">Start Over</button>
+              <button id="generate-button-single" class="generate-button">
+                Regenerate
+              </button>
+            </div>
+          </div>
         </div>
       </header>
 
@@ -76,6 +213,9 @@
     </div>
 
     <script>
+      // Track if we've submitted a search before
+      let hasSubmitted = false;
+
       function answerBoxTemplate(
         Title,
         authors,
@@ -177,22 +317,32 @@
         </div>`;
       }
 
-      function filterText() {
+      function filterText(isRegeneration = false) {
         document.getElementById("answer-box").innerHTML = "";
         const progressIndicator = document.getElementById("progress-indicator");
         const progressText = document.getElementById("progress-text");
         progressIndicator.style.display = "none";
 
-        const query1 = document.getElementById("filter-text-val1").value;
-        const query2 = document.getElementById("filter-text-val2").value;
-        const genreSelect = document.getElementById("genre-selector");
+        // Get values from appropriate input fields based on form mode
+        const query1 = isRegeneration
+          ? document.getElementById("filter-text-val1-single").value
+          : document.getElementById("filter-text-val1").value;
+
+        const query2 = isRegeneration
+          ? document.getElementById("filter-text-val2-single").value
+          : document.getElementById("filter-text-val2").value;
+
+        const genreSelect = isRegeneration
+          ? document.getElementById("genre-selector-single")
+          : document.getElementById("genre-selector");
+
         const selectedGenre =
           genreSelect.options[genreSelect.selectedIndex].value;
         const wordCount = query1.trim().split(/\s+/).filter(Boolean).length;
 
-        if (wordCount < 20) {
+        if (wordCount < 15) {
           document.getElementById("answer-box").innerHTML =
-            "<div class='error'>Dream description must have at least 20 words.</div>";
+            "<div class='error'>Dream description must have at least 15 words.</div>";
           return;
         }
         if (query2.trim().length === 0) {
@@ -235,6 +385,12 @@
             clearInterval(progressInterval);
             progressIndicator.style.display = "none";
 
+            // If this is the first time generating results, switch to single page view
+            if (!hasSubmitted) {
+              switchToSinglePageView();
+              hasSubmitted = true;
+            }
+
             document.getElementById("answer-box").innerHTML = "";
             if (data.length === 0) {
               document.getElementById("answer-box").innerHTML =
@@ -275,53 +431,192 @@
           });
       }
 
+      // Function to switch from multi-step to single page view
+      function switchToSinglePageView() {
+        // Copy values from multi-step form to single page form
+        document.getElementById("filter-text-val1-single").value =
+          document.getElementById("filter-text-val1").value;
+
+        document.getElementById("filter-text-val2-single").value =
+          document.getElementById("filter-text-val2").value;
+
+        const multiGenre = document.getElementById("genre-selector");
+        const singleGenre = document.getElementById("genre-selector-single");
+        singleGenre.selectedIndex = multiGenre.selectedIndex;
+
+        // Update word count in single view
+        const words = document
+          .getElementById("filter-text-val1-single")
+          .value.trim()
+          .split(/\s+/)
+          .filter(Boolean);
+        const wordCount = words.length;
+        document.getElementById(
+          "word-count-single"
+        ).textContent = `${wordCount} word${wordCount !== 1 ? "s" : ""}`;
+
+        // Hide step indicators and multi-step form, show single page form
+        document.getElementById("step-indicators").style.display = "none";
+        document.getElementById("multi-step-form").style.display = "none";
+        document.getElementById("single-page-form").style.display = "block";
+      }
+
+      // Function to reset to multi-step view
+      function resetToMultiStepView() {
+        // Reset all inputs
+        document.getElementById("filter-text-val1").value = "";
+        document.getElementById("filter-text-val2").value = "";
+        document.getElementById("genre-selector").selectedIndex = 0;
+        document.getElementById("word-count").textContent = "0 words";
+
+        // Reset to step 1
+        document.getElementById("step-1").style.display = "block";
+        document.getElementById("step-2").style.display = "none";
+        document.getElementById("step-3").style.display = "none";
+
+        document.getElementById("step-1-indicator").classList.add("active");
+        document.getElementById("step-2-indicator").classList.remove("active");
+        document.getElementById("step-3-indicator").classList.remove("active");
+
+        // Show multi-step form, hide single page form
+        document.getElementById("step-indicators").style.display = "block";
+        document.getElementById("multi-step-form").style.display = "block";
+        document.getElementById("single-page-form").style.display = "none";
+
+        // Clear results
+        document.getElementById("answer-box").innerHTML = "";
+
+        // Reset submission state
+        hasSubmitted = false;
+      }
+
+      // Multi-step form logic
       const dreamInput = document.getElementById("filter-text-val1");
       const feelingInput = document.getElementById("filter-text-val2");
-      const genreSelect = document.getElementById("genre-selector");
-      const generateButton = document.getElementById("generate-button");
       const wordCountDisplay = document.getElementById("word-count");
 
-      function updateButtonState() {
-        const dreamText = dreamInput.value.trim();
-        const feelingText = feelingInput.value.trim();
-        const words = dreamText.split(/\s+/).filter(Boolean);
+      // Step 1 logic
+      const nextStep1Button = document.getElementById("next-step-1");
+      dreamInput.addEventListener("input", function () {
+        const words = this.value.trim().split(/\s+/).filter(Boolean);
         const currentWordCount = words.length;
 
         wordCountDisplay.textContent = `${currentWordCount} word${
           currentWordCount !== 1 ? "s" : ""
         }`;
         wordCountDisplay.style.color =
-          currentWordCount < 20 ? "#e53e3e" : "var(--medium-light)";
+          currentWordCount < 15 ? "#e53e3e" : "var(--medium-light)";
 
-        if (currentWordCount >= 20 && feelingText.length > 0) {
-          generateButton.disabled = false;
-        } else {
-          generateButton.disabled = true;
-        }
+        nextStep1Button.disabled = currentWordCount < 15;
+      });
+
+      nextStep1Button.addEventListener("click", function () {
+        document.getElementById("step-1").style.display = "none";
+        document.getElementById("step-2").style.display = "block";
+        document.getElementById("step-1-indicator").classList.remove("active");
+        document.getElementById("step-2-indicator").classList.add("active");
+      });
+
+      // Step 2 logic
+      const prevStep2Button = document.getElementById("prev-step-2");
+      const nextStep2Button = document.getElementById("next-step-2");
+
+      feelingInput.addEventListener("input", function () {
+        nextStep2Button.disabled = this.value.trim().length === 0;
+      });
+
+      prevStep2Button.addEventListener("click", function () {
+        document.getElementById("step-2").style.display = "none";
+        document.getElementById("step-1").style.display = "block";
+        document.getElementById("step-2-indicator").classList.remove("active");
+        document.getElementById("step-1-indicator").classList.add("active");
+      });
+
+      nextStep2Button.addEventListener("click", function () {
+        document.getElementById("step-2").style.display = "none";
+        document.getElementById("step-3").style.display = "block";
+        document.getElementById("step-2-indicator").classList.remove("active");
+        document.getElementById("step-3-indicator").classList.add("active");
+      });
+
+      // Step 3 logic
+      const prevStep3Button = document.getElementById("prev-step-3");
+
+      prevStep3Button.addEventListener("click", function () {
+        document.getElementById("step-3").style.display = "none";
+        document.getElementById("step-2").style.display = "block";
+        document.getElementById("step-3-indicator").classList.remove("active");
+        document.getElementById("step-2-indicator").classList.add("active");
+      });
+
+      // Connect buttons to their functions
+      document
+        .getElementById("generate-button-multi")
+        .addEventListener("click", function () {
+          filterText(false); // First-time generation
+        });
+
+      document
+        .getElementById("generate-button-single")
+        .addEventListener("click", function () {
+          filterText(true); // Regeneration from single-page view
+        });
+
+      document
+        .getElementById("reset-button")
+        .addEventListener("click", resetToMultiStepView);
+
+      // Single page form logic
+      const dreamInputSingle = document.getElementById(
+        "filter-text-val1-single"
+      );
+      const feelingInputSingle = document.getElementById(
+        "filter-text-val2-single"
+      );
+      const wordCountDisplaySingle =
+        document.getElementById("word-count-single");
+      const generateButtonSingle = document.getElementById(
+        "generate-button-single"
+      );
+
+      dreamInputSingle.addEventListener("input", function () {
+        const words = this.value.trim().split(/\s+/).filter(Boolean);
+        const currentWordCount = words.length;
+
+        wordCountDisplaySingle.textContent = `${currentWordCount} word${
+          currentWordCount !== 1 ? "s" : ""
+        }`;
+        wordCountDisplaySingle.style.color =
+          currentWordCount < 15 ? "#e53e3e" : "var(--medium-light)";
+
+        updateSingleGenerateButton();
+      });
+
+      feelingInputSingle.addEventListener("input", updateSingleGenerateButton);
+
+      function updateSingleGenerateButton() {
+        const dreamText = dreamInputSingle.value.trim();
+        const feelingText = feelingInputSingle.value.trim();
+        const wordCount = dreamText.split(/\s+/).filter(Boolean).length;
+
+        generateButtonSingle.disabled =
+          wordCount < 15 || feelingText.length === 0;
       }
 
-      dreamInput.addEventListener("input", updateButtonState);
-      feelingInput.addEventListener("input", updateButtonState);
+      // Handle Enter key in textareas
+      dreamInput.addEventListener("keypress", function (e) {
+        if (e.key === "Enter" && !e.shiftKey && !nextStep1Button.disabled) {
+          e.preventDefault();
+          nextStep1Button.click();
+        }
+      });
 
-      updateButtonState();
-
-      document
-        .getElementById("filter-text-val1")
-        .addEventListener("keypress", function (e) {
-          if (e.key === "Enter" && !e.shiftKey) {
-            e.preventDefault();
-            filterText();
-          }
-        });
-
-      document
-        .getElementById("filter-text-val2")
-        .addEventListener("keypress", function (e) {
-          if (e.key === "Enter" && !e.shiftKey) {
-            e.preventDefault();
-            filterText();
-          }
-        });
+      feelingInput.addEventListener("keypress", function (e) {
+        if (e.key === "Enter" && !e.shiftKey && !nextStep2Button.disabled) {
+          e.preventDefault();
+          nextStep2Button.click();
+        }
+      });
     </script>
   </body>
 </html>

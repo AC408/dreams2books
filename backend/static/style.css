@@ -484,3 +484,160 @@ body {
   box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.05);
   outline: none;
 }
+
+.step-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.step {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--light-accent);
+  color: var(--medium);
+  border-radius: 50%;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.2s ease;
+}
+
+.step.active {
+  background-color: var(--dark);
+  color: var(--white);
+}
+
+.step-line {
+  height: 2px;
+  width: 60px;
+  background-color: var(--light-accent);
+}
+
+.form-step {
+  transition: all 0.3s ease;
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 24px;
+}
+
+.prev-button,
+.next-button {
+  padding: 12px 24px;
+  border-radius: var(--radius);
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.15s;
+  letter-spacing: 0.2px;
+  border: none;
+}
+
+.prev-button {
+  background-color: var(--light);
+  color: var(--dark);
+  border: 1px solid var(--light-accent);
+}
+
+.prev-button:hover {
+  background-color: var(--light-accent);
+}
+
+.next-button {
+  background-color: var(--dark);
+  color: var(--white);
+}
+
+.next-button:hover {
+  background-color: var(--dark-accent);
+}
+
+.next-button:disabled {
+  background-color: var(--medium-light);
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.generate-button {
+  background-color: #4a6da7;
+  color: var(--white);
+  padding: 12px 24px;
+  border-radius: var(--radius);
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.15s;
+  letter-spacing: 0.2px;
+  border: none;
+}
+
+.generate-button:hover {
+  background-color: #3a5a8f;
+}
+
+.generate-button:disabled {
+  background-color: var(--medium-light);
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.form-buttons button:only-child {
+  margin-left: auto;
+}
+
+@media (max-width: 900px) {
+  .step-line {
+    width: 30px;
+  }
+
+  .form-buttons {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .form-buttons button {
+    width: 100%;
+  }
+
+  .form-buttons button:only-child {
+    margin-left: 0;
+  }
+}
+
+.example-container {
+  margin: 20px 0;
+  padding-top: 10px;
+}
+
+.example-container h4 {
+  font-size: 14px;
+  color: var(--medium);
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+
+.example-box {
+  background-color: var(--light);
+  border-radius: var(--radius);
+  padding: 12px 16px;
+  margin-bottom: 10px;
+  border-left: 3px solid var(--light-accent);
+}
+
+.example-box p {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--medium);
+  margin: 0;
+  font-style: italic;
+}
+
+.example-box:last-child {
+  margin-bottom: 0;
+}
