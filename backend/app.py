@@ -44,6 +44,7 @@ def json_search(query):
     asort = np.argsort(sims)[::-1][:MAX_NUM_RESULTS]
     matched_res = []
     cos_explanation = []
+    hidden_cos_explanation = []
     for i in range(MAX_NUM_RESULTS):
         index = asort[i]
         file_num = int(index / NUM_INDICES_IN_EACH_DATA_FILE)
@@ -70,6 +71,20 @@ def json_search(query):
             cos_explanation_i.append(term)
         cos_explanation.append(cos_explanation_i)
 
+        hidden_q = ""
+        for review in result["review"]:
+            hidden_q += review["review/text"].lower()
+        hidden_v = vectorizer.transform([hidden_q]).toarray()
+        hidden_cos_res = np.array(hidden_v.squeeze() * query_tfidf.squeeze())
+        hidden_max_sim = min(np.count_nonzero(hidden_cos_res), 10)
+        hidden_sim_terms = np.argsort(hidden_cos_res)[::-1][:hidden_max_sim]
+        hidden_cos_explanation_i = []
+        for t in range(len(hidden_sim_terms)):
+            hidden_term_index = hidden_sim_terms[t]
+            hidden_term = index_to_term[hidden_term_index]
+            hidden_cos_explanation_i.append(hidden_term)
+        hidden_cos_explanation.append(hidden_cos_explanation_i)
+
         # then delete the resource
         del data
         # then have garbage collector collect it
@@ -78,6 +93,8 @@ def json_search(query):
     df = pd.DataFrame(matched_res)
     df["similarity_score"] = scores
     df["cos_explanation"] = cos_explanation
+    df["hidden_explanation"] = hidden_cos_explanation
+    print(hidden_cos_explanation)
     return df.to_json(orient="records")
 
 
