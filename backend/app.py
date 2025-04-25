@@ -27,6 +27,7 @@ for k in range(1, num_split):
     new_words_compressed = np.load(svd_path + "words_compressed_" + str(k) + ".npy")
     words_compressed = np.concatenate((words_compressed, new_words_compressed))
 docs_compressed_normed = normalize(np.load(svd_path + "docs_compressed.npy"))
+index_to_term = vectorizer.get_feature_names_out()
 
 app = Flask(__name__)
 CORS(app)
@@ -42,6 +43,7 @@ def json_search(query):
     scores = np.sort(sims)[::-1][:MAX_NUM_RESULTS]
     asort = np.argsort(sims)[::-1][:MAX_NUM_RESULTS]
     matched_res = []
+    cos_explanation = []
     for i in range(MAX_NUM_RESULTS):
         index = asort[i]
         file_num = int(index / NUM_INDICES_IN_EACH_DATA_FILE)
@@ -52,7 +54,22 @@ def json_search(query):
             data = json.load(file)
         index_in_file = index - NUM_INDICES_IN_EACH_DATA_FILE * file_num
         # then grab the data and append
-        matched_res.append(data[index_in_file])
+        result = data[index_in_file]
+        matched_res.append(result)
+
+        # emphasize words corresponding to query
+        result_q = result["Title"] + result["description"].lower()
+        result_v = vectorizer.transform([result_q]).toarray()
+        cos_res = np.array(result_v.squeeze() * query_tfidf.squeeze())
+        max_sim = min(np.count_nonzero(cos_res), 10)
+        sim_terms = np.argsort(cos_res)[::-1][:max_sim]
+        cos_explanation_i = []
+        for t in range(len(sim_terms)):
+            term_index = sim_terms[t]
+            term = index_to_term[term_index]
+            cos_explanation_i.append(term)
+        cos_explanation.append(cos_explanation_i)
+
         # then delete the resource
         del data
         # then have garbage collector collect it
@@ -60,6 +77,7 @@ def json_search(query):
 
     df = pd.DataFrame(matched_res)
     df["similarity_score"] = scores
+    df["cos_explanation"] = cos_explanation
     return df.to_json(orient="records")
 
 
