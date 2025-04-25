@@ -11,12 +11,15 @@ root_dir = os.path.abspath(os.path.join("..", os.curdir))
 docs_compressed_normed = normalize(np.load(root_dir + "/data/svd/docs_compressed.npy"))
 
 # SVD gives eigenvalues (dimensions) in ascending order, we want the most variabilities
+# np.savetxt("d_c_m", docs_compressed_normed, delimiter=",", fmt="%f")
 U_30 = docs_compressed_normed[:, -30:]
-print(U_30.shape)  # double checking shape
+# np.savetxt("u_30", U_30, delimiter=",", fmt="%f")
+# print(U_30.shape)  # double checking shape
 
 for i in range(30):
     # Get top 30 documents most related to each dimension
     top_docs = U_30[:, i].argsort()[::-1][:30]
+    # np.savetxt("top_" + str(i), top_docs, delimiter=",", fmt="%f")
 
     matched_res = []
     for j in range(30):

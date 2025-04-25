@@ -26,15 +26,16 @@ vectorizer = TfidfVectorizer(
 )
 doc_terms = []
 for d in data:
-    terms = d["description"]
+    terms = d["description"].lower()
+    # terms += d["Title"].lower()
     for review in d["review"]:
-        terms += review["review/text"]
+        terms += review["review/text"].lower()
     doc_terms.append(terms)
 
 tf_idf = vectorizer.fit_transform([d for d in doc_terms])
 
 docs_compressed, s, words_compressed = svds(tf_idf, k=125)
-print("S: ", s)
+# print("S: ", s)
 
 num_splits = 5
 split = np.split(words_compressed, num_splits)
