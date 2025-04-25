@@ -12,6 +12,11 @@ import joblib
 
 NUM_INDICES_IN_EACH_DATA_FILE = 11309  # determined by running create_init_json
 MAX_NUM_RESULTS = 50
+NUM_FEATURES = 30
+TOP_K_FEATURES = 3
+
+# Feature list corresponding to the last NUM_FEATURES dimensions
+FEATURE_LIST = ["History", "International", "Games", "Education", "SocialScience", "Performance", "Faith", "Entertainment", "Pets", "Care", "Literature", "Art", "Verse", "Culture", "Vacation", "Identity", "Narrative", "Technology", "Linguistics", "Spirituality", "Classics", "Regional", "Theology", "Fiction", "Conflict", "Crime", "Idioms", "Cuisine", "Suspense", "Reference"]
 
 # ROOT_PATH for linking with all your files.
 # Feel free to use a config.py or settings.py with a global export variable
@@ -26,7 +31,8 @@ num_split = 5  # same as number of word_compressed files and in save_svd_data
 for k in range(1, num_split):
     new_words_compressed = np.load(svd_path + "words_compressed_" + str(k) + ".npy")
     words_compressed = np.concatenate((words_compressed, new_words_compressed))
-docs_compressed_normed = normalize(np.load(svd_path + "docs_compressed.npy"))
+docs_compressed = np.load(svd_path + "docs_compressed.npy")
+docs_compressed_normed = normalize(docs_compressed)
 index_to_term = vectorizer.get_feature_names_out()
 
 app = Flask(__name__)
@@ -45,6 +51,8 @@ def json_search(query):
     matched_res = []
     cos_explanation = []
     hidden_cos_explanation = []
+    top_features_list = [] # New list to store top features for each book
+
     for i in range(MAX_NUM_RESULTS):
         index = asort[i]
         file_num = int(index / NUM_INDICES_IN_EACH_DATA_FILE)
@@ -57,6 +65,13 @@ def json_search(query):
         # then grab the data and append
         result = data[index_in_file]
         matched_res.append(result)
+
+        # Calculate top features based on the book's vector
+        book_vector = docs_compressed_normed[index]
+        feature_scores = book_vector[-NUM_FEATURES:]
+        top_feature_indices = np.argsort(feature_scores)[::-1][:TOP_K_FEATURES]
+        top_features = [FEATURE_LIST[idx] for idx in top_feature_indices]
+        top_features_list.append(top_features)
 
         # emphasize words corresponding to query
         result_q = result["Title"] + result["description"].lower()
@@ -94,6 +109,7 @@ def json_search(query):
     df["similarity_score"] = scores
     df["cos_explanation"] = cos_explanation
     df["hidden_explanation"] = hidden_cos_explanation
+    df["top_features"] = top_features_list # Add top features to DataFrame
     print(hidden_cos_explanation)
     return df.to_json(orient="records")
 

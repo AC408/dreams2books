@@ -1,167 +1,312 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>Dreams2Books - Find Books From Your Dreams</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<head>
-  <title>Dreams2Books - Find Books From Your Dreams</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-</head>
+  <body>
+    <div class="container">
+      <header class="hero">
+        <h1>Dreams2Books</h1>
+        <p class="subtitle">Find the perfect book inspired by your dreams</p>
 
-<body>
-  <div class="container">
-    <header class="hero">
-      <h1>Dreams2Books</h1>
-      <p class="subtitle">Find the perfect book inspired by your dreams</p>
-
-      <div class="search-container">
-        <div class="input-box">
-          <textarea placeholder="Describe your dreams in a minimum of 10 words" id="filter-text-val1"
-            rows="4"></textarea>
+        <div class="search-container">
+          <div class="input-box-container">
+            <div class="input-box">
+              <textarea
+                placeholder="Describe your dreams (minimum 20 words)"
+                id="filter-text-val1"
+                rows="4"
+              ></textarea>
+            </div>
+            <span id="word-count">0 words</span>
+          </div>
+          <div class="input-box">
+            <textarea
+              placeholder="How did you feel about your dream?"
+              id="filter-text-val2"
+              rows="4"
+            ></textarea>
+          </div>
+          <button id="generate-button" onclick="filterText()" disabled>
+            Generate Recommendations
+          </button>
         </div>
-        <div class="input-box">
-          <textarea placeholder="How did you feel about your dream" id="filter-text-val2" rows="4"></textarea>
+      </header>
+
+      <div class="results-wrapper">
+        <div id="progress-indicator" style="display: none">
+          <p id="progress-text"></p>
         </div>
-        <button onclick="filterText()">Generate Recommendations</button>
+        <main id="answer-box"></main>
       </div>
-    </header>
-
-    <div class="results-wrapper">
-      <main id="answer-box"></main>
     </div>
-  </div>
 
-  <script>
-    function answerBoxTemplate(
-      Title,
-      authors,
-      infoLink,
-      similarity_score,
-      description
-    ) {
-      // formatting the author text bc we got brackets and quotes in the dataset
-      let authorText = Array.isArray(authors) ? authors.join(", ") : authors;
-      authorText = authorText.replace(/['\[\]]/g, "");
+    <script>
+      function answerBoxTemplate(
+        Title,
+        authors,
+        infoLink,
+        similarity_score,
+        description,
+        top_features,
+        cos_explanation,
+        hidden_explanation
+      ) {
+        // formatting the author text bc we got brackets and quotes in the dataset
+        let authorText = Array.isArray(authors) ? authors.join(", ") : authors;
+        authorText = authorText.replace(/['\[\]]/g, "");
 
-      // uppercasing first letter bc our dataset si full of lowercase lol
-      const capitalizedTitle =
-        Title.charAt(0).toUpperCase() + Title.slice(1).toLowerCase();
+        // uppercasing first letter bc our dataset si full of lowercase lol
+        const capitalizedTitle =
+          Title.charAt(0).toUpperCase() + Title.slice(1).toLowerCase();
 
-      // construct image url with this nice little trick but unscalable trick. so we actually did have the image url in our dataset, but we trimmed it. but you can construct it like this since its just the google books api same as the book id.
-      const bookIdMatch = infoLink.match(/id=([^&]+)/);
-      const bookId = bookIdMatch ? bookIdMatch[1] : "";
-      const coverImageUrl = bookId
-        ? `https://books.google.com/books/content?id=${bookId}&printsec=frontcover&img=1&zoom=1&source=gbs_api`
-        : "";
+        // construct image url with this nice little trick but unscalable trick. so we actually did have the image url in our dataset, but we trimmed it. but you can construct it like this since its just the google books api same as the book id.
+        const bookIdMatch = infoLink.match(/id=([^&]+)/);
+        const bookId = bookIdMatch ? bookIdMatch[1] : "";
+        const coverImageUrl = bookId
+          ? `https://books.google.com/books/content?id=${bookId}&printsec=frontcover&img=1&zoom=1&source=gbs_api`
+          : "";
 
-      const hasCover = bookId !== "";
+        const hasCover = bookId !== "";
 
-      // Format similarity score to 2 decimal places
-      const formattedScore = similarity_score
-        ? `Similarity: ${parseFloat(similarity_score).toFixed(2)}`
-        : "N/A";
+        // Format similarity score to 2 decimal places
+        const formattedScore = similarity_score
+          ? `Similarity: ${parseFloat(similarity_score).toFixed(2)}`
+          : "N/A";
 
-      return `
+        return `
         <div class="book-card ${hasCover ? "has-cover" : ""}">
           <span class="book-rank">${formattedScore}</span>
-          ${hasCover
-          ? `<div class="book-cover">
+          ${
+            hasCover
+              ? `<div class="book-cover">
             <img src="${coverImageUrl}" alt="${capitalizedTitle} cover" />
           </div>`
-          : ""
-        }
+              : ""
+          }
           <div class="book-content">
             <div class="book-header">
               <h3 class="book-title">${capitalizedTitle}</h3>
             </div>
             <p class="book-authors">By ${authorText}</p>
-            <p class="book-description">${description || "No description available"
-        }</p>
+            <div class="book-features">
+              ${
+                top_features && top_features.length > 0
+                  ? top_features
+                      .map(
+                        (feature) =>
+                          `<span class="feature-tag">${feature}</span>`
+                      )
+                      .join("")
+                  : ""
+              }
+            </div>
+            <p class="book-description">${
+              description || "No description available"
+            }</p>
+            <div class="explanations">
+              <p class="explanation-title">Important Query Word Matches</p>
+              <div class="explanation-tags">
+                ${
+                  // Check if cos_explanation exists and is an array
+                  cos_explanation &&
+                  Array.isArray(cos_explanation) &&
+                  cos_explanation.length > 0
+                    ? cos_explanation
+                        .map(
+                          (word) =>
+                            `<span class="explanation-tag">${word}</span>`
+                        )
+                        .join("")
+                    : '<span class="explanation-tag">N/A</span>' // Display N/A tag if no data
+                }
+              </div>
+              <p class="explanation-title explanation-hidden">Hidden Correlations Calculation</p>
+              <div class="explanation-tags explanation-hidden">
+                 ${
+                   // Check if hidden_explanation exists and is an array
+                   hidden_explanation &&
+                   Array.isArray(hidden_explanation) &&
+                   hidden_explanation.length > 0
+                     ? hidden_explanation
+                         .map(
+                           (word) =>
+                             `<span class="explanation-tag">${word}</span>`
+                         )
+                         .join("")
+                     : '<span class="explanation-tag">N/A</span>' // Display N/A tag if no data
+                 }
+              </div>
+            </div>
             <a href="${infoLink}" target="_blank" class="book-link">View on Google Books</a>
           </div>
         </div>`;
-    }
-
-    function createLoadingState() {
-      let loadingHTML = '<h2 class="results-heading">Recommended Books</h2>';
-      loadingHTML += '<div class="loading-grid">';
-
-      for (let i = 0; i < 6; i++) {
-        loadingHTML += '<div class="loading-card"></div>';
       }
 
-      loadingHTML += "</div>";
-      return loadingHTML;
-    }
+      function filterText() {
+        document.getElementById("answer-box").innerHTML = "";
+        const progressIndicator = document.getElementById("progress-indicator");
+        const progressText = document.getElementById("progress-text");
+        progressIndicator.style.display = "none"; // Ensure it's hidden initially
 
-    function filterText() {
-      document.getElementById("answer-box").innerHTML = "";
-      const query1 = document.getElementById("filter-text-val1").value;
-      const query2 = document.getElementById("filter-text-val2").value;
-      if (query1.split(" ").length < 10) {
-        document.getElementById("answer-box").innerHTML =
-          "<div class='error'>Description has less than 10 words</div>";
-        return;
-      }
-      if (query1.length === 0 && query2.length === 0) return;
+        const query1 = document.getElementById("filter-text-val1").value;
+        const query2 = document.getElementById("filter-text-val2").value;
+        const wordCount = query1.trim().split(/\s+/).filter(Boolean).length;
 
-      const query = query1 + " " + query1 + " " + query2;
+        // Check word count and if second input is filled
+        if (wordCount < 20) {
+          document.getElementById("answer-box").innerHTML =
+            "<div class='error'>Dream description must have at least 20 words.</div>";
+          return;
+        }
+        if (query2.trim().length === 0) {
+          document.getElementById("answer-box").innerHTML =
+            "<div class='error'>Please also describe how you felt about the dream.</div>";
+          return;
+        }
 
-      document.getElementById("answer-box").innerHTML = createLoadingState();
+        const query = query1 + " " + query1 + " " + query2; // Consider refining query combination logic if needed
 
-      fetch("/episodes?" + new URLSearchParams({ title: query }).toString())
-        .then((response) => response.json())
-        .then((data) => {
-          document.getElementById("answer-box").innerHTML = "";
-          if (data.length === 0) {
+        // --- Start Progress Indicator ---
+        const progressMessages = [
+          "Looking through the backend...",
+          "Analyzing your dream description...",
+          "Comparing dream vibes with book plots...",
+          "Finding the best book matches...",
+        ];
+        let currentMessageIndex = 0;
+        let progressInterval;
+
+        progressText.textContent = progressMessages[currentMessageIndex];
+        progressIndicator.style.display = "block"; // Show the indicator
+
+        progressInterval = setInterval(() => {
+          currentMessageIndex =
+            (currentMessageIndex + 1) % progressMessages.length;
+          // Add a fade-out/fade-in effect for the text change
+          progressText.style.opacity = 0;
+          setTimeout(() => {
+            progressText.textContent = progressMessages[currentMessageIndex];
+            progressText.style.opacity = 1;
+          }, 300); // Match CSS transition duration (adjust if needed)
+        }, 2500); // Change message every 2.5 seconds
+        // --- End Progress Indicator Setup ---
+
+        fetch("/episodes?" + new URLSearchParams({ title: query }).toString())
+          .then((response) => response.json())
+          .then((data) => {
+            // --- Stop Progress Indicator ---
+            clearInterval(progressInterval);
+            progressIndicator.style.display = "none";
+            // --- Stop Progress Indicator ---
+
+            document.getElementById("answer-box").innerHTML = ""; // Clear just in case
+            if (data.length === 0) {
+              document.getElementById("answer-box").innerHTML =
+                "<div class='no-results'>No books found matching your dream.</div>";
+              return;
+            }
+
+            const resultsHeading = document.createElement("h2");
+            resultsHeading.className = "results-heading";
+            resultsHeading.textContent = "Recommended Books";
+            document.getElementById("answer-box").appendChild(resultsHeading);
+
+            const resultsGrid = document.createElement("div");
+            resultsGrid.className = "results-list";
+            document.getElementById("answer-box").appendChild(resultsGrid);
+
+            data.forEach((row) => {
+              let tempDiv = document.createElement("div");
+              tempDiv.innerHTML = answerBoxTemplate(
+                row.Title,
+                row.authors,
+                row.infoLink,
+                row.similarity_score,
+                row.description,
+                row.top_features,
+                row.cos_explanation,
+                row.hidden_explanation
+              );
+              resultsGrid.appendChild(tempDiv.firstElementChild);
+            });
+          })
+          .catch((error) => {
+            // --- Stop Progress Indicator on Error ---
+            clearInterval(progressInterval);
+            progressIndicator.style.display = "none";
+            // --- Stop Progress Indicator on Error ---
+            console.error("Error fetching recommendations:", error);
             document.getElementById("answer-box").innerHTML =
-              "<div class='no-results'>No books found matching your dream.</div>";
-            return;
-          }
-
-          const resultsHeading = document.createElement("h2");
-          resultsHeading.className = "results-heading";
-          resultsHeading.textContent = "Recommended Books";
-          document.getElementById("answer-box").appendChild(resultsHeading);
-
-          const resultsGrid = document.createElement("div");
-          resultsGrid.className = "results-grid";
-          document.getElementById("answer-box").appendChild(resultsGrid);
-
-          data.forEach((row) => {
-            let tempDiv = document.createElement("div");
-            tempDiv.innerHTML = answerBoxTemplate(
-              row.Title,
-              row.authors,
-              row.infoLink,
-              row.similarity_score,
-              row.description
-            );
-            resultsGrid.appendChild(tempDiv.firstElementChild);
+              "<div class='error'>Could not fetch recommendations. Please try again later.</div>";
           });
-        })
-        ;
-    }
+      }
 
-    document
-      .getElementById("filter-text-val1")
-      .addEventListener("keypress", function (e) {
-        if (e.key === "Enter" && !e.shiftKey) {
-          e.preventDefault();
-          filterText();
+      // --- Input Validation and Button Enabling ---
+      const dreamInput = document.getElementById("filter-text-val1");
+      const feelingInput = document.getElementById("filter-text-val2");
+      const generateButton = document.getElementById("generate-button");
+      const wordCountDisplay = document.getElementById("word-count");
+
+      function updateButtonState() {
+        const dreamText = dreamInput.value.trim();
+        const feelingText = feelingInput.value.trim();
+        const words = dreamText.split(/\s+/).filter(Boolean);
+        const currentWordCount = words.length;
+
+        // Update word count display
+        wordCountDisplay.textContent = `${currentWordCount} word${
+          currentWordCount !== 1 ? "s" : ""
+        }`;
+        // Add visual feedback if below limit
+        wordCountDisplay.style.color =
+          currentWordCount < 20 ? "#e53e3e" : "var(--medium-light)";
+
+        // Enable button only if dream >= 20 words AND feeling has content
+        if (currentWordCount >= 20 && feelingText.length > 0) {
+          generateButton.disabled = false;
+        } else {
+          generateButton.disabled = true;
         }
-      });
+      }
 
-    document
-      .getElementById("filter-text-val2")
-      .addEventListener("keypress", function (e) {
-        if (e.key === "Enter" && !e.shiftKey) {
-          e.preventDefault();
-          filterText();
-        }
-      });
-  </script>
-</body>
+      // Add listeners to both inputs
+      dreamInput.addEventListener("input", updateButtonState);
+      feelingInput.addEventListener("input", updateButtonState);
 
+      // Initial call to set state
+      updateButtonState();
+
+      // --- End Input Validation ---
+
+      document
+        .getElementById("filter-text-val1")
+        .addEventListener("keypress", function (e) {
+          if (e.key === "Enter" && !e.shiftKey) {
+            e.preventDefault();
+            filterText();
+          }
+        });
+
+      document
+        .getElementById("filter-text-val2")
+        .addEventListener("keypress", function (e) {
+          if (e.key === "Enter" && !e.shiftKey) {
+            e.preventDefault();
+            filterText();
+          }
+        });
+    </script>
+  </body>
 </html>

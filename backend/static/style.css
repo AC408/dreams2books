@@ -71,15 +71,25 @@ body {
   margin-bottom: 40px;
 }
 
+/* Container for input box + word counter */
+.input-box-container {
+  position: relative; /* Needed for absolute positioning of counter */
+  width: 100%;
+  margin-bottom: 16px; /* Space below the first input area */
+}
+
 .input-box {
   border-radius: 12px;
   border: 1px solid var(--light-accent);
   display: flex;
   align-items: flex-start;
-  padding: 12px 20px;
+  padding: 16px 20px;
   width: 100%;
   transition: border-color 0.15s, box-shadow 0.15s;
   background-color: var(--white);
+  background-color: transparent;
+  line-height: 1.5;
+  padding: 0;
 }
 
 .input-box:focus-within {
@@ -94,9 +104,16 @@ body {
   outline: 0;
   font-family: inherit;
   resize: none;
-  background-color: transparent;
-  line-height: 1.5;
-  padding: 0;
+}
+
+/* Word Counter Style */
+#word-count {
+  position: absolute;
+  bottom: 10px;
+  right: 15px;
+  font-size: 12px;
+  color: var(--medium-light);
+  pointer-events: none; /* Prevent interference with textarea */
 }
 
 .search-container button {
@@ -111,6 +128,13 @@ body {
   transition: background-color 0.15s;
   align-self: flex-start;
   letter-spacing: 0.2px;
+}
+
+/* Disabled Button Style */
+.search-container button:disabled {
+  background-color: var(--medium-light); /* Lighter background */
+  cursor: not-allowed; /* Indicate non-interactive state */
+  opacity: 0.7;
 }
 
 .search-container button:hover {
@@ -134,11 +158,12 @@ body {
   padding: 0;
 }
 
-/* Results Grid */
-.results-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
+/* Results List (formerly Grid) */
+.results-list {
+  /* Renamed from .results-grid */
+  display: flex; /* Changed from grid */
+  flex-direction: column; /* Added */
+  gap: 20px; /* Adjusted gap */
   padding-bottom: 60px;
 }
 
@@ -149,7 +174,7 @@ body {
   padding: 24px;
   transition: transform 0.2s, box-shadow 0.2s;
   border: 1px solid var(--light-accent);
-  height: 300px;
+  /* Removed fixed height: 300px; */
   display: flex;
   flex-direction: column;
   position: relative;
@@ -158,21 +183,33 @@ body {
 .book-card.has-cover {
   padding: 0;
   overflow: hidden;
-  display: grid;
-  grid-template-columns: 200px 1fr;
+  display: flex; /* Keep flex for overall row layout */
+  flex-direction: row;
+  align-items: flex-start; /* Align items to the top */
 }
 
 .book-cover {
-  height: 100%;
+  width: 150px; /* Fixed width */
+  flex-shrink: 0;
   overflow: hidden;
-  background-color: #f0f0f0;
-  position: relative;
+  align-self: stretch; /* Make cover stretch to the card height */
+  position: relative; /* For potential aspect ratio enforcement */
+}
+
+/* Enforce aspect ratio (e.g., 2:3) */
+.book-cover::before {
+  content: "";
+  display: block;
+  padding-top: 150%; /* 3 / 2 * 100% = 150% */
 }
 
 .book-cover img {
+  position: absolute; /* Position image within the pseudo-element space */
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover; /* Cover ensures the image fills the space */
   object-position: center;
   display: block;
 }
@@ -181,8 +218,9 @@ body {
   padding: 24px;
   display: flex;
   flex-direction: column;
-  height: 100%;
-  overflow: hidden;
+  flex-grow: 1; /* Allow content to take remaining space */
+  overflow: hidden; /* Prevent content overflow */
+  /* Removed height: 100%; */
 }
 
 .book-card:hover {
@@ -232,28 +270,72 @@ body {
   font-weight: 500;
 }
 
+/* Style for the feature tags container */
+.book-features {
+  margin-bottom: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+/* Style for individual feature tags */
+.feature-tag {
+  background-color: var(--light-accent);
+  color: var(--medium-dark);
+  padding: 4px 10px;
+  border-radius: 12px; /* More rounded corners */
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.4;
+  white-space: nowrap; /* Prevent tags from wrapping */
+}
+
+/* Explanation styles */
+.explanations {
+  margin-top: 16px;
+  border-top: 1px solid var(--light-accent);
+  padding-top: 16px;
+}
+
+.explanation-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--medium);
+  margin-bottom: 8px; /* Increased spacing */
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Container for explanation tags */
+.explanation-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 12px; /* Space below tag group */
+}
+
+/* Style for individual explanation tags */
+.explanation-tag {
+  background-color: #e2e8f0; /* Slightly different background */
+  color: #4a5568; /* Slightly different text color */
+  padding: 3px 8px;
+  border-radius: 10px;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.3;
+  white-space: nowrap;
+}
+
 .book-description {
   color: var(--medium-light);
   font-size: 14px;
-  margin-bottom: 16px;
+  /* Removed margin-bottom: 16px; */
   line-height: 1.6;
-  flex: 1;
-  overflow-y: auto;
-  scrollbar-width: thin;
-  scrollbar-color: var(--light-accent) transparent;
-}
-
-.book-description::-webkit-scrollbar {
-  width: 6px;
-}
-
-.book-description::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.book-description::-webkit-scrollbar-thumb {
-  background-color: var(--light-accent);
-  border-radius: 3px;
+  /* Removed flex: 1; */
+  /* Removed overflow-y: auto; */
+  /* Removed scrollbar styles - let card handle scrolling if needed */
+  margin-top: 16px; /* Add space above description */
 }
 
 .book-link {
@@ -272,90 +354,35 @@ body {
   border-bottom: 1px solid var(--medium);
 }
 
-/* Loading State */
-.loading-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
+/* New Progress Indicator Styles */
+#progress-indicator {
+  /* Remove card styles */
+  /* background-color: var(--white); */
+  /* border-radius: var(--radius); */
+  /* box-shadow: var(--shadow); */
+  /* margin-bottom: 30px; */
+
+  /* Centering styles */
+  position: absolute; /* Position relative to results-wrapper */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  padding: 20px; /* Add some padding */
+  width: 80%; /* Prevent text becoming too wide */
+  max-width: 400px; /* Max width */
+  z-index: 100; /* Ensure it's above other content */
 }
 
-.loading-card {
-  background-color: #f7f7f7;
+#progress-text {
+  font-size: 18px;
+  color: var(--medium);
+  font-weight: 500;
+  transition: opacity 0.3s ease-in-out; /* Match JS timeout */
+  background-color: rgba(255, 255, 255, 0.9); /* Slight background */
+  padding: 15px 25px;
   border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  border: none;
-  height: 300px;
-  position: relative;
-  overflow: hidden;
-  opacity: 0;
-  animation: fadeIn 0.5s ease-in-out forwards;
-  display: grid;
-  grid-template-columns: 200px 1fr;
-}
-
-.loading-card:nth-child(1) {
-  animation-delay: 0.1s;
-}
-
-.loading-card:nth-child(2) {
-  animation-delay: 0.3s;
-}
-
-.loading-card:nth-child(3) {
-  animation-delay: 0.5s;
-}
-
-.loading-card:nth-child(4) {
-  animation-delay: 0.7s;
-}
-
-.loading-card:nth-child(5) {
-  animation-delay: 0.9s;
-}
-
-.loading-card:nth-child(6) {
-  animation-delay: 1.1s;
-}
-
-.loading-card::before {
-  content: "";
-  background-color: #e8e8e8;
-  grid-column: 1;
-}
-
-.loading-card::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  transform: translateX(-100%);
-  background-image: linear-gradient(
-    90deg,
-    rgba(255, 255, 255, 0) 0,
-    rgba(255, 255, 255, 0.4) 20%,
-    rgba(255, 255, 255, 0.7) 60%,
-    rgba(255, 255, 255, 0)
-  );
-  animation: shimmer 1.5s infinite ease-in-out;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes shimmer {
-  100% {
-    transform: translateX(100%);
-  }
+  box-shadow: var(--shadow-md);
 }
 
 /* Status Messages */
@@ -409,9 +436,10 @@ body {
   .results-wrapper {
     height: auto;
     padding: 30px 20px;
+    position: relative; /* Needed for absolute positioning of progress indicator */
   }
 
-  .results-grid,
+  .results-list,
   .loading-grid {
     grid-template-columns: 1fr;
   }
